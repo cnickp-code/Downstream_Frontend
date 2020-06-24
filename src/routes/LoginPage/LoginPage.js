@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
-import Nav from '../../components/Nav/Nav'
 import Footer from '../../components/Footer/Footer'
 import Login from '../../components/Login/Login'
 
@@ -18,7 +17,6 @@ class LoginPage extends React.Component {
                 <header>
                     <Header />
                 </header>
-                <Nav />
                 <main>
                     <Login onLoginSuccess={this.handleLoginSuccess} />
                 </main>

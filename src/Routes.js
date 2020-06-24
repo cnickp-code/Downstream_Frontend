@@ -7,6 +7,8 @@ import EventsPage from './routes/EventsPage/EventsPage'
 import SchedulePage from './routes/SchedulePage/SchedulePage'
 import LoginPage from './routes/LoginPage/LoginPage'
 import SignupPage from './routes/SignupPage/SignupPage'
+import PublicRoute from './components/Utils/PublicRoute'
+import PrivateRoute from './components/Utils/PrivateRoute'
 
 class Routes extends React.Component {
     render() {
@@ -32,7 +34,7 @@ class Routes extends React.Component {
                     exact path='/events/:event_id'
                     component={}
                 /> */}
-                <Route
+                <PrivateRoute
                     exact path='/schedule'
                     component={SchedulePage}
                 />
@@ -40,11 +42,11 @@ class Routes extends React.Component {
                     exact path='/schedule/:event_id'
                     component={}
                 /> */}
-                <Route
+                <PublicRoute
                     exact path='/login'
                     component={LoginPage}
                 />
-                <Route
+                <PublicRoute
                     exact path='/signup'
                     component={SignupPage}
                 />

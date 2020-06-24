@@ -14,6 +14,14 @@ class App extends React.Component {
     }
   }
 
+  addEvent = (event) => {
+    const eventList = this.state.events
+    this.setState({
+      ...eventList,
+      event
+    })
+  }
+
   setSchedule = (schedule) => {
     this.setState({
       schedule
@@ -43,10 +51,6 @@ class App extends React.Component {
     DownstreamApiService.getEvents()
       .then(this.setEvents)
       .catch(this.setError)
-
-    DownstreamApiService.getSchedule()
-      .then(this.setSchedule)
-      .catch(this.setError)
   }
 
   render() {
@@ -57,8 +61,11 @@ class App extends React.Component {
       setSchedule: this.setSchedule,
       setEvents: this.setEvents,
       setError: this.setError,
-      clearError: this.clearError
+      clearError: this.clearError,
+      addEvent: this.addEvent
     }
+
+    console.log(this.state.schedule)
 
     return (
       <div className="App">
