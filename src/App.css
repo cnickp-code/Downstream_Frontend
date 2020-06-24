@@ -89,6 +89,10 @@ footer {
   border-top: none;
 }
 
+.margin-right {
+  margin-right: 5px;
+}
+
 /* COVER PAGE STYLES */
 
 .cover {
@@ -182,6 +186,93 @@ footer {
 
 /* Splash Screen Styles */
 
+.headphones {
+  font-size: 100px;
+  position: relative;
+  top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.25s forwards;
+  -webkit-animation: fadeIn 0.5s ease 0.25s forwards;
+  -moz-animation: fadeIn 0.5s ease 0.25s forwards;
+  -o-animation: fadeIn 0.5s ease 0.25s forwards;
+  -ms-animation: fadeIn 0.5s ease 0.25s forwards;
+}
+
+.drop1 {
+  font-size: 40px;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.5s forwards;
+  -webkit-animation: fadeIn 0.5s ease 0.5s forwards;
+  -moz-animation: fadeIn 0.5s ease 0.5s forwards;
+  -o-animation: fadeIn 0.5s ease 0.5s forwards;
+  -ms-animation: fadeIn 0.5s ease 0.5s forwards;
+  
+}
+
+.drop2 {
+  font-size: 30px;
+  position: relative;
+  left: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.75s forwards;
+  -webkit-animation: fadeIn 0.5s ease 0.75s forwards;
+  -moz-animation: fadeIn 0.5s ease 0.75s forwards;
+  -o-animation: fadeIn 0.5s ease 0.75s forwards;
+  -ms-animation: fadeIn 0.5s ease 0.75s forwards;
+}
+
+.drop3 {
+  font-size: 25px;
+  position: relative;
+  right: 5px;
+  bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 1s forwards;
+  -webkit-animation: fadeIn 0.5s ease 1s forwards;
+  -moz-animation: fadeIn 0.5s ease 1s forwards;
+  -o-animation: fadeIn 0.5s ease 1s forwards;
+  -ms-animation: fadeIn 0.5s ease 1s forwards;
+}
+
+.drop4 {
+  font-size: 20px;
+  position: relative;
+  left: 5px;
+  bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 1.25s forwards;
+  -webkit-animation: fadeIn 0.5s ease 1.25s forwards;
+  -moz-animation: fadeIn 0.5s ease 1.25s forwards;
+  -o-animation: fadeIn 0.5s ease 1.25s forwards;
+  -ms-animation: fadeIn 0.5s ease 1.25s forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .splash-image {
   display: flex;
   flex-direction: row;
@@ -191,11 +282,7 @@ footer {
   height: 95vh;
   margin-left: auto;
   margin-right: auto;
-  /* border: 1px solid black; */
-  /* background-color: transparent; */
   border-bottom: none;
-  background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
-  /* background-image: url('https://static.billboard.com/files/media/streaming-illustration-v-2019-billboard-1548-1024x677.jpg');  */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -208,12 +295,11 @@ footer {
   text-align: center;
   color: white;
   padding: 10px;
-  /* border: 1px solid rgb(12, 52, 110);  */
-  /* background-color: rgba(224, 224, 224, 0.9);  */
-  border-radius: 20px; /* Changed */
-  margin-left: 10px; /* Changed */
-  margin-right: 10px; /* Changed */
-  margin-top: 150px;
+  border-radius: 20px; 
+  margin-left: 10px; 
+  margin-right: 10px; 
+  height: fit-content;
+  position: relative;
   
 }
 
@@ -233,11 +319,23 @@ footer {
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
-  padding-top: 6px;
+  padding-top: 5px;
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
 }
 
 .splash-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-shadow: 2px 2px 6px #000000;
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
 }
 
 /* Home Page Styles */

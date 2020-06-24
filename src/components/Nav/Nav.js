@@ -37,7 +37,8 @@ class Nav extends React.Component {
                         </ul>
                     </div>
                     <div className="mobile-logo" >
-                        <NavLink to="/home" className="nav-header-text">DownStream</NavLink>
+                        
+                        <NavLink to="/home" className="nav-header-text"><i className="fas fa-headphones margin-right"></i>DownStream</NavLink>
                     </div>
                 </nav>
 
