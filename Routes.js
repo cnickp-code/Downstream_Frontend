@@ -3,9 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 class Routes extends React.Component { 
     render() {
-        return (
-
-        )
+        return 
     }
 }
 
