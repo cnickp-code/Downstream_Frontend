@@ -93,6 +93,11 @@ footer {
   margin-right: 5px;
 }
 
+.error {
+  color: red;
+  text-align: center;
+}
+
 /* COVER PAGE STYLES */
 
 .cover {
@@ -238,7 +243,6 @@ footer {
 .drop4 {
   font-size: 20px;
   position: relative;
-  left: 5px;
   bottom: 10px;
   opacity: 0;
   animation: fadeIn 0.5s ease 1.25s forwards;
@@ -1277,8 +1281,8 @@ footer {
       bottom: 65px;
       right: 10px;
       z-index: 999;
-      opacity: 0.9;
-      
+      border-radius: 25px;
+      box-shadow: 4px 3px 11px 0px rgba(0,0,0,0.75);
   }
   
   .fab-search {
@@ -1570,7 +1574,6 @@ footer {
   }
 
   .about-header {
-      border-top: 1px solid white;
       padding-top: 20px;
       text-align: center;
       margin-top: 20px;

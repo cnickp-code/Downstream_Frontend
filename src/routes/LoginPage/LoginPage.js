@@ -5,6 +5,13 @@ import Footer from '../../components/Footer/Footer'
 import Login from '../../components/Login/Login'
 
 class LoginPage extends React.Component {
+
+    handleLoginSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/home'
+        history.push(destination)
+    }
+
     render() {
         return (
             <>
@@ -13,7 +20,7 @@ class LoginPage extends React.Component {
                 </header>
                 <Nav />
                 <main>
-                    <Login />
+                    <Login onLoginSuccess={this.handleLoginSuccess} />
                 </main>
                 <Footer />
             </>
