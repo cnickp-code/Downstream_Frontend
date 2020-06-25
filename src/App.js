@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       events: [],
       schedule: [],
+      showAdd: false,
       error: null
     }
   }
@@ -31,6 +32,12 @@ class App extends React.Component {
   setEvents = (events) => {
     this.setState({
       events
+    })
+  }
+
+  setShowAdd = (bool) => {
+    this.setState({
+      showAdd: bool
     })
   }
 
@@ -58,11 +65,13 @@ class App extends React.Component {
       events: this.state.events,
       error: this.state.error,
       schedule: this.state.schedule,
+      showAdd: this.state.showAdd,
       setSchedule: this.setSchedule,
       setEvents: this.setEvents,
       setError: this.setError,
       clearError: this.clearError,
-      addEvent: this.addEvent
+      addEvent: this.addEvent,
+      setShowAdd: this.setShowAdd
     }
 
     console.log(this.state.schedule)

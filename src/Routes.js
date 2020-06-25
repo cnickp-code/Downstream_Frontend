@@ -7,6 +7,7 @@ import EventsPage from './routes/EventsPage/EventsPage'
 import SchedulePage from './routes/SchedulePage/SchedulePage'
 import LoginPage from './routes/LoginPage/LoginPage'
 import SignupPage from './routes/SignupPage/SignupPage'
+import AddEventPage from './routes/AddEventPage/AddEventPage'
 import PublicRoute from './components/Utils/PublicRoute'
 import PrivateRoute from './components/Utils/PrivateRoute'
 
@@ -50,10 +51,10 @@ class Routes extends React.Component {
                     exact path='/signup'
                     component={SignupPage}
                 />
-                {/* <Route
+                <Route
                     exact path='/add_event'
-                    component={}
-                /> */}
+                    component={AddEventPage}
+                />
             </Switch>
         )
     }

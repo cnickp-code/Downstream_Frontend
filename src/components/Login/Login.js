@@ -63,6 +63,7 @@ class Login extends React.Component {
         .then(res => {
             user_name.value = ''
             password.value = ''
+            console.log(res.authToken)
             TokenService.saveAuthToken(res.authToken)
             this.props.onLoginSuccess()
         })

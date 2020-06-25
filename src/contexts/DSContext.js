@@ -4,10 +4,12 @@ const EventContext = React.createContext({
     events: [],
     error: null,
     schedule: [],
+    showAdd: false,
     setEvents: () => {},
     setError: () => {},
     clearError: () => {},
-    addEvent: () => {}
+    addEvent: () => {},
+    setShowAdd: () => {}
 })
 
 export default EventContext
