@@ -83,7 +83,10 @@ class AddEvent extends React.Component {
     
             console.log(newEvent)
             DownstreamApiService.postEvent(newEvent)
-                .then(this.context.addEvent)
+                .then(res => {
+                    this.context.addEvent(res)
+                    this.props.history.push('/home')
+                })
                 .catch(this.context.setError)
         }
 

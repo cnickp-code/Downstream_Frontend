@@ -5,8 +5,11 @@ import Fab from '../../components/SearchFab/SearchFab'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ScheduleEventList from '../../components/ScheduleEventList/ScheduleEventList'
 import EventInfo from '../../components/EventInfo/EventInfo'
+import DSContext from '../../contexts/DSContext'
 
 class SchedulePage extends React.Component {
+    static contextType = DSContext
+    
     render() {
         return (
             <>

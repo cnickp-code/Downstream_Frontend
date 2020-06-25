@@ -51,9 +51,21 @@ const DownstreamApiService = {
             return (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-        }
-
-        )
+        })
+    },
+    postScheduleItem(item) {
+        return fetch(`${config.API_ENDPOINT}/schedule`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify(item)
+        })
+        .then(res => {
+            return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+        })
     },
     deleteScheduleItem(scheduleId, callback) {
         return fetch(`${config.API_ENDPOINT}/schedule/${scheduleId}`, {

@@ -9,7 +9,6 @@ class ScheduleEvent extends React.Component {
     }
 
     render() {
-        console.log(this.props.event)
         return (
             <div className="event-container">
                 <h3 className="center-text">{this.props.event.name}</h3>
