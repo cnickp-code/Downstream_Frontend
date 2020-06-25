@@ -74,8 +74,6 @@ class App extends React.Component {
       setShowAdd: this.setShowAdd
     }
 
-    console.log(this.state.schedule)
-
     return (
       <div className="App">
         <DSContext.Provider value={contextValue}>

@@ -1,6 +1,12 @@
 import React from 'react'
+import DSEventContext from '../../contexts/DSEventContext'
 
 class Event extends React.Component {
+    static contextType = DSEventContext
+
+    handleSetEventInfo = () => {
+        this.context.setEventInfo(this.props.event)
+    }
 
     render() {
         return (
@@ -8,7 +14,7 @@ class Event extends React.Component {
                 <h3 className="center-text">{this.props.event.name}</h3>
                 <img src={this.props.event.image_url} className="event-image" alt="event"/>
                 <div className="event-button-container">
-                    <a href="/eventinfo.html" className="details-button event-info">View Details</a>
+                    <button className="details-button event-info" onClick={this.handleSetEventInfo}>View Details</button>
                 </div>
             </div>
         )

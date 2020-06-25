@@ -5,7 +5,7 @@ class SearchFab extends React.Component {
     render() {
         return (
             <div className="fab-container">
-                <NavLink to="/events" className="fab-search">
+                <NavLink to="/mobile-search" className="fab-search">
                     <i className="fas fa-search"></i>
                 </NavLink>
             </div>

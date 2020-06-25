@@ -1,17 +1,21 @@
 import React from 'react'
-import DSContext from '../../contexts/DSContext'
+import DSEventContext from '../../contexts/DSEventContext'
 
 class EventFocus extends React.Component {
-    static contextType = DSContext
+    static contextType = DSEventContext
+
+    handleHideEventInfo = () => {
+        this.context.hideEventInfo();
+    }
 
     render() {
         return (
             <div className="cover">
                 <div className="cover-container">
-                    <a href="/home.html" className="cover-exit"></a>
+                    <div className="cover-exit" onClick={this.handleHideEventInfo}></div>
                     <h1 className="cover-event-title">Event Title</h1>
                     <img src="https://billetto.co.uk/blog/wp-content/uploads/2019/06/zhqczjr9fho-e1560853535167.jpg"
-                        className="cover-event-image center" />
+                        className="cover-event-image center" alt="cover" />
                     <div className="cover-event-info center">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum neque facilis, obcaecati porro
                         accusantium, tenetur repellat perferendis impedit expedita est esse in maiores suscipit voluptas!

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EventContext = React.createContext({
+const DSContext = React.createContext({
     events: [],
     error: null,
     schedule: [],
@@ -12,4 +12,4 @@ const EventContext = React.createContext({
     setShowAdd: () => {}
 })
 
-export default EventContext
+export default DSContext

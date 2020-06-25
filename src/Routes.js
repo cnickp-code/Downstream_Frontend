@@ -35,7 +35,13 @@ class Routes extends React.Component {
                 />
                 {/* <Route
                     exact path='/events/:event_id'
-                    component={}
+                    render={(routeProps) => {
+                        return (
+                            <MainPage
+                                event_id={routeProps.match.params.event_id}
+                            />
+                        )
+                    }}
                 /> */}
                 <PrivateRoute
                     exact path='/schedule'

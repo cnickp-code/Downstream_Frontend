@@ -166,8 +166,8 @@ class AddEvent extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <h4>Event Info</h4>
-                        <textarea className="add-event-info center" ref={this.description} required>
+                        <h4>Event Info (max 250 chars)</h4>
+                        <textarea className="add-event-info center" ref={this.description} maxLength="250" required>
 
                         </textarea>
 
