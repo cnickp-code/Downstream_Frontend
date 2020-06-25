@@ -100,7 +100,7 @@ class Login extends React.Component {
                         />
                         {this.state.hasPasswordError && <p className="error">{this.state.error}</p>}
                     </fieldset>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="form-submit-button">Submit</button>
                 </form>
                 <div className="login-box center">
                     <p>Don't have an account? <NavLink to="/signup">Sign up!</NavLink></p>

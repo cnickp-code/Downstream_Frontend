@@ -16,7 +16,7 @@ class Signup extends React.Component {
                         <input type="text" name="repeat-password" id="repeat-password" placeholder="" className="text-input center"
                             required />
                     </fieldset>
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" className="form-submit-button">Register</button>
                 </form>
                 <div className="login-box center">
                     <p>Already have an account? <NavLink to="/login">Log in</NavLink></p>
