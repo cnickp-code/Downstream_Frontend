@@ -13,7 +13,9 @@ const DSContext = React.createContext({
     setError: () => {},
     clearError: () => {},
     addEvent: () => {},
-    setShowAdd: () => {}
+    setShowAdd: () => {},
+    addScheduleItem: () => {},
+    deleteScheduleItem: () => {}
 })
 
 export default DSContext

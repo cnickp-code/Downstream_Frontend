@@ -15,7 +15,7 @@ class ScheduleEvent extends React.Component {
                 <img src={this.props.event.image_url} className="event-image" alt="event" />
                 <div className="event-button-container">
                     <button className="details-button event-info" onClick={this.handleSetEventInfo}>View Details</button>
-                    <button  className="details-button event-info">Remove</button>
+                    <button className="details-button event-info">Remove</button>
                 </div>
             </div>
         )

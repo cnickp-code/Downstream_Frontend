@@ -17,11 +17,28 @@ class App extends React.Component {
     }
   }
 
-  addEvent = (event) => {
-    const eventList = this.state.events
+  addScheduleItem = (item) => {
+    console.log(`Reached add schedule item`)
+    const scheduleList = [...this.state.schedule, item]
+
     this.setState({
-      ...eventList,
-      event
+      schedule: scheduleList
+    })
+  }
+
+  deleteScheduleItem = (id) => {
+    const scheduleList = this.state.schedule.filter(sched => sched.id !== id)
+
+    this.setState({
+      schedule: scheduleList
+    })
+  }
+
+  addEvent = (event) => {
+    const newEventList = [...this.state.events, event]
+
+    this.setState({
+      events: newEventList
     })
   }
 
@@ -83,7 +100,9 @@ class App extends React.Component {
       setError: this.setError,
       clearError: this.clearError,
       addEvent: this.addEvent,
-      setShowAdd: this.setShowAdd
+      setShowAdd: this.setShowAdd,
+      addScheduleItem: this.addScheduleItem,
+      deleteScheduleItem: this.deleteScheduleItem
     }
 
     console.log(this.state.event)
