@@ -82,9 +82,9 @@ class AddEvent extends React.Component {
             }
     
             console.log(newEvent)
-            // DownstreamApiService.postEvent(newEvent)
-            //     .then(this.context.addEvent)
-            //     .catch(this.context.setError)
+            DownstreamApiService.postEvent(newEvent)
+                .then(this.context.addEvent)
+                .catch(this.context.setError)
         }
 
 

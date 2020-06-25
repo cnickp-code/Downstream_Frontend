@@ -17,7 +17,7 @@ const DownstreamApiService = {
     getEvent(eventId) {
         return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
             headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
         .then(res => 
@@ -31,7 +31,7 @@ const DownstreamApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(event)
         })
@@ -44,7 +44,7 @@ const DownstreamApiService = {
     getSchedule() {
         return fetch(`${config.API_ENDPOINT}/schedule`, {
             headers: {
-                'Authorization': `basic ${TokenService.getAuthToken()}`
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
         .then(res => {

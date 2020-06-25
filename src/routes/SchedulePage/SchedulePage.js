@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer'
 import Fab from '../../components/SearchFab/SearchFab'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ScheduleEventList from '../../components/ScheduleEventList/ScheduleEventList'
+import EventInfo from '../../components/EventInfo/EventInfo'
 
 class SchedulePage extends React.Component {
     render() {
@@ -18,6 +19,7 @@ class SchedulePage extends React.Component {
                         <Sidebar />
                         <ScheduleEventList />
                     </div>
+                    {this.context.showEventInfo && <EventInfo />}
                 </main>
                 <Footer />
             </>

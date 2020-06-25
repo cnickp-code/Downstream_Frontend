@@ -1,8 +1,8 @@
 import React from 'react'
-import DSEventContext from '../../contexts/DSEventContext'
+import DSContext from '../../contexts/DSContext'
 
 class Event extends React.Component {
-    static contextType = DSEventContext
+    static contextType = DSContext
 
     handleSetEventInfo = () => {
         this.context.setEventInfo(this.props.event)

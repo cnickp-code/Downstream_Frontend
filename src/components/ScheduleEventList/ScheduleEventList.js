@@ -14,13 +14,15 @@ class ScheduleEventList extends React.Component {
         .catch(this.context.setError)
     }
     render() {
+        const scheduleList = this.context.schedule.map(event => {
+            return <ScheduleEvent key={event.id} event={event} />
+        })
+
         return (
             <div className="myevents-content-container">
                 <h1 className="events-header">My Schedule</h1>
                 <div className="bottom-container">
-                    <ScheduleEvent />
-                    <ScheduleEvent />
-                    <ScheduleEvent />
+                {scheduleList}
 
                 </div>
 

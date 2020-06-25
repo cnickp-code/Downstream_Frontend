@@ -1,31 +1,34 @@
 import React from 'react'
-import DSEventContext from '../../contexts/DSEventContext'
+import DSContext from '../../contexts/DSContext'
 
-class EventFocus extends React.Component {
-    static contextType = DSEventContext
+class EventInfo extends React.Component {
+    static contextType = DSContext
 
     handleHideEventInfo = () => {
         this.context.hideEventInfo();
     }
 
     render() {
+        const startDate = this.context.event.start_date;
+        const endDate = this.context.event.end_date;
+
+        console.log(startDate)
+        console.log(endDate)
         return (
             <div className="cover">
                 <div className="cover-container">
                     <div className="cover-exit" onClick={this.handleHideEventInfo}></div>
-                    <h1 className="cover-event-title">Event Title</h1>
-                    <img src="https://billetto.co.uk/blog/wp-content/uploads/2019/06/zhqczjr9fho-e1560853535167.jpg"
+                    <h1 className="cover-event-title">{this.context.event.name}</h1>
+                    <img src={this.context.event.image_url}
                         className="cover-event-image center" alt="cover" />
                     <div className="cover-event-info center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum neque facilis, obcaecati porro
-                        accusantium, tenetur repellat perferendis impedit expedita est esse in maiores suscipit voluptas!
-                        Omnis consequuntur hic illo corrupti.
+                        {this.context.event.description}
                     <h3 className="cover-inner-title">Dates:</h3>
                         <div className="cover-list">Now - Then</div>
                         <h3 className="cover-inner-title">Genre:</h3>
-                        <div className="cover-list">Dubstep</div>
+                        <div className="cover-list">{this.context.event.genre}</div>
                         <h3 className="cover-inner-title">Platform:</h3>
-                        <div className="cover-list">Twitch</div>
+                        <div className="cover-list">{this.context.event.platform}</div>
                     </div>
                     <div className="cover-link-container center">
                         <a href="/" className="cover-nav-link">Link to Stream</a>
@@ -37,4 +40,4 @@ class EventFocus extends React.Component {
     }
 }
 
-export default EventFocus
+export default EventInfo

@@ -11,6 +11,8 @@ class App extends React.Component {
       events: [],
       schedule: [],
       showAdd: false,
+      showEventInfo: false,
+      event: {},
       error: null
     }
   }
@@ -48,16 +50,22 @@ class App extends React.Component {
   }
 
   clearError = () => {
-    this.setState({ 
+    this.setState({
       error: null
     })
   }
 
+  setEventInfo = (event) => {
+    this.setState({
+      showEventInfo: true,
+      event
+    })
+  }
 
-  componentDidMount() {
-    DownstreamApiService.getEvents()
-      .then(this.setEvents)
-      .catch(this.setError)
+  hideEventInfo = () => {
+    this.setState({
+      showEventInfo: false
+    })
   }
 
   render() {
@@ -66,6 +74,10 @@ class App extends React.Component {
       error: this.state.error,
       schedule: this.state.schedule,
       showAdd: this.state.showAdd,
+      event: this.state.event,
+      showEventInfo: this.state.showEventInfo,
+      setEventInfo: this.setEventInfo,
+      hideEventInfo: this.hideEventInfo,
       setSchedule: this.setSchedule,
       setEvents: this.setEvents,
       setError: this.setError,
@@ -74,12 +86,15 @@ class App extends React.Component {
       setShowAdd: this.setShowAdd
     }
 
+    console.log(this.state.event)
+    console.log(this.state.schedule)
+
     return (
       <div className="App">
         <DSContext.Provider value={contextValue}>
           <Routes />
         </DSContext.Provider>
-        
+
       </div>
     )
   }
