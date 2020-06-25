@@ -18,6 +18,8 @@ class ScheduleEventList extends React.Component {
             return <ScheduleEvent key={event.id} event={event} />
         })
 
+        console.log(this.context.schedule)
+
         return (
             <div className="myevents-content-container">
                 <h1 className="events-header">My Schedule</h1>

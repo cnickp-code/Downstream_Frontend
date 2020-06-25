@@ -9,13 +9,14 @@ class ScheduleEvent extends React.Component {
     }
 
     render() {
+        console.log(this.props.event)
         return (
             <div className="event-container">
-                <h3 className="center-text">Event Title</h3>
-                <img src="https://billetto.co.uk/blog/wp-content/uploads/2019/06/zhqczjr9fho-e1560853535167.jpg" className="event-image" alt="event" />
+                <h3 className="center-text">{this.props.event.name}</h3>
+                <img src={this.props.event.image_url} className="event-image" alt="event" />
                 <div className="event-button-container">
-                <button className="details-button event-info" onClick={this.handleSetEventInfo}>View Details</button>
-                    <a href="/" className="details-button event-info">Remove</a>
+                    <button className="details-button event-info" onClick={this.handleSetEventInfo}>View Details</button>
+                    <button  className="details-button event-info">Remove</button>
                 </div>
             </div>
         )
