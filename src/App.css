@@ -98,6 +98,10 @@ footer {
   text-align: center;
 }
 
+::placeholder {
+  color: #F7F9Fb;
+}
+
 /* COVER PAGE STYLES */
 
 .cover {
@@ -844,7 +848,6 @@ footer {
   height: 140px;
   font-size: 18px;
   /* padding: 15px; */
-  margin: 10px 20px 10px 20px;
   resize: none;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import { NavLink } from 'react-router-dom'
 
 class Login extends React.Component {
     constructor(props) {
@@ -99,8 +100,11 @@ class Login extends React.Component {
                         />
                         {this.state.hasPasswordError && <p className="error">{this.state.error}</p>}
                     </fieldset>
-                    <button type="submit">Log In</button>
+                    <button type="submit">Submit</button>
                 </form>
+                <div className="login-box center">
+                    <p>Don't have an account? <NavLink to="/signup">Sign up!</NavLink></p>
+                </div>
             </div>
         )
     }

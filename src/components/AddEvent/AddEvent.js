@@ -21,10 +21,10 @@ class AddEvent extends React.Component {
                                 <input placeholder="" type="text" name="title" id="email" className="text-input center"
                                     required />
                                 <h4>Image URL</h4>
-                                <input type="text" name="image-url" id="image-url" placeholder=""
+                                <input type="url" name="image-url" id="image-url" placeholder="https://"
                                     className="text-input center" required />
                                 <h4>Stream URL</h4>
-                                <input type="text" name="stream-url" id="stream-url" placeholder=""
+                                <input type="url" name="stream-url" id="stream-url" placeholder="https://"
                                     className="text-input center" required />
                             </div>
                             <div className="add-event-right">
@@ -99,7 +99,7 @@ class AddEvent extends React.Component {
 
 
                     </fieldset>
-                    <button type="submit">Add Event</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         )
