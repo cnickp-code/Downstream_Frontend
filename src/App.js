@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Routes from './Routes'
-import DownstreamApiService from './services/downstream-api-service'
 import DSContext from './contexts/DSContext'
 
 class App extends React.Component {

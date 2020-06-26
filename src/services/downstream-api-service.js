@@ -74,7 +74,7 @@ const DownstreamApiService = {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => {
