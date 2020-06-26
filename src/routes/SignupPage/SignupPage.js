@@ -4,6 +4,11 @@ import Footer from '../../components/Footer/Footer'
 import Signup from '../../components/Signup/Signup'
 
 class SignupPage extends React.Component {
+
+    handleRegistrationSuccess = user => {
+        this.props.history.push('/login')
+    }
+
     render() {
         return (
             <>
@@ -11,7 +16,7 @@ class SignupPage extends React.Component {
                     <Header />
                 </header>
                 <main>
-                    <Signup />
+                    <Signup onRegistrationSuccess={this.handleRegistrationSuccess} />
                 </main>
                 <Footer />
             </>

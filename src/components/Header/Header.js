@@ -5,7 +5,7 @@ import TokenService from '../../services/token-service'
 class Header extends React.Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
-        this.props.history.push('/home')
+        // this.props.history.push('/home')
     }
 
     renderPublicNav() {
