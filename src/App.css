@@ -599,6 +599,7 @@ button:active {
   height: calc(100% + 62px);
   width: 25%;
   border-right: 1px solid rgb(255, 255, 255);
+  background-color: rgb(2, 105, 146);
 }
 
 

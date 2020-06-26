@@ -29,8 +29,6 @@ class AddEvent extends React.Component {
         }
     }
 
-
-
     handleStartDateChange = (date) => {
         this.setState({
             startDate: date

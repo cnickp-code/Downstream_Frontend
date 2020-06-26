@@ -95,7 +95,7 @@ class Header extends React.Component {
         return (
             <>
                 <div className="header-link">
-                    <a href="/home.html" className="header-text">DownStream</a>
+                    <NavLink to="/home" className="header-text"><i className="fas fa-headphones margin-right"></i>DownStream</NavLink>
                 </div>
                 {TokenService.hasAuthToken()
                     ? this.renderPrivateNav()
