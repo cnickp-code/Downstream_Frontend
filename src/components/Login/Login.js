@@ -90,7 +90,7 @@ class Login extends React.Component {
                         {this.state.hasUsernameError && <p className="error">{this.state.error}</p>}
                         <h4>Password</h4>
                         <input 
-                            type="text" 
+                            type="password" 
                             name="password" 
                             id="password" 
                             placeholder="" 

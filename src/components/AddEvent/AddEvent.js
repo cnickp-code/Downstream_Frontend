@@ -157,7 +157,7 @@ class AddEvent extends React.Component {
                                         onChange={this.handleStartDateChange}
                                     />
 
-                                    <h4>End Date:</h4>
+                                    <h4 className="margin-top">End Date:</h4>
                                     <DatePicker
                                         id="end-date-time"
                                         name="endDateTime"

@@ -11,8 +11,8 @@ class Event extends React.Component {
     render() {
         return (
             <div className="event-container">
-                <h3 className="center-text">{this.props.event.name}</h3>
-                <img src={this.props.event.image_url} className="event-image" alt="event"/>
+                <h3 className="center-text event-head-text">{this.props.event.name}</h3>
+                <img src={this.props.event.image_url} className="event-image .box-shadow" alt="event"/>
                 <div className="event-button-container">
                     <button className="details-button event-info" onClick={this.handleSetEventInfo}>View Details</button>
                 </div>

@@ -11,9 +11,9 @@ class Signup extends React.Component {
                         <h4>Email</h4>
                         <input placeholder="" type="text" name="email" id="email" className="text-input center" required />
                         <h4>Password</h4>
-                        <input type="text" name="password" id="password" placeholder="" className="text-input center" required />
+                        <input type="password" name="password" id="password" placeholder="" className="text-input center" required />
                         <h4>Repeat Password</h4>
-                        <input type="text" name="repeat-password" id="repeat-password" placeholder="" className="text-input center"
+                        <input type="password" name="repeat-password" id="repeat-password" placeholder="" className="text-input center"
                             required />
                     </fieldset>
                     <button type="submit" className="form-submit-button">Register</button>
