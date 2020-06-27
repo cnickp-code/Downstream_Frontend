@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Routes from './Routes'
 import DSContext from './contexts/DSContext'
+import DownstreamApiService from './services/downstream-api-service'
+import TokenService from './services/token-service';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class App extends React.Component {
       schedule: [],
       showAdd: false,
       showEventInfo: false,
+      showMobileSearch: false,
       event: {},
       error: null
     }
@@ -48,8 +51,24 @@ class App extends React.Component {
   }
 
   setEvents = (events) => {
+    const clientEvents = events.map(event => {
+      const addedObj = { added: false}
+      const newEvent = Object.assign(event, addedObj)
+
+      return newEvent
+    })
+
+    clientEvents.forEach(event => {
+      this.state.schedule.forEach(item => {
+        if(item.name === event.name) {
+          event.added = true;
+        }
+      })
+      return event;
+    })
+
     this.setState({
-      events
+      events: clientEvents
     })
   }
 
@@ -84,6 +103,32 @@ class App extends React.Component {
     })
   }
 
+  setShowMobileSearch = () => {
+    this.setState({
+      showMobileSearch: true
+    })
+  }
+
+  hideMobileSearch = () => {
+    this.setState({
+      showMobileSearch: false
+    })
+  }
+
+  componentDidMount() {
+      DownstreamApiService.getEvents()
+        .then(events => {
+            this.setEvents(events)
+        })
+        .catch(this.setError)
+      
+
+      DownstreamApiService.getSchedule()
+      .then(this.setSchedule)
+      .catch(this.setError)
+
+  }
+
   render() {
     const contextValue = {
       events: this.state.events,
@@ -92,6 +137,7 @@ class App extends React.Component {
       showAdd: this.state.showAdd,
       event: this.state.event,
       showEventInfo: this.state.showEventInfo,
+      showMobileSearch: this.state.showMobileSearch,
       setEventInfo: this.setEventInfo,
       hideEventInfo: this.hideEventInfo,
       setSchedule: this.setSchedule,
@@ -101,10 +147,12 @@ class App extends React.Component {
       addEvent: this.addEvent,
       setShowAdd: this.setShowAdd,
       addScheduleItem: this.addScheduleItem,
-      deleteScheduleItem: this.deleteScheduleItem
+      deleteScheduleItem: this.deleteScheduleItem,
+      setShowMobileSearch: this.setShowMobileSearch,
+      hideMobileSearch: this.hideMobileSearch
     }
 
-    console.log(this.state.event)
+    console.log(this.state.events)
     console.log(this.state.schedule)
 
     return (

@@ -106,6 +106,10 @@ footer {
   color: blue;
 }
 
+.added {
+  color: yellowgreen
+}
+
 .error {
   color: rgb(255, 109, 109);
   text-align: center;
@@ -875,6 +879,7 @@ button:active {
 
 .event-container {
   width: 70%;
+  max-width: 710px;
   height: 430px;
   padding-top: 10px;
   padding-bottom: 40px;
@@ -914,8 +919,15 @@ button:active {
 
 .bottom-container {
   overflow-y: scroll;
+  overflow-x: none;
   height: calc(100% + 58px);
   position: relative;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.bottom-container::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar {
@@ -1275,12 +1287,6 @@ button:active {
       bottom: 10px;
   }
 
-  .info-container {
-    /* background-image: linear-gradient(to right, blue, green, yellow, orange );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    right: 17%;
-  }
 
   .info-details {
     font-size: 50px;
@@ -1288,15 +1294,11 @@ button:active {
 
   .spotlight-info-container {
 
-    right: 20%;
+    right: 10%;
   }
 
   .spotlight-info-details {
     font-size: 50px;
-  }
-
-  .delete-container {
-    left: 17%;
   }
 
 
@@ -2008,5 +2010,11 @@ button:active {
 @media screen and (min-height: 1200px) {
   .main-container {
       height: 78vh;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .bottom-container {
+    height: calc(100% + 68px);
   }
 }

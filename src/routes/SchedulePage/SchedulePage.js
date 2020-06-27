@@ -6,6 +6,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import ScheduleEventList from '../../components/ScheduleEventList/ScheduleEventList'
 import EventInfo from '../../components/EventInfo/EventInfo'
 import DSContext from '../../contexts/DSContext'
+import MobileSearch from '../../components/MobileSearch/MobileSearch'
 
 class SchedulePage extends React.Component {
     static contextType = DSContext
@@ -23,6 +24,7 @@ class SchedulePage extends React.Component {
                         <ScheduleEventList />
                     </div>
                     {this.context.showEventInfo && <EventInfo />}
+                    {this.context.showMobileSearch && <MobileSearch />}
                 </main>
                 <Footer />
             </>

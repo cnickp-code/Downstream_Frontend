@@ -8,7 +8,13 @@ class EventList extends React.Component {
 
     componentDidMount() {
         DownstreamApiService.getEvents()
-          .then(this.context.setEvents)
+          .then(events => {
+              events.forEach(event => {
+                  
+              })
+
+              this.context.setEvents(events)
+          })
           .catch(this.context.setError)
     }
 

@@ -37,9 +37,9 @@ class EventInfo extends React.Component {
         console.log(newScheduleItem)
 
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
-            .then(res => {
-                console.log(res)
-                this.context.addScheduleItem(res)
+            .then(item => {
+                console.log(item)
+                this.context.addScheduleItem(item)
                 this.context.hideEventInfo()
             })
             .catch(this.context.setError)
@@ -49,8 +49,8 @@ class EventInfo extends React.Component {
         const startDate = this.context.event.start_date;
         const endDate = this.context.event.end_date;
 
-        console.log(startDate)
-        console.log(endDate)
+        console.log(startDate.toLocaleString())
+        console.log(endDate.toLocaleString())
         return (
             <div className="cover" onClick={this.handleHideEventInfo}>
                 <div className="cover-container">
@@ -69,10 +69,13 @@ class EventInfo extends React.Component {
                         <h3 className="cover-inner-title">Platform:</h3>
                         <div className="cover-list">{this.context.event.platform}</div>
                     </div>
+                    {this.context.event.added && <p className="added center margin-top">Event already added to schedule!</p>}
                     <div className="cover-link-container center">
                         <a href="/" className="button cover-nav-link">Link to Stream</a>
-                        <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>Add to Schedule</button>
+                        
+                        {!this.context.event.added && <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>Add to Schedule</button>}
                     </div>
+                    
                 </div>
             </div>
         )
