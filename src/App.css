@@ -299,7 +299,7 @@ button:active {
 .contact-container {
   padding-top: 50px;
   color: white;
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(14, 13, 13);
   padding-bottom: 50px;
   position: relative;
   z-index: 1;
@@ -349,9 +349,13 @@ button:active {
   position: relative;
   width: 70%;
   height: 75%;
-  background-color: rgb(2, 138, 192);
+  /* background-color: rgb(2, 138, 192); */
   margin-left: auto;
   margin-right: auto;
+}
+
+.cover-container::-webit-scrollbar {
+  display: none;
 }
 
 .cover-event-title {
@@ -408,15 +412,15 @@ button:active {
   font-size: 30px;
   cursor: pointer;
   text-decoration: none;
-  background-color: rgb(2, 138, 192);
+  /* background-color: rgb(2, 138, 192); */
 }
 
-.cover-exit:before {
+/* .cover-exit:before {
   content: "X";
   text-decoration: none;
   color: #F7F9Fb;
   background-color: rgb(2, 138, 192);
-}
+} */
 
 /* Splash Screen Styles */
 
@@ -770,7 +774,7 @@ button:active {
 .info-container {
   position: absolute;
   right: 5px;
-  top: 45px;
+  top: 65px;
   border-radius: 40px;
   cursor: pointer;
   
@@ -799,7 +803,7 @@ button:active {
 .delete-container {
   position: absolute;
   left: 5px;
-  top: 45px;
+  top: 65px;
   border-radius: 40px;
   cursor: pointer
 }
@@ -812,7 +816,7 @@ button:active {
 
 .sidebar {
   display: block;
-  height: calc(100% + 62px);
+  height: calc(100% + 68px);
   width: 25%;
   border-right: 1px solid rgb(255, 255, 255);
   background-color: rgb(2, 105, 146);
@@ -1209,7 +1213,7 @@ button:active {
 /* MY EVENTS STYLES */
 .myevents-content-container {
   display: flex;
-  height: calc(100% + 62px);
+  height: calc(100% + 68px);
   flex-direction: column;
   width: 100%;
   max-width: 100%;
@@ -1670,7 +1674,7 @@ button:active {
   .info-container {
     position: absolute;
     right: 5px;
-    top: 15%;
+    top: 20%;
     border-radius: 30px;
     cursor: pointer
   }
@@ -1678,7 +1682,7 @@ button:active {
   .delete-container {
     position: absolute;
     left: 5px;
-    top: 15%;
+    top: 20%;
     border-radius: 30px;
     cursor: pointer
   }
@@ -1696,7 +1700,6 @@ button:active {
       position: relative;
       width: 80%;
       height: 91%;
-      background-color: rgb(2, 138, 192);
       color: #F7F9Fb;
       margin-left: auto;
       margin-right: auto;
@@ -1801,9 +1804,13 @@ button:active {
   .event-container {
       padding-top: 10px;
       width: 80%;
-      height: 230px;
+      height: 250px;
       position: relative;
       margin: 20px auto 30px auto;
+  }
+
+  .event-time {
+    font-size: x-small;
   }
   
   .event-image {
