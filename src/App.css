@@ -772,13 +772,15 @@ button:active {
   right: 5px;
   top: 45px;
   border-radius: 40px;
-  cursor: pointer
+  cursor: pointer;
+  
 }
 
 
 .info-details {
   border-radius: 40px;
   font-size: 40px;
+  
 }
 
 .spotlight-info-container {
@@ -1270,7 +1272,23 @@ button:active {
   }
 
   .info-container {
+    /* background-image: linear-gradient(to right, blue, green, yellow, orange );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
     right: 17%;
+  }
+
+  .info-details {
+    font-size: 50px;
+  }
+
+  .spotlight-info-container {
+
+    right: 20%;
+  }
+
+  .spotlight-info-details {
+    font-size: 50px;
   }
 
   .delete-container {
