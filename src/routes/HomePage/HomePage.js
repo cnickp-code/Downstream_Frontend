@@ -7,10 +7,12 @@ class HomePage extends React.Component {
     render() {
         return (
             <>
-                <header>
-                    <Header />
-                </header>
-                <Spotlight />
+                <div className="home-scroll-container">
+                    <header>
+                        <Header />
+                    </header>
+                    <Spotlight />
+                </div>
                 <Footer />
             </>
         )

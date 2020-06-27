@@ -1,27 +1,63 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 class Spotlight extends React.Component {
     render() {
         return (
             <main>
+                <h1 className="spotlight-header">Spotlight</h1>
                 <div className="spotlight-container">
-                    <h1 className="spotlight-header">Spotlight</h1>
-                    <div className="spotlight-item-container">
-                        <img src="https://billetto.co.uk/blog/wp-content/uploads/2019/06/zhqczjr9fho-e1560853535167.jpg" className="spotlight-image" alt="spotlight"/>
-                        <div className="spotlight-button-container">
-                            <a href="/eventinfo.html" className="details-button event-info">View Details</a>
+
+                    <h3 class="center-text event-head-text">Lost Lands</h3>
+                    <div className="spotlight-item-container center">
+                        <div className="spotlight-info-container">
+                            <div className="spotlight-info-details">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
                         </div>
-                        {/* <a className="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a className="next" onclick="plusSlides(1)">&#10095;</a> */}
+                        <img src="https://www.lostlandsfestival.com/wp-content/uploads/2020/05/preview-lightbox-TeaserGraphic_1920x1080_2-1200x675.jpg" className="spotlight-image" alt="spotlight" />
+                    </div>
+                    <div className="home-container">
+                        <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>
 
+
                 </div>
-                {/* <div className="dot-container" style={'text-align:center'}>
-                    <span className="dot" onclick="currentSlide(1)"></span>
-                    <span className="dot" onclick="currentSlide(2)"></span>
-                    <span className="dot" onclick="currentSlide(3)"></span>
-                </div> */}
-            </main>
+                <div className="parallax">
+                    <div className="home-image1">
+                    </div>
+                </div>
+                <div className="home-news-container">
+
+                    <h2 className="news-text">Need the scoop on the latest?</h2>
+                    <div className="home-container">
+                        <NavLink to="/about" className="home-event-button2 center">News >></NavLink>
+                    </div>
+                </div>
+                <div className="parallax">
+                    <div className="home-image2">
+                    </div>
+                </div>
+
+                <div className="contact-container">
+                    <div className="inner-contact-container center">
+                        <div className="contact-left">
+
+                        </div>
+                        <div className="contact-right">
+                            <h1>Contact me!</h1>
+                            <h3 className="margin-top">Name:</h3>
+                            <input type="text" className="contact-input" />
+                            <h3 className="margin-top">Email:</h3>
+                            <input type="text" className="contact-input" />
+                            <h3 className="margin-top">Message:</h3>
+                            <textarea className="contact-text">
+
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </main >
         )
     }
 }

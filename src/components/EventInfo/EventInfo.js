@@ -68,7 +68,7 @@ class EventInfo extends React.Component {
                         <div className="cover-list">{this.context.event.platform}</div>
                     </div>
                     <div className="cover-link-container center">
-                        <a href="/" className="cover-nav-link">Link to Stream</a>
+                        <a href="/" className="button cover-nav-link">Link to Stream</a>
                         <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>Add to Schedule</button>
                     </div>
                 </div>
