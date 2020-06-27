@@ -52,13 +52,17 @@ class AddEvent extends React.Component {
         const eventDescription = this.description.current.value;
         const eventStartDate = this.state.startDate;
         const eventEndDate = this.state.endDate;
+        const currentDate = new Date()
 
         if(eventStartDate > eventEndDate) {
             this.setState({
                 error: "Start date/time must be before end date/time."
             })
-        }
-        else if (eventGenre === "") {
+        } else if(eventStartDate < currentDate || eventEndDate < currentDate) {
+            this.setState({
+                error: "Start/end date must be on or after today."
+            })
+        } else if (eventGenre === "") {
             this.setState({
                 error: "Please choose a genre."
             })
@@ -102,6 +106,7 @@ class AddEvent extends React.Component {
             <div className="form-box center">
                 <form className="main-form" onSubmit={event => this.handleSubmitEvent(event, this.context.addEvent)}>
                     <h1>Add Event</h1>
+                    {this.state.error && <h3 className="error">{this.state.error}</h3>}
                     <fieldset name="login-info">
                         <div className="add-event-container">
                             <div className="add-event-left">
@@ -174,8 +179,10 @@ class AddEvent extends React.Component {
 
 
                     </fieldset>
+                    
                     <button type="submit" className="form-submit-button">Submit</button>
-                    {this.state.error && <p className="error">{this.state.error}</p>}
+                    
+                    
                 </form>
             </div>
         )

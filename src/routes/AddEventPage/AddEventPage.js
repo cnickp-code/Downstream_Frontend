@@ -7,12 +7,14 @@ class AddEventPage extends React.Component {
     render() {
         return (
             <>
-                <header>
-                    <Header />
-                </header>
-                <main>
-                    <AddEvent />
-                </main>
+                <div className="home-scroll-container">
+                    <header>
+                        <Header />
+                    </header>
+                    <main>
+                        <AddEvent />
+                    </main>
+                </div>
                 <Footer />
             </>
         )

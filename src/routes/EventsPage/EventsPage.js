@@ -19,6 +19,7 @@ class EventsPage extends React.Component {
                 </header>
                 <main>
                     <Fab />
+                    
                     <div className="main-container">
                         <Sidebar />
                         <EventList />

@@ -43,6 +43,16 @@ class EventInfo extends React.Component {
                 this.context.hideEventInfo()
             })
             .catch(this.context.setError)
+        
+        DownstreamApiService.getSchedule()
+            .then(this.context.setSchedule)
+            .catch(this.context.setError)
+        
+        DownstreamApiService.getEvents()
+            .then(events => {
+                this.context.setEvents(events)
+            })
+            .catch(this.context.setError)
     }
 
     render() {
@@ -71,9 +81,13 @@ class EventInfo extends React.Component {
                     </div>
                     {this.context.event.added && <p className="added center margin-top">Event already added to schedule!</p>}
                     <div className="cover-link-container center">
-                        <a href="/" className="button cover-nav-link">Link to Stream</a>
+                        <a href="/" className="button cover-nav-link">
+                            <i class="fas fa-link"></i> Link to Stream
+                        </a>
                         
-                        {!this.context.event.added && <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>Add to Schedule</button>}
+                        {!this.context.event.added && <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>
+                            <i class="fas fa-plus-circle"></i> Add to Schedule
+                        </button>}
                     </div>
                     
                 </div>

@@ -17,6 +17,7 @@ class Spotlight extends React.Component {
                         </div>
                         <img src="https://www.lostlandsfestival.com/wp-content/uploads/2020/05/preview-lightbox-TeaserGraphic_1920x1080_2-1200x675.jpg" className="spotlight-image" alt="spotlight" />
                     </div>
+                    <p className="center center-text">Click <i class="fas fa-info-circle"></i> for more info!</p>
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>
