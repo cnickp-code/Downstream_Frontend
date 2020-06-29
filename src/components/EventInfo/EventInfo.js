@@ -34,22 +34,28 @@ class EventInfo extends React.Component {
             event_id: eventId
         }
 
-        console.log(newScheduleItem)
+        // console.log(newScheduleItem)
+
+
 
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
             .then(item => {
-                console.log(item)
+                console.log(`items: ${item}`)
                 this.context.addScheduleItem(item)
                 this.context.hideEventInfo()
             })
             .catch(this.context.setError)
-        
+
         DownstreamApiService.getSchedule()
-            .then(this.context.setSchedule)
+            .then(sched => {
+                console.log(`sched item: ${sched}`)
+                this.context.setSchedule(sched)
+            })
             .catch(this.context.setError)
-        
+
         DownstreamApiService.getEvents()
             .then(events => {
+                console.log(`events: ${events}`)
                 this.context.setEvents(events)
             })
             .catch(this.context.setError)
@@ -84,12 +90,12 @@ class EventInfo extends React.Component {
                         <a href="/" className="button cover-nav-link">
                             <i class="fas fa-link"></i> Link to Stream
                         </a>
-                        
+
                         {!this.context.event.added && <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>
                             <i class="fas fa-plus-circle"></i> Add to Schedule
                         </button>}
                     </div>
-                    
+
                 </div>
             </div>
         )

@@ -121,11 +121,6 @@ class App extends React.Component {
             this.setEvents(events)
         })
         .catch(this.setError)
-      
-
-      DownstreamApiService.getSchedule()
-      .then(this.setSchedule)
-      .catch(this.setError)
 
   }
 
