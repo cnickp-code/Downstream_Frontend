@@ -76,6 +76,18 @@ footer {
 
 /* General Stuff */
 
+.info {
+  color: black;
+}
+
+.stream {
+  color: blue;
+}
+
+.scroll {
+  color: purple;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -102,9 +114,9 @@ footer {
   color: red;
 }
 
-.info {
+/* .info {
   color: blue;
-}
+} */
 
 .added {
   color: yellowgreen
@@ -780,7 +792,7 @@ button:active {
 .info-container {
   position: absolute;
   right: 5px;
-  top: 65px;
+  top: 15px;
   border-radius: 40px;
   cursor: pointer;
   text-shadow: 0px 0px 10px #014f7c;
@@ -877,16 +889,52 @@ button:active {
   text-align: center;
 }
 
+  .info-overlay-image {
+    width: 100%;
+    height: 200px;
+    background-size: contain;
+    /* filter: blur(4px); */
+    position: relative;
+  }
 
+  .info-overlay-background {
+    width: 100%;
+    height: 100%;
+    /* position: relative;
+    top: -100%; */
+    background-color: black;
+    opacity: 0.8;
+    position: relative;
+  }
+
+  .info-description {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .info-artists {
+    position: relative;
+    top: 15%;
+  }
+  
+  .misc-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+  }
 
 .event-container {
   width: 70%;
   max-width: 710px;
   height: 430px;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  min-height: fit-content;
+  padding-top: 20px;
+  padding-bottom: 60px;
   position: relative;
-  margin: 40px auto 40px auto;
+  margin: 40px auto 70px auto;
   /* border-top: 1px solid black; */
 }
 
@@ -900,6 +948,43 @@ button:active {
   box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
 }
 
+.info-overlay-image {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  /* filter: blur(4px); */
+  position: relative;
+}
+
+.info-overlay-background {
+  width: 100%;
+  height: 100%;
+  /* position: relative;
+  top: -100%; */
+  background-color: black;
+  opacity: 0.8;
+  position: relative;
+}
+
+.info-description {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.info-artists {
+  position: relative;
+  top: 20%;
+}
+
+.misc-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 5px;
+}
+
 .event-info {
   padding: 5px;
   cursor: pointer;
@@ -908,15 +993,13 @@ button:active {
 
 .event-button-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   width: 80%;
-  position: absolute;
-  padding: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-  /* right: 10px; */
-  bottom: 0;
+}
+
+.icon-container {
+  font-size: 35px;
 }
 
 .bottom-container {
@@ -1272,36 +1355,6 @@ button:active {
   box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59); */
 }
 
-@media screen and (min-width: 1400px) {
-  .prev {
-      left: 20%;
-      border-radius: 3px 0 0 3px;
-  }
-  
-  .next {
-      right: 20%;
-      border-radius: 3px 0 0 3px;
-  }
-
-  .event-button-container {
-      position: absolute;
-      justify-content: space-around;
-      bottom: 10px;
-  }
-
-
-  .info-details {
-    font-size: 50px;
-  }
-
-
-  .spotlight-info-details {
-    font-size: 50px;
-  }
-
-
-}
-
 @media screen and (max-width: 900px) {
   .nav-link {
       font-size: small;
@@ -1312,7 +1365,7 @@ button:active {
   }
 
   .event-container {
-      height: 300px;
+      height: 330px;
       padding-bottom: 30px;
   }
 
@@ -1673,23 +1726,23 @@ button:active {
 
   .info-container {
     right: 5px;
-    top: 20%;
-    border-radius: 40px;
+    top: 2%;
+    border-radius: 30px;
   }
 
   .delete-container {
     position: absolute;
     left: 5px;
     top: 20%;
-    border-radius: 40px;
+    border-radius: 30px;
     cursor: pointer
   }
 
 
   
   .info-details {
-    border-radius: 40px;
-    font-size: 40px;
+    border-radius: 30px;
+    font-size: 30px;
   }
   
   .cover-container { 
@@ -1802,9 +1855,16 @@ button:active {
   .event-container {
       padding-top: 10px;
       width: 80%;
-      height: 250px;
+      height: 280px;
       position: relative;
-      margin: 20px auto 30px auto;
+      margin: 10px auto 20px auto;
+      
+  }
+
+  .icon-container {
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
   }
 
   .event-time {
@@ -1814,6 +1874,43 @@ button:active {
   .event-image {
       width: 100%;
       height: 200px;
+  }
+
+  .info-overlay-image {
+    width: 100%;
+    height: 200px;
+    background-size: 100% 100%;
+    /* filter: blur(4px); */
+    position: relative;
+  }
+
+  .info-overlay-background {
+    width: 100%;
+    height: 100%;
+    /* position: relative;
+    top: -100%; */
+    background-color: black;
+    opacity: 0.8;
+    position: relative;
+  }
+
+  .info-description {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .info-artists {
+    position: relative;
+    top: 8%;
+  }
+  
+  .misc-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
   }
   
   
@@ -1930,10 +2027,7 @@ button:active {
       display: flex;
       justify-content: space-between;
       width: 85%;
-      position: absolute;
       padding: 5px;
-      /* right: 10px; */
-      bottom: 0px;
   }
   
   .main-form textarea {

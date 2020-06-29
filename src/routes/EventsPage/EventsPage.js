@@ -24,7 +24,7 @@ class EventsPage extends React.Component {
                         <Sidebar />
                         <EventList />
                     </div>
-                    {this.context.showEventInfo && <EventInfo />}
+                    {/* {this.context.showEventInfo && <EventInfo />} */}
                     {this.context.showMobileSearch && <MobileSearch />}
                 </main>
                 <Footer />
