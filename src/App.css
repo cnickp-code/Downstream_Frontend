@@ -41,6 +41,7 @@ body {
   border: 1px solid rgb(255, 255, 255);
   border-left: none;
   border-right: none;
+  border-top: none;
   background-color: rgb(2, 138, 192);
   background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
   background-position: bottom;
