@@ -9,6 +9,7 @@ import LoginPage from './routes/LoginPage/LoginPage'
 import SignupPage from './routes/SignupPage/SignupPage'
 import AddEventPage from './routes/AddEventPage/AddEventPage'
 import MobileSearch from '../src/components/MobileSearch/MobileSearch'
+import NewsPage from '../src/routes/NewsPage/NewsPage'
 
 import PublicRoute from './components/Utils/PublicRoute'
 import PrivateRoute from './components/Utils/PrivateRoute'
@@ -67,6 +68,11 @@ class Routes extends React.Component {
                 <Route
                     exact path='/mobile-search'
                     component={MobileSearch}
+                />
+
+                <Route
+                    exact path='/news'
+                    component={NewsPage}
                 />
             </Switch>
         )

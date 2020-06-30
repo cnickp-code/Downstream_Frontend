@@ -46,27 +46,26 @@ class EventInfo extends React.Component {
             })
             .catch(this.context.setError)
 
-        DownstreamApiService.getSchedule()
-            .then(sched => {
-                console.log(`sched item: ${sched}`)
-                this.context.setSchedule(sched)
-            })
-            .catch(this.context.setError)
+        // DownstreamApiService.getSchedule()
+        //     .then(sched => {
+        //         console.log(`sched item: ${sched}`)
+        //         this.context.setSchedule(sched)
+        //     })
+        //     .catch(this.context.setError)
 
-        DownstreamApiService.getEvents()
-            .then(events => {
-                console.log(`events: ${events}`)
-                this.context.setEvents(events)
-            })
-            .catch(this.context.setError)
+        // DownstreamApiService.getEvents()
+        //     .then(events => {
+        //         console.log(`events: ${events}`)
+        //         this.context.setEvents(events)
+        //     })
+        //     .catch(this.context.setError)
     }
 
     render() {
-        const startDate = this.context.event.start_date;
-        const endDate = this.context.event.end_date;
+        const startDate = this.context.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
+        const endDate = this.context.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
 
-        console.log(startDate.toLocaleString())
-        console.log(endDate.toLocaleString())
+
         return (
             <div className="cover" onClick={this.handleHideEventInfo}>
                 <div className="cover-container">
@@ -79,14 +78,14 @@ class EventInfo extends React.Component {
                     <div className="cover-event-info center">
                         {this.context.event.description}
                         <h3 className="cover-inner-title">Dates:</h3>
-                        <div className="cover-list">Now - Then</div>
+                        <div className="cover-list">{startDate} to {endDate}</div>
                         <h3 className="cover-inner-title">Genre:</h3>
                         <div className="cover-list">{this.context.event.genre}</div>
                         <h3 className="cover-inner-title">Platform:</h3>
                         <div className="cover-list">{this.context.event.platform}</div>
                     </div>
                     {this.context.event.added && <p className="added center margin-top">Event already added to schedule!</p>}
-                    <div className="cover-link-container center">
+                    {/* <div className="cover-link-container center">
                         <a href="/" className="button cover-nav-link">
                             <i class="fas fa-link"></i> Link to Stream
                         </a>
@@ -94,7 +93,7 @@ class EventInfo extends React.Component {
                         {!this.context.event.added && <button className="cover-nav-link" onClick={this.handleAddEventToSchedule}>
                             <i class="fas fa-plus-circle"></i> Add to Schedule
                         </button>}
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

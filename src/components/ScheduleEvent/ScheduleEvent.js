@@ -1,19 +1,29 @@
 import React from 'react'
 import DSContext from '../../contexts/DSContext'
 import DownstreamApiService from '../../services/downstream-api-service'
+import EventOverlay from '../EventOverlay/EventOverlay'
+import ScheduleButtons from '../ScheduleButtons/ScheduleButtons'
 
 class ScheduleEvent extends React.Component {
     static contextType = DSContext
 
-    handleSetEventInfo = () => {
-        this.context.setEventInfo(this.props.event)
+    constructor(props) {
+        super(props);
+        this.state = {
+            showOverlayInfo: false
+        }
     }
 
-    handleDeleteFromSchedule = () => {
-        const itemId = this.props.event.id
+    handleSetEventInfo = () => {
+        this.setState({
+            showOverlayInfo: true
+        })
+    }
 
-        DownstreamApiService.deleteScheduleItem(itemId, this.context.deleteScheduleItem)
-            .catch(this.context.setError)
+    handleHideEventInfo = () => {
+        this.setState({
+            showOverlayInfo: false
+        })
     }
 
     render() {
@@ -26,31 +36,45 @@ class ScheduleEvent extends React.Component {
         let hours = Number('.' + days.toString().split('.')[1]) * 24;
         let minutes = Number('.' + hours.toString().split('.')[1]) * 60;
 
-        if(currentDate.getTime() > eventEndDate.getTime()) {
+        if (currentDate.getTime() > eventEndDate.getTime()) {
             timeString = `Event has passed :(`
         }
-        if(currentDate.getTime() > eventStartDate.getTime() && currentDate.getTime() < eventEndDate.getTime()) {
+        if (currentDate.getTime() >= eventStartDate.getTime() && currentDate.getTime() <= eventEndDate.getTime()) {
             timeString = `Happening now!!`
         }
-        if(currentDate.getTime() < eventStartDate.getTime()) {
+        if (currentDate.getTime() < eventStartDate.getTime()) {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`
         }
 
+        const info =
+            <div className="info-container" onClick={this.handleSetEventInfo}>
+                <div className="info-details">
+                    <i className="fas fa-info-circle"></i>
+                </div>
+            </div>;
+
+        const exit =
+            <div className="info-container" onClick={this.handleHideEventInfo}>
+                <div className="info-details">
+                    <i class="far fa-times-circle"></i>
+                </div>
+            </div>;
+
+
         return (
             <div className="event-container">
-                <div className="info-container" onClick={this.handleSetEventInfo}>
-                    <div className="info-details">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                </div>
-                <div className="delete-container" onClick={this.handleDeleteFromSchedule}>
-                    <div className="info-details trash">
-                    <i class="fas fa-trash-alt"></i>
-                    </div>
-                </div>
+               {this.state.showOverlayInfo
+                    ? exit
+                    : info}
                 <h3 className="center-text event-head-text">{this.props.event.name}</h3>
                 <p class="event-time center">{timeString}</p>
-                <img src={this.props.event.image_url} className="event-image" alt="event" />
+
+                {this.state.showOverlayInfo
+                    ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} />
+                    : <img src={this.props.event.image_url} className="event-image" alt="event" /> }
+
+                {this.state.showOverlayInfo && <ScheduleButtons event={this.props.event} showInfo={this.state.showOverlayInfo} /> }    
+            
             </div>
         )
     }

@@ -23,8 +23,23 @@ class App extends React.Component {
     console.log(`Reached add schedule item`)
     const scheduleList = [...this.state.schedule, item]
 
+    const events = this.state.events.map(event => {
+      if(event.id = item.event_id) {
+        const newEvent = {
+          ...event,
+          added: true
+        }
+        console.log(newEvent)
+        return newEvent
+      }
+      return event
+    })
+
+
+
     this.setState({
-      schedule: scheduleList
+      schedule: scheduleList,
+      events
     })
   }
 
@@ -45,22 +60,44 @@ class App extends React.Component {
   }
 
   setSchedule = (schedule) => {
+    const events = this.state.events.map(event => {
+      const isEventInSched = schedule.find(item => item.event_id === event.id)
+
+      const newEvent = {
+        ...event,
+        added: true
+      }
+
+      if(isEventInSched) {
+        return newEvent
+      }
+
+      return event;
+    })
+
     this.setState({
-      schedule
+      schedule,
+      events
     })
   }
 
   setEvents = (events) => {
+    const currentDate = new Date();
     const clientEvents = events.map(event => {
-      const addedObj = { added: false}
-      const newEvent = Object.assign(event, addedObj)
+      let pastObj = { past: false }
+      if (currentDate > event.end_date) {
+        pastObj = { past: true }
+      }
+
+      const addedObj = { added: false }
+      const newEvent = Object.assign(event, addedObj, pastObj)
 
       return newEvent
     })
 
     clientEvents.forEach(event => {
       this.state.schedule.forEach(item => {
-        if(item.name === event.name) {
+        if (item.name === event.name) {
           event.added = true;
         }
       })
@@ -116,12 +153,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-      DownstreamApiService.getEvents()
-        .then(events => {
-            this.setEvents(events)
-        })
-        .catch(this.setError)
+    DownstreamApiService.getEvents()
+      .then(events => {
+        this.setEvents(events)
+      })
+      .catch(this.setError)
 
+    DownstreamApiService.getSchedule()
+      .then(items => {
+        console.log('added schedule')
+        this.setSchedule(items)
+      })
+      .catch(this.setError)
   }
 
   render() {
@@ -149,6 +192,8 @@ class App extends React.Component {
 
     console.log(this.state.events)
     console.log(this.state.schedule)
+
+
 
     return (
       <div className="App">

@@ -13,7 +13,7 @@ class Header extends React.Component {
             <>
                 <nav className="main-nav">
                     <ul className="nav-list">
-                        <li><NavLink to='/about' className="nav-link">About</NavLink></li>
+                        <li><NavLink to='/news' className="nav-link">News</NavLink></li>
                         <li><NavLink to="/events" className="nav-link">Events</NavLink></li>
                         <li><NavLink to="/schedule" className="nav-link">My Schedule</NavLink></li>
                     </ul>
@@ -32,7 +32,7 @@ class Header extends React.Component {
                         <span></span>
 
                         <ul id="menu">
-                            <NavLink to="/about"><li>About</li></NavLink>
+                            <NavLink to="/news"><li>News</li></NavLink>
                             <NavLink to="/events"><li>Events</li></NavLink>
                             <NavLink to="/schedule"><li>My Schedule</li></NavLink>
                             <NavLink to="/login"><li>Login</li></NavLink>
@@ -55,7 +55,7 @@ class Header extends React.Component {
             <>
                 <nav className="main-nav">
                     <ul className="nav-list">
-                        <li><NavLink to='/about' className="nav-link">News</NavLink></li>
+                        <li><NavLink to='/news' className="nav-link">News</NavLink></li>
                         <li><NavLink to="/events" className="nav-link">Events</NavLink></li>
                         <li><NavLink to="/schedule" className="nav-link">My Schedule</NavLink></li>
                     </ul>
@@ -74,7 +74,7 @@ class Header extends React.Component {
                         <span></span>
 
                         <ul id="menu">
-                            <NavLink to="/about"><li>News</li></NavLink>
+                            <NavLink to="/news"><li>News</li></NavLink>
                             <NavLink to="/events"><li>Events</li></NavLink>
                             <NavLink to="/schedule"><li>My Schedule</li></NavLink>
                             <NavLink to="/add_event"><li>Add Event</li></NavLink>
