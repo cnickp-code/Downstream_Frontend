@@ -154,9 +154,9 @@ footer {
   color: blue;
 }
 
-.scroll {
+/* .scroll {
   color: purple;
-}
+} */
 
 .center {
   margin-left: auto;
@@ -1060,6 +1060,7 @@ button:active {
 
 
 .icon-container {
+  color: #F7F9Fb;
   font-size: 35px;
 }
 
@@ -1914,15 +1915,17 @@ button:active {
   }
   
   .event-container {
+      display: block;
       padding-top: 10px;
       width: 80%;
-      height: 290px;
+      height: 310px;
       position: relative;
       margin: 10px auto 20px auto;
       
   }
 
   .icon-container {
+    color: #f7f7f7;
     font-size: 25px;
     width: 30px;
     height: 30px;
@@ -2156,6 +2159,22 @@ button:active {
 @media screen and (max-height: 850px), screen and (min-width: 760px) {
   .cover-container {
       overflow: scroll;
+  }
+
+
+}
+
+@media screen and (min-width: 760px) {
+  .bottom-container {
+    display: flex;
+    flex-flow: row wrap;
+    transition: 0.3s ease;
+    overflow-y: scroll;
+    overflow-x: none;
+    height: calc(100% + 58px);
+    position: relative;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
   }
 }
 

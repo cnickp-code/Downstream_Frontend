@@ -63,6 +63,7 @@ class Event extends React.Component {
 
 
 
+
         return (
             <div className="event-container">
                 {this.state.showOverlayInfo
@@ -72,6 +73,7 @@ class Event extends React.Component {
 
                 <h3 className="center-text event-head-text">{this.props.event.name}</h3>
                 <p className="event-time center">{timeString}</p>
+                <h3 className="center"><i className="fas fa-tint"></i>  {this.props.event.event_popularity}</h3>
 
 
 

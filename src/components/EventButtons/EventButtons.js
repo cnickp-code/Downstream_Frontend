@@ -33,6 +33,7 @@ class EventButtons extends React.Component {
         const eventStreamUrl = this.props.event.stream_url
         const eventStartDate = this.props.event.start_date
         const eventEndDate = this.props.event.end_date
+        const eventPlatform = this.props.event.platform
 
         const newScheduleItem = {
             event_id: eventId,
@@ -42,7 +43,8 @@ class EventButtons extends React.Component {
             info_url: eventInfoUrl,
             stream_url: eventStreamUrl,
             start_date: eventStartDate,
-            end_date: eventEndDate
+            end_date: eventEndDate,
+            platform: eventPlatform
         }
 
         const newRawScheduleItem = {
@@ -56,6 +58,12 @@ class EventButtons extends React.Component {
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
             .then(item => {
                 console.log(item)
+
+                // const newReturnedSched = {
+                //     ...newScheduleItem,
+                //     id: item.id
+                // }
+
                 this.context.addScheduleItem(item)
             })
             .catch(this.context.setError)
@@ -68,13 +76,13 @@ class EventButtons extends React.Component {
         return (
             <div className={this.props.showInfo ? "event-button-container center" : "event-button-container moveUp center"}>
                 <div className="icon-container">
-                    <i className="fas fa-info-circle info" onClick={this.handleSetEventInfo}></i>
+                    <i className="fas fa-info-circle" onClick={this.handleSetEventInfo}></i>
                 </div>
                 <div className="icon-container">
-                    <a href={this.props.event.stream_url}><i className="fas fa-stream stream"></i></a>
+                    <a href={this.props.event.stream_url}><i className="fas fa-stream"></i></a>
                 </div>
                 <div className="icon-container">
-                    <a href={this.props.event.info_url}> <i className="fas fa-scroll scroll"></i> </a>
+                    <a href={this.props.event.info_url}> <i className="fas fa-scroll"></i> </a>
                 </div>
 
                 {!this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddEventToSchedule}>

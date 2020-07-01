@@ -19,9 +19,22 @@ class EventList extends React.Component {
     }
 
     render() {
-        const eventList = this.context.events.map(event => {
-            return <Event key={event.id} event={event} />
-        })
+
+        let eventList
+        
+        if(this.context.searchTerm.length > 0) {
+            eventList = this.context.searchEvents.map(event => {
+                return <Event key={event.id} event={event} />
+            })
+        } else {
+            eventList = this.context.events.map(event => {
+                return <Event key={event.id} event={event} />
+            })
+        }
+
+
+
+
 
         return (
             

@@ -2,6 +2,8 @@ import React from 'react'
 
 const DSContext = React.createContext({
     events: [],
+    searchEvents: [],
+    searchTerm: null,
     error: null,
     schedule: [],
     showAdd: false,
@@ -15,7 +17,9 @@ const DSContext = React.createContext({
     addEvent: () => {},
     setShowAdd: () => {},
     addScheduleItem: () => {},
-    deleteScheduleItem: () => {}
+    deleteScheduleItem: () => {},
+    setSearchEvents: () => {},
+    setSearchTerm: () => {}
 })
 
 export default DSContext

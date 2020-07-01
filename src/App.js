@@ -10,6 +10,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       events: [],
+      searchEvents: [],
+      searchTerm: "",
       schedule: [],
       showAdd: false,
       showEventInfo: false,
@@ -20,19 +22,19 @@ class App extends React.Component {
   }
 
   addScheduleItem = (item) => {
-    console.log(`Reached add schedule item`)
     const scheduleList = [...this.state.schedule, item]
 
     const events = this.state.events.map(event => {
-      if(event.id = item.event_id) {
+      if(event.id === item.event_id) {
         const newEvent = {
           ...event,
           added: true
         }
-        console.log(newEvent)
         return newEvent
+      } else {
+        return event
       }
-      return event
+      
     })
 
 
@@ -79,6 +81,41 @@ class App extends React.Component {
       schedule,
       events
     })
+  }
+
+  setSearchTerm = (term, timeFrame, pastBool, plat) => {
+    const searchTerm = term
+
+    this.setState(prevState => {
+      const searchEvents = prevState.events.filter(event => {
+        return (
+          event.name.toLowerCase().includes(searchTerm.toLowerCase())
+          
+        );
+      });
+
+      return {
+        searchTerm,
+        searchEvents
+      };
+    });
+  }
+
+  setSearchEvents = () => {
+    DownstreamApiService.getEvents()
+      .then(events => {
+        const { searchTerm } = this.state
+        const searchEvents = events.filter(event => {
+          return event.name.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+
+        this.setState({
+          events,
+          searchEvents
+        })
+      })
+
+
   }
 
   setEvents = (events) => {
@@ -170,6 +207,8 @@ class App extends React.Component {
   render() {
     const contextValue = {
       events: this.state.events,
+      searchEvents: this.state.searchEvents,
+      searchTerm: this.state.searchTerm,
       error: this.state.error,
       schedule: this.state.schedule,
       showAdd: this.state.showAdd,
@@ -187,7 +226,9 @@ class App extends React.Component {
       addScheduleItem: this.addScheduleItem,
       deleteScheduleItem: this.deleteScheduleItem,
       setShowMobileSearch: this.setShowMobileSearch,
-      hideMobileSearch: this.hideMobileSearch
+      hideMobileSearch: this.hideMobileSearch,
+      setSearchTerm: this.setSearchTerm,
+      setSearchEvents: this.setSearchEvents
     }
 
     console.log(this.state.events)

@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
     handleSearch(event) {
         const searchTerm = this.searchTerm.current.value;
         const timeFrame = this.timeFrame.current.value;
-        const pastEvents = this.pastEvents.current.value;
+        const pastBool = this.pastEvents.current.value;
         const platform = this.platform.current.value;
         let events = this.context.events;
 
@@ -36,13 +36,12 @@ class SearchForm extends React.Component {
         // console.log(`Past events: ${pastEvents}`)
         // console.log(`Platform: ${platform}`)
 
-        events = events.filter(event => {
-            if(event.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                return true;
-            }
-            return false;
-        })
-        console.log(events);
+        this.context.setSearchTerm(searchTerm, timeFrame, pastBool, platform)
+        this.context.setSearchEvents();
+    }
+
+    componentDidMount() {
+        this.context.setSearchEvents()
     }
 
     render() {
@@ -55,9 +54,9 @@ class SearchForm extends React.Component {
                     <div className="date-inner-container">
                         <select name="timeframe" id="timeframe" className="event-select" onChange={event => this.handleSearch(event)} ref={this.timeFrame}>
                             <option value="none" selected disabled>Choose Time Frame</option>
-                            <option value="today">Today</option>
-                            <option value="week">Within One Week</option>
-                            <option value="month">This Month</option>
+                            <option value="today">Less than 24 hrs away</option>
+                            <option value="week">Less than 1 week away</option>
+                            <option value="month">Less than 1 month away</option>
                             <option value="year">This Year</option>
                             <option value="none">No Time Frame</option>
                         </select>
