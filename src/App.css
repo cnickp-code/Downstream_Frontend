@@ -1076,7 +1076,8 @@ button:active {
   padding-top: 20px;
   padding-bottom: 60px;
   position: relative;
-  margin: 40px auto 70px auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .spotlight-event-image {
