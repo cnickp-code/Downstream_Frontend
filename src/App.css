@@ -238,6 +238,7 @@ footer {
 }
 
 .error {
+  max-width: 280px;
   color: rgb(255, 109, 109);
   text-align: center;
 }
@@ -1820,6 +1821,30 @@ button:active {
       z-index: 3;
       padding: 10px;
   }
+
+  .spot-event-container {
+    width: 70%;
+    max-width: 310px;
+    height: 230px;
+    min-height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .spotlight-event-image {
+    width: 100%;
+    height: 100%;
+    max-width: 610px;
+    max-height: 400px;
+    -webkit-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
+    -moz-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
+    box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
+    cursor: pointer;
+  }
+    
   
   .spotlight-item-container {
       display: flex;

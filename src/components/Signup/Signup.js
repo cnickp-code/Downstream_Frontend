@@ -18,6 +18,7 @@ class Signup extends React.Component {
 
 
     handleRegistrationSubmit = (event) => {
+        event.preventDefault();
         const { user_name, email, password } = event.target
         const date_created = new Date()
 

@@ -229,7 +229,6 @@ class App extends React.Component {
 
     DownstreamApiService.getSchedule()
       .then(items => {
-        console.log('added schedule')
         this.setSchedule(items)
       })
       .catch(this.setError)
@@ -263,8 +262,6 @@ class App extends React.Component {
       setSearchEvents: this.setSearchEvents
     }
 
-    console.log(this.state.events)
-    console.log(this.state.schedule)
 
 
 

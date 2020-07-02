@@ -1,7 +1,27 @@
 import React from 'react'
 import Spotlight from '../Spotlight/Spotlight';
+import EventOverlay from '../EventOverlay/EventOverlay'
 
 class SpotlightEvent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showOverlayInfo: false
+        }
+    }
+
+    handleSetEventInfo = () => {
+        this.setState({
+            showOverlayInfo: true
+        })
+    }
+
+    handleHideEventInfo = () => {
+        this.setState({
+            showOverlayInfo: false
+        })
+    }
+    
     render() {
         const currentDate = new Date();
         const eventStartDate = new Date(this.props.event.start_date)
@@ -27,7 +47,10 @@ class SpotlightEvent extends React.Component {
                 <h3 className="center-text event-head-text">{this.props.event.name}   <i className="fas fa-tint margin-left"></i>  {this.props.event.event_popularity}</h3>
                 <p className="event-time center">{timeString}</p>
                 <h3 className="center"></h3> 
-                <img src={this.props.event.image_url} className="spotlight-event-image box-shadow" alt="event"/>
+                <img src={this.props.event.image_url} className="spotlight-event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>
+                {/* {this.state.showOverlayInfo
+                    ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>
+                    : <img src={this.props.event.image_url} className="spotlight-event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>} */}
             </div>
         )
     }

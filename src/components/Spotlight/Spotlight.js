@@ -14,7 +14,7 @@ class Spotlight extends React.Component {
                 <h1 className="spotlight-header">Spotlight</h1>
                 <div className="spotlight-container">
                     <SpotlightEvent event={event} />
-                    <p className="center center-text">Click the flyer for more info!</p>
+                    {/* <p className="center center-text">Click the flyer for more info!</p> */}
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>
