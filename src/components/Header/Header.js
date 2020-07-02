@@ -15,7 +15,7 @@ class Header extends React.Component {
                     <ul className="nav-list">
                         <li><NavLink to='/news' className="nav-link">News</NavLink></li>
                         <li><NavLink to="/events" className="nav-link">Events</NavLink></li>
-                        <li><NavLink to="/schedule" className="nav-link">My Schedule</NavLink></li>
+                        <li><NavLink to="/signup" className="nav-link">My Schedule</NavLink></li>
                     </ul>
                     <ul className="nav-list">
                         <li><NavLink to="/login" className="nav-link">Login</NavLink></li>
@@ -34,7 +34,7 @@ class Header extends React.Component {
                         <ul id="menu">
                             <NavLink to="/news"><li>News</li></NavLink>
                             <NavLink to="/events"><li>Events</li></NavLink>
-                            <NavLink to="/schedule"><li>My Schedule</li></NavLink>
+                            <NavLink to="/signup"><li>My Schedule</li></NavLink>
                             <NavLink to="/login"><li>Login</li></NavLink>
                             <NavLink to="/signup"><li>Sign Up</li></NavLink>
                         </ul>

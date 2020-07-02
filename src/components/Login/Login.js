@@ -19,9 +19,6 @@ class Login extends React.Component {
 
         const { user_name, password } = event.target
 
-        console.log(user_name)
-        console.log(password)
-
         AuthApiService.postLogin({
             user_name: user_name.value,
             password: password.value
@@ -29,7 +26,6 @@ class Login extends React.Component {
             .then(res => {
                 user_name.value = ''
                 password.value = ''
-                console.log(res.authToken)
                 TokenService.saveAuthToken(res.authToken)
                 this.props.onLoginSuccess()
             })

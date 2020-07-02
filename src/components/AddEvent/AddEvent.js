@@ -73,7 +73,6 @@ class AddEvent extends React.Component {
                 error: "Please choose a primary platform."
             })
         } else {
-            console.log(eventArtists)
             const newEvent = {
                 name: eventName,
                 image_url: eventImageUrl,
@@ -87,13 +86,16 @@ class AddEvent extends React.Component {
                 artists: eventArtists
             }
 
-            console.log(newEvent)
             DownstreamApiService.postEvent(newEvent)
                 .then(res => {
                     this.context.addEvent(res)
-                    this.props.history.push('/home')
                 })
                 .catch(this.context.setError)
+
+                // console.log(this.props)
+            // const { location, history } = this.props
+            // const destination = (location.state || {}).from || '/home'
+            // history.push(destination)
         }
 
 

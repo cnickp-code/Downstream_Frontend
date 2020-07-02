@@ -31,7 +31,6 @@ class SearchFab extends React.Component {
     handleMobileSearch = () => {
         const searchTerm = this.searchTerm.current.value;
 
-        console.log(searchTerm)
 
         this.context.setSearchTerm(searchTerm)
         this.context.setSearchEvents();

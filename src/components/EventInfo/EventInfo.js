@@ -34,13 +34,11 @@ class EventInfo extends React.Component {
             event_id: eventId
         }
 
-        // console.log(newScheduleItem)
 
 
 
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
             .then(item => {
-                console.log(`items: ${item}`)
                 this.context.addScheduleItem(item)
                 this.context.hideEventInfo()
             })

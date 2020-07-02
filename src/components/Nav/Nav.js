@@ -93,8 +93,6 @@ class Nav extends React.Component {
 
     render() {
 
-        console.log(TokenService.hasAuthToken)
-
         return (
             <>
                 {TokenService.hasAuthToken()

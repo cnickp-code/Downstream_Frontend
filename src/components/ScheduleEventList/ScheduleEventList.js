@@ -19,7 +19,6 @@ class ScheduleEventList extends React.Component {
             return <ScheduleEvent key={event.id} event={event} />
         })
 
-        console.log(this.context.schedule)
 
         // let scheduleList
 

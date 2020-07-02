@@ -19,7 +19,6 @@ class EventButtons extends React.Component {
 
         DownstreamApiService.deleteScheduleItem(itemId, this.context.deleteScheduleItem)
             .then(res => {
-                console.log('hello')
             })
             .catch(this.context.setError)
     }
@@ -51,13 +50,10 @@ class EventButtons extends React.Component {
             event_id: eventId
         }
 
-        // console.log(newScheduleItem)
-
 
 
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
             .then(item => {
-                console.log(item)
 
                 // const newReturnedSched = {
                 //     ...newScheduleItem,
@@ -74,7 +70,6 @@ class EventButtons extends React.Component {
 
                 DownstreamApiService.getSchedule()
                 .then(items => {
-                  console.log('added schedule')
                   this.context.setSchedule(items)
                 })
                 .catch(this.setError)

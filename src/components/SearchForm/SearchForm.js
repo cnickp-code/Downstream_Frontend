@@ -31,11 +31,6 @@ class SearchForm extends React.Component {
 
         let currentDate = new Date();
 
-        // console.log(`Search term: ${searchTerm}`)
-        // console.log(`Time frame: ${timeFrame}`)
-        // console.log(`Past events: ${pastEvents}`)
-        // console.log(`Platform: ${platform}`)
-
         this.context.setSearchTerm(searchTerm)
         this.context.setSearchEvents();
     }

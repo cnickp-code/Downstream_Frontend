@@ -43,7 +43,6 @@ class Signup extends React.Component {
 
     handleUserNameError = (event) => {
         let userName = event.target.value;
-        console.log(this.state.error)
 
         if (userName.length === 0) {
             this.setState({
