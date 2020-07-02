@@ -1,4 +1,4 @@
 export default {
-    API_ENDPOINT: 'https://glacial-coast-32883.herokuapp.com/',
+    API_ENDPOINT: 'http://localhost:8000/api',
     TOKEN_KEY: 'downstream-client-auth-token',
 }

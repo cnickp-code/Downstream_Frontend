@@ -38,7 +38,9 @@ class Signup extends React.Component {
             this.props.history.push('/login')
         })
         .catch(res => {
-            this.setState({ error: res.error })
+            this.setState({ 
+                error: res.error 
+            })
         }) 
     }
 
@@ -148,7 +150,7 @@ class Signup extends React.Component {
             <div className="form-box-ls center">
                 <form className="main-form" onSubmit={this.handleRegistrationSubmit}>
                 <div role='alert'>
-                    {error && <p className='error'>{error}</p>}
+                    {error && <p className='error center'>{error}</p>}
                 </div>
                     <h1>Sign up</h1>
                     <fieldset name="login-info">
@@ -162,7 +164,7 @@ class Signup extends React.Component {
                             onChange={this.handleUserNameError}
                             required
                          />
-                        {userNameError && <p className='error'>{userNameError}</p>}
+                        {userNameError && <p className='error center'>{userNameError}</p>}
 
                         <h4>Email</h4>
                         <input 
@@ -174,7 +176,7 @@ class Signup extends React.Component {
                             onChange={this.handleEmailError}
                             required 
                         />
-                        {emailError && <p className='error'>{emailError}</p>}
+                        {emailError && <p className='error center'>{emailError}</p>}
                         
                         <h4>Password</h4>
                         <input 
@@ -187,7 +189,7 @@ class Signup extends React.Component {
                             ref={this.password}
                             required 
                         />
-                        {passwordError && <p className='error'>{passwordError}</p>}
+                        {passwordError && <p className='error center'>{passwordError}</p>}
 
                         <h4>Repeat Password</h4>
                         <input 
@@ -199,7 +201,7 @@ class Signup extends React.Component {
                             onChange={this.handleRepeatPasswordError}
                             required 
                         />
-                        {repeatPasswordError && <p className='error'>{repeatPasswordError}</p>}
+                        {repeatPasswordError && <p className='error center'>{repeatPasswordError}</p>}
                         
                     </fieldset>
                     <button type="submit" className="form-submit-button">Register</button>
