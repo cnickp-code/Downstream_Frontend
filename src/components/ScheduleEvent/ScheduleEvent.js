@@ -46,34 +46,34 @@ class ScheduleEvent extends React.Component {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`
         }
 
-        const info =
-            <div className="info-container" onClick={this.handleSetEventInfo}>
-                <div className="info-details">
-                    <i className="fas fa-info-circle"></i>
-                </div>
-            </div>;
+        // const info =
+        //     <div className="info-container" onClick={this.handleSetEventInfo}>
+        //         <div className="info-details">
+        //             <i className="fas fa-info-circle"></i>
+        //         </div>
+        //     </div>;
 
-        const exit =
-            <div className="info-container" onClick={this.handleHideEventInfo}>
-                <div className="info-details">
-                    <i class="far fa-times-circle"></i>
-                </div>
-            </div>;
+        // const exit =
+        //     <div className="info-container" onClick={this.handleHideEventInfo}>
+        //         <div className="info-details">
+        //             <i class="far fa-times-circle"></i>
+        //         </div>
+        //     </div>;
 
 
         return (
             <div className="event-container">
-               {this.state.showOverlayInfo
+               {/* {this.state.showOverlayInfo
                     ? exit
-                    : info}
+                    : info} */}
                 <h3 className="center-text event-head-text">{this.props.event.name}</h3>
                 <p class="event-time center">{timeString}</p>
 
                 {this.state.showOverlayInfo
-                    ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} />
-                    : <img src={this.props.event.image_url} className="event-image" alt="event" /> }
+                    ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>
+                    : <img src={this.props.event.image_url} className="event-image" alt="event" onClick={this.handleSetEventInfo}/> }
 
-                {this.state.showOverlayInfo && <ScheduleButtons event={this.props.event} showInfo={this.state.showOverlayInfo} /> }    
+                {this.state.showOverlayInfo && <ScheduleButtons event={this.props.event} showInfo={this.state.showOverlayInfo}  /> }    
             
             </div>
         )

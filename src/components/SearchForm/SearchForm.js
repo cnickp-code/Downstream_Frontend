@@ -36,7 +36,7 @@ class SearchForm extends React.Component {
         // console.log(`Past events: ${pastEvents}`)
         // console.log(`Platform: ${platform}`)
 
-        this.context.setSearchTerm(searchTerm, timeFrame, pastBool, platform)
+        this.context.setSearchTerm(searchTerm)
         this.context.setSearchEvents();
     }
 

@@ -70,15 +70,18 @@ class EventInfo extends React.Component {
             <div className="cover" onClick={this.handleHideEventInfo}>
                 <div className="cover-container">
                     <div className="cover-exit" onClick={this.handleHideEventInfo}>
-                        <i class="far fa-times-circle"></i>
+                        <i className="far fa-times-circle"></i>
                     </div>
                     <h1 className="cover-event-title">{this.context.event.name}</h1>
+                    <h3 className=" center">Dates:</h3>
+                        <div className="cover-list center">{startDate} to {endDate}</div>
                     <img src={this.context.event.image_url}
                         className="cover-event-image center" alt="cover" />
                     <div className="cover-event-info center">
                         {this.context.event.description}
-                        <h3 className="cover-inner-title">Dates:</h3>
-                        <div className="cover-list">{startDate} to {endDate}</div>
+                        <h3 className="cover-inner-title">Artists:</h3>
+                        <div className="cover-list">{this.context.event.artists}</div>
+ 
                         <h3 className="cover-inner-title">Genre:</h3>
                         <div className="cover-list">{this.context.event.genre}</div>
                         <h3 className="cover-inner-title">Platform:</h3>

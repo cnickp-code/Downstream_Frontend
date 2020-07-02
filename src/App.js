@@ -83,14 +83,15 @@ class App extends React.Component {
     })
   }
 
-  setSearchTerm = (term, timeFrame, pastBool, plat) => {
+  setSearchTerm = (term) => {
     const searchTerm = term
 
     this.setState(prevState => {
       const searchEvents = prevState.events.filter(event => {
         return (
           event.name.toLowerCase().includes(searchTerm.toLowerCase())
-          
+          || event.name.toLowerCase().includes(searchTerm.toLowerCase())
+          || event.genre.toLowerCase().includes(searchTerm.toLowerCase())
         );
       });
 
@@ -106,7 +107,11 @@ class App extends React.Component {
       .then(events => {
         const { searchTerm } = this.state
         const searchEvents = events.filter(event => {
-          return event.name.toLowerCase().includes(searchTerm.toLowerCase());
+          return (
+            event.name.toLowerCase().includes(searchTerm.toLowerCase())
+            || event.name.toLowerCase().includes(searchTerm.toLowerCase())
+            || event.genre.toLowerCase().includes(searchTerm.toLowerCase())
+          )
         });
 
         this.setState({
@@ -114,8 +119,7 @@ class App extends React.Component {
           searchEvents
         })
       })
-
-
+    
   }
 
   setEvents = (events) => {

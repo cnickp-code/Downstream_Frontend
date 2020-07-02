@@ -1,12 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
+import DSContext from '../../contexts/DSContext'
+import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent'
 
 class Spotlight extends React.Component {
+    static contextType = DSContext
+
     render() {
+        const event = this.context.events[0]
+
         return (
             <main>
                 <h1 className="spotlight-header">Spotlight</h1>
                 <div className="spotlight-container">
+                    <SpotlightEvent event={event} />
+                    <p className="center center-text">Click the flyer for more info!</p>
+                    <div className="home-container">
+                        <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
+                    </div>
+                </div>
+
+                {/* <div className="spotlight-container">
 
                     <h3 class="center-text event-head-text">Lost Lands</h3>
                     <div className="spotlight-item-container center">
@@ -17,13 +31,10 @@ class Spotlight extends React.Component {
                         </div>
                         <img src="https://www.lostlandsfestival.com/wp-content/uploads/2020/05/preview-lightbox-TeaserGraphic_1920x1080_2-1200x675.jpg" className="spotlight-image" alt="spotlight" />
                     </div>
-                    <p className="center center-text">Click <i className="fas fa-info-circle"></i> for more info!</p>
-                    <div className="home-container">
-                        <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
-                    </div>
 
 
-                </div>
+
+                </div> */}
                 <div className="parallax">
                     <div className="home-image1">
                     </div>

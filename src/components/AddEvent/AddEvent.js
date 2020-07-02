@@ -21,6 +21,7 @@ class AddEvent extends React.Component {
         this.endMonth = React.createRef();
         this.endDay = React.createRef();
         this.description = React.createRef();
+        this.artists = React.createRef();
         this.state = {
             startDate: new Date(),
             endDate: new Date(),
@@ -52,13 +53,14 @@ class AddEvent extends React.Component {
         const eventDescription = this.description.current.value;
         const eventStartDate = this.state.startDate;
         const eventEndDate = this.state.endDate;
+        const eventArtists = this.artists.current.value;
         const currentDate = new Date()
 
-        if(eventStartDate > eventEndDate) {
+        if (eventStartDate > eventEndDate) {
             this.setState({
                 error: "Start date/time must be before end date/time."
             })
-        } else if(eventStartDate < currentDate || eventEndDate < currentDate) {
+        } else if (eventStartDate < currentDate || eventEndDate < currentDate) {
             this.setState({
                 error: "Start/end date must be on or after today."
             })
@@ -71,6 +73,7 @@ class AddEvent extends React.Component {
                 error: "Please choose a primary platform."
             })
         } else {
+            console.log(eventArtists)
             const newEvent = {
                 name: eventName,
                 image_url: eventImageUrl,
@@ -80,9 +83,10 @@ class AddEvent extends React.Component {
                 platform: eventPlatform,
                 start_date: eventStartDate.toLocaleDateString(),
                 end_date: eventEndDate.toLocaleDateString(),
-                description: eventDescription
+                description: eventDescription,
+                artists: eventArtists
             }
-    
+
             console.log(newEvent)
             DownstreamApiService.postEvent(newEvent)
                 .then(res => {
@@ -122,6 +126,9 @@ class AddEvent extends React.Component {
                                 <h4>Stream URL</h4>
                                 <input type="url" name="stream-url" id="stream-url" placeholder="https://"
                                     className="text-input center" ref={this.streamUrl} required />
+                                <h4>Artists (separate by commas)</h4>
+                                <input placeholder="" type="text" name="artists" id="artists" className="text-input center" ref={this.artists}
+                                    required />
                             </div>
                             <div className="add-event-right">
                                 <div className="genre-platform-container">
@@ -179,10 +186,10 @@ class AddEvent extends React.Component {
 
 
                     </fieldset>
-                    
+
                     <button type="submit" className="form-submit-button">Submit</button>
-                    
-                    
+
+
                 </form>
             </div>
         )

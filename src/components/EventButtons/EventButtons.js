@@ -71,18 +71,16 @@ class EventButtons extends React.Component {
 
     render() {
 
-        console.log(this.props.event.added)
-
         return (
             <div className={this.props.showInfo ? "event-button-container center" : "event-button-container moveUp center"}>
                 <div className="icon-container">
                     <i className="fas fa-info-circle white" onClick={this.handleSetEventInfo}></i>
                 </div>
                 <div className="icon-container">
-                    <a href={this.props.event.info_url}> <i class="fas fa-link white"></i> </a>
+                    <a href={this.props.event.info_url}> <i className="fas fa-link white"></i> </a>
                 </div>
                 <div className="icon-container">
-                    <a href={this.props.event.stream_url}><i class="fas fa-desktop white"></i></a>
+                    <a href={this.props.event.stream_url}><i className="fas fa-desktop white"></i></a>
                 </div>
 
 
@@ -90,7 +88,7 @@ class EventButtons extends React.Component {
                     <i className="fas fa-plus-circle added"></i>
                 </div>}
                 {this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddedAlert}>
-                    <i class="far fa-check-square added"></i>
+                    <i className="far fa-check-square added"></i>
                 </div>}
                 
                 {/* {this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleDeleteFromSchedule}>
