@@ -84,6 +84,10 @@ footer {
   animation: fadeOut 0.5s ease forwards;
 }
 
+.fade-in-event {
+  animation: fadeInEvent 0.5 ease;
+}
+
 .fade-in {
   animation: fadeIn 0.5s ease;
 }
@@ -111,6 +115,31 @@ footer {
 @-ms-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
+}
+
+@keyframes fadeInEvent {
+  0% {opacity:0;}
+  100% {opacity:0.8;}
+}
+
+@-moz-keyframes fadeInEvent {
+  0% {opacity:0;}
+  100% {opacity:0.8;}
+}
+
+@-webkit-keyframes fadeInEvent {
+  0% {opacity:0;}
+  100% {opacity:0.8;}
+}
+
+@-o-keyframes fadeInEvent {
+  0% {opacity:0;}
+  100% {opacity:0.8;}
+}
+
+@-ms-keyframes fadeInEvent {
+  0% {opacity:0;}
+  100% {opacity:0.8;}
 }
 
 @keyframes fadeOut {
@@ -1002,7 +1031,7 @@ button:active {
     background-color: black;
     opacity: 0.8;
     position: relative;
-    animation: fadeIn 0.5s ease;
+    animation: fadeInEvent 0.5s ease;
     cursor: pointer;
   }
 

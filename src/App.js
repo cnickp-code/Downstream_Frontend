@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       events: [],
       searchEvents: [],
+      searchSchedule: [],
       searchTerm: "",
       schedule: [],
       showAdd: false,
@@ -95,9 +96,18 @@ class App extends React.Component {
         );
       });
 
+      const searchSchedule = prevState.schedule.filter(item => {
+        return (
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          || item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          || item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      })
+
       return {
         searchTerm,
-        searchEvents
+        searchEvents,
+        searchSchedule
       };
     });
   }
@@ -119,7 +129,24 @@ class App extends React.Component {
           searchEvents
         })
       })
-    
+
+    DownstreamApiService.getSchedule()
+      .then(items => {
+        const { searchTerm } = this.state
+        const searchSchedule = items.filter(item => {
+          return (
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            || item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            || item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+        })
+
+        this.setState({
+          searchSchedule,
+          schedule: items
+        })
+      })
+      .catch(this.setError)
   }
 
   setEvents = (events) => {
@@ -212,6 +239,7 @@ class App extends React.Component {
     const contextValue = {
       events: this.state.events,
       searchEvents: this.state.searchEvents,
+      searchSchedule: this.state.searchSchedule,
       searchTerm: this.state.searchTerm,
       error: this.state.error,
       schedule: this.state.schedule,

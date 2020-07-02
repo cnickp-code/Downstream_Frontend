@@ -14,11 +14,24 @@ class ScheduleEventList extends React.Component {
         .catch(this.context.setError)
     }
     render() {
+        
         const scheduleList = this.context.schedule.map(event => {
             return <ScheduleEvent key={event.id} event={event} />
         })
 
         console.log(this.context.schedule)
+
+        // let scheduleList
+
+        // if(this.context.searchTerm.length > 0) {
+        //     scheduleList = this.context.searchSchedule.map(item => {
+        //         return <ScheduleEvent key={item.id} event={item} />
+        //     })
+        // } else {
+        //     return scheduleList = this.context.schedule.map(event => {
+        //         return <ScheduleEvent key={event.id} event={event} />
+        //     })
+        // }
 
         return (
             <div className="myevents-content-container">

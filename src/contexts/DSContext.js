@@ -3,6 +3,7 @@ import React from 'react'
 const DSContext = React.createContext({
     events: [],
     searchEvents: [],
+    searchSchedule: [],
     searchTerm: null,
     error: null,
     schedule: [],

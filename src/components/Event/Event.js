@@ -78,7 +78,7 @@ class Event extends React.Component {
 
                 {this.state.showOverlayInfo
                     ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>
-                    : <img src={this.props.event.image_url} className="event-image .box-shadow" alt="event" onClick={this.handleSetEventInfo}/>}
+                    : <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>}
 
 
 

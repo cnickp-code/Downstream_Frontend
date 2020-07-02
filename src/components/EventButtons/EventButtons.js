@@ -65,6 +65,19 @@ class EventButtons extends React.Component {
                 // }
 
                 this.context.addScheduleItem(item)
+
+                DownstreamApiService.getEvents()
+                .then(events => {
+                  this.context.setEvents(events)
+                })
+                .catch(this.setError)
+
+                DownstreamApiService.getSchedule()
+                .then(items => {
+                  console.log('added schedule')
+                  this.context.setSchedule(items)
+                })
+                .catch(this.setError)
             })
             .catch(this.context.setError)
     }
