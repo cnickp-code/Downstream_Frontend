@@ -38,10 +38,10 @@ class EventOverlay extends React.Component {
                             <h4>Genre</h4>
                             <p>{this.props.event.genre}</p>
                         </div>
-                        <div className="platform-info">
+                        {/* <div className="platform-info">
                             <h4>Platform</h4>
                             <p>{this.props.event.platform}</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
