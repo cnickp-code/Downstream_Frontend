@@ -70,7 +70,9 @@ class Event extends React.Component {
                     : info} */}
 
 
-                <h3 className="center-text event-head-text">{this.props.event.name}   <i className="fas fa-tint margin-left"></i>  {this.props.event.event_popularity}</h3>
+                <h3 className="popularity-container"> <i className="fas fa-tint"></i>  {this.props.event.event_popularity}</h3>
+
+                <h3 className="center-text center event-head-text">{this.props.event.name}</h3>
                 <p className="event-time center">{timeString}</p>
                 <h3 className="center"></h3>
 

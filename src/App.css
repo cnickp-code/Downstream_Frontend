@@ -328,6 +328,17 @@ button:active {
 
 /* HOME STYLES */
 
+.popularity-container {
+  position: absolute;
+  right: -5px;
+  top: 20px;
+}
+
+.event-head-text {
+  width: 85%;
+
+}
+
 .home-scroll-container {
   height: 100vh;
   overflow-y: scroll;
@@ -1565,7 +1576,10 @@ button:active {
       border-bottom: none;
   }
 
+
+
   .event-head-text {
+    width: 85%;
     font-size: 1.65rem;
   }
 
@@ -2053,9 +2067,9 @@ button:active {
   }
   
   .cover-exit {
-      position: absolute;
+      position: fixed;
       right: 15px;
-      top: 5px;
+      top: 15px;
       font-size: 20px;
       cursor: pointer;
   }
