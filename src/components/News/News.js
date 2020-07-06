@@ -1,15 +1,15 @@
 import React from 'react';
-import { TwitterTimelineEmbed } from 'react-twitter-embed'
+import { TwitterTweetEmbed} from 'react-twitter-embed'
 
 class News extends React.Component {
     render() {
         return (
             <main>
                 <h1 className="spotlight-header">News</h1>
-                <div className="spotlight-container">
-                    <TwitterTimelineEmbed
-                        sourceType="profile"
-                        screenName="saurabhnemade"
+                <div className="news-container">
+                    <h3>DownStream has a Twitter!</h3>
+                    <TwitterTweetEmbed
+                        tweetId={'1280219867933667330'}
                         options={{ height: 400 }}
                         className="center"
                     />

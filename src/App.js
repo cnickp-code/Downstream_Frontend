@@ -150,6 +150,7 @@ class App extends React.Component {
   }
 
   setEvents = (events) => {
+    console.log('set events')
     const currentDate = new Date();
     const clientEvents = events.map(event => {
       let pastObj = { past: false }

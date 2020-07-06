@@ -9,10 +9,6 @@ class EventList extends React.Component {
     componentDidMount() {
         DownstreamApiService.getEvents()
           .then(events => {
-              events.forEach(event => {
-                  
-              })
-
               this.context.setEvents(events)
           })
           .catch(this.context.setError)

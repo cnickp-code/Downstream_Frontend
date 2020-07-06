@@ -4,6 +4,13 @@ import Footer from '../../components/Footer/Footer'
 import AddEvent from '../../components/AddEvent/AddEvent'
 
 class AddEventPage extends React.Component {
+
+    handleAddSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/home'
+        history.push(destination)
+    }
+
     render() {
         return (
             <>
@@ -12,7 +19,7 @@ class AddEventPage extends React.Component {
                         <Header />
                     </header>
                     <main>
-                        <AddEvent />
+                        <AddEvent onAddSuccess={this.handleAddSuccess}/>
                     </main>
                 </div>
                 <Footer />

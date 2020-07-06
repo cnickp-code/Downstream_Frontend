@@ -43,7 +43,7 @@ body {
   border-right: none;
   border-top: none;
   background-color: rgb(2, 138, 192);
-  background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
+  background-image: url('./downstream_background.jpg');
   background-position: bottom;
 }
 
@@ -75,7 +75,7 @@ footer {
   -moz-box-shadow: 0px -2px 9px 0px rgba(0,0,0,0.59);
   box-shadow: 0px -2px 9px 0px rgba(0,0,0,0.59);
   background-color: rgb(167, 166, 166);
-  background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
+  background-image: url('./downstream_background.jpg');
   background-position: bottom;
 }
 
@@ -694,7 +694,7 @@ button:active {
   width: 100%;
   font-size: 2.7em;
   font-weight: bold;
-  background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
+  background-image: url('./downstream_background.jpg');
   background-position: center;
   position: relative;
   z-index: 4;
@@ -752,9 +752,13 @@ button:active {
 }
 
 .news-container {
-    min-height: fit-content;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  align-items: center;
+  min-height: fit-content;
   padding: 40px 20px 40px 20px;
-    background-color: rgb(2, 105, 146);
+  background-color: rgb(2, 105, 146);
 }
 
 
@@ -1174,6 +1178,7 @@ button:active {
   position: relative;
   -ms-overflow-style: none;  
   scrollbar-width: none;  
+  
 }
 
 .bottom-container::-webkit-scrollbar {
@@ -1652,7 +1657,7 @@ button:active {
       padding: 10px;
       width: 100%;
       background-color: rgb(202, 202, 202);
-      background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600');
+      background-image: url('./downstream_background.jpg');
       z-index: 1000;
       -webkit-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.59);
       -moz-box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.59);
@@ -1689,7 +1694,6 @@ button:active {
       font-size: 2em; /* Changed */
       font-weight: bold;
       border-bottom: 1px solid rgb(255, 255, 255);
-      background-image: url('https://floridadep.gov/sites/all/themes/basic/image_thumbs_png_gif_jpg.php?f=Fotolia_66039753_L.jpg&w=1600&h=600')
   }
   
   .main-nav {
@@ -2333,10 +2337,13 @@ button:active {
 @media screen and (min-width: 760px) {
   .bottom-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    /* flex-flow: row wrap;
+    align-items: flex-start; */
+    justify-content: space-between; 
     transition: 0.3s ease;
     overflow-y: scroll;
-    overflow-x: none;
+    overflow-x: hidden;
     height: calc(100% + 58px);
     position: relative;
     -ms-overflow-style: none;  

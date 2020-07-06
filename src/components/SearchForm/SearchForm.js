@@ -24,9 +24,9 @@ class SearchForm extends React.Component {
 
     handleSearch(event) {
         const searchTerm = this.searchTerm.current.value;
-        const timeFrame = this.timeFrame.current.value;
-        const pastBool = this.pastEvents.current.value;
-        const platform = this.platform.current.value;
+        // const timeFrame = this.timeFrame.current.value;
+        // const pastBool = this.pastEvents.current.value;
+        // const platform = this.platform.current.value;
         let events = this.context.events;
 
         let currentDate = new Date();
@@ -44,7 +44,7 @@ class SearchForm extends React.Component {
         return (
             <form id="event-search-form">
                 <input type="text" placeholder="Search" className="event-search-input" id="search-input" onChange={event => this.handleSearch(event)} ref={this.searchTerm}/>
-                <br />
+                {/* <br />
                     <p>Time Frame:</p>
                     <div className="date-inner-container">
                         <select name="timeframe" id="timeframe" className="event-select" onChange={event => this.handleSearch(event)} ref={this.timeFrame}>
@@ -127,12 +127,6 @@ class SearchForm extends React.Component {
                                 value="other" />
                             <span className="checkmark"></span>
                         </label>
-                        {/* <label className="genre">All Genres
-                                <input 
-                                type="checkbox"
-                                value="all" />
-                            <span className="checkmark"></span>
-                        </label> */}
                     </div>
                 </div>
                 <br />
@@ -144,7 +138,7 @@ class SearchForm extends React.Component {
                     <option value="facebook">Facebook</option>
                     <option value="other">Other</option>
                 </select>
-                <button type="submit" className="search-button margin-top">Submit</button>
+                <button type="submit" className="search-button margin-top">Submit</button> */}
             </form>
 
         )

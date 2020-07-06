@@ -67,7 +67,7 @@ class ScheduleEvent extends React.Component {
                     ? exit
                     : info} */}
                 <h3 className="center-text event-head-text">{this.props.event.name}</h3>
-                <p class="event-time center">{timeString}</p>
+                <p className="event-time center">{timeString}</p>
 
                 {this.state.showOverlayInfo
                     ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>

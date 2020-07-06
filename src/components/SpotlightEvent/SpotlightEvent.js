@@ -1,6 +1,7 @@
 import React from 'react'
 import Spotlight from '../Spotlight/Spotlight';
-import EventOverlay from '../EventOverlay/EventOverlay'
+import EventOverlay from '../EventOverlay/EventOverlay';
+
 
 class SpotlightEvent extends React.Component {
     constructor(props) {
@@ -20,6 +21,16 @@ class SpotlightEvent extends React.Component {
         this.setState({
             showOverlayInfo: false
         })
+    }
+
+    componentDidMount() {
+        console.log('hello')
+        // DownstreamApiService.getEvents()
+        //   .then(events => {
+        //       console.log('added events')
+        //       this.context.setEvents(events)
+        //   })
+        //   .catch(this.context.setError)
     }
     
     render() {

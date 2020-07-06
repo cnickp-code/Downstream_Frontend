@@ -2,12 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import DSContext from '../../contexts/DSContext'
 import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent'
+import DownstreamApiService from '../../services/downstream-api-service';
 
 class Spotlight extends React.Component {
     static contextType = DSContext
 
+    componentDidMount() {
+        console.log('hello')
+        DownstreamApiService.getEvents()
+          .then(events => {
+              console.log('added events')
+              this.context.setEvents(events)
+          })
+          .catch(this.context.setError)
+    }
+
     render() {
+        
         const event = this.context.events[0]
+
+        console.log(event)
 
         return (
             <main>
@@ -43,7 +57,7 @@ class Spotlight extends React.Component {
 
                     <h2 className="news-text">Need the scoop on the latest?</h2>
                     <div className="home-container">
-                        <NavLink to="/about" className="home-event-button2 center">News >></NavLink>
+                        <NavLink to="/news" className="home-event-button2 center">News >></NavLink>
                     </div>
                 </div>
                 <div className="parallax">

@@ -24,7 +24,7 @@ class EventOverlay extends React.Component {
         let artists = this.props.event.artists;
 
         if(this.props.event.artists.length > 50) {
-            artists = this.props.event.artists.split(' ')
+            artists = this.props.event.artists.split(', ')
 
             let length = 0;
             let i = 0;
@@ -33,7 +33,7 @@ class EventOverlay extends React.Component {
                 i++;
             }
 
-            artists = artists.slice(0, i).join(' ') + '...'
+            artists = artists.slice(0, i).join(', ') + '...'
         }
 
         const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
