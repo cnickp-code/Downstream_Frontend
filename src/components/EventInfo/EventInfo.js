@@ -59,6 +59,11 @@ class EventInfo extends React.Component {
         //     .catch(this.context.setError)
     }
 
+    handleShowCoverImage = () => {
+        this.context.toggleCoverImage();
+        this.context.hideEventInfo();
+    }
+
     render() {
         const startDate = this.context.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
         const endDate = this.context.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
@@ -74,7 +79,7 @@ class EventInfo extends React.Component {
                     <h3 className=" center">Dates:</h3>
                         <div className="cover-list center">{startDate} to {endDate}</div>
                     <img src={this.context.event.image_url}
-                        className="cover-event-image center" alt="cover" />
+                        className="cover-event-image center" alt="cover" onClick={this.handleShowCoverImage}/>
                     <div className="cover-event-info center">
                         {this.context.event.description}
                         <h3 className="cover-inner-title">Artists:</h3>

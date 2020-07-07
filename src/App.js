@@ -16,10 +16,19 @@ class App extends React.Component {
       schedule: [],
       showAdd: false,
       showEventInfo: false,
+      showCoverImage: false,
       showMobileSearch: false,
       event: {},
       error: null
     }
+  }
+
+  toggleCoverImage = () => {
+    console.log('toggle cover image reached')
+    const showCoverImage = !this.state.showCoverImage
+    this.setState({
+      showCoverImage
+    })
   }
 
   addScheduleItem = (item) => {
@@ -247,6 +256,8 @@ class App extends React.Component {
       event: this.state.event,
       showEventInfo: this.state.showEventInfo,
       showMobileSearch: this.state.showMobileSearch,
+      showCoverImage: this.state.showCoverImage,
+      toggleCoverImage: this.toggleCoverImage,
       setEventInfo: this.setEventInfo,
       hideEventInfo: this.hideEventInfo,
       setSchedule: this.setSchedule,
@@ -263,7 +274,7 @@ class App extends React.Component {
       setSearchEvents: this.setSearchEvents
     }
 
-
+    console.log(this.state.showCoverImage)
 
 
     return (

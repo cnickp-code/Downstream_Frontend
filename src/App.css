@@ -66,7 +66,7 @@ main {
 
 footer {
   position: absolute;
-  bottom: -58px;
+  bottom: -68px;
   width: 100vw;
   /* border-top: 1px solid rgb(255, 255, 255); */
   /* width: 90%; */
@@ -182,6 +182,15 @@ footer {
 }
 
 /* General Stuff */
+
+.artist {
+  background-color: rgb(255, 231, 19);
+  color: rgb(92, 92, 92);
+}
+
+.xs-text {
+  font-size: x-small;
+}
 
 .info {
   color: black;
@@ -330,13 +339,13 @@ button:active {
 
 .popularity-container {
   position: absolute;
-  right: -5px;
-  top: 20px;
+  right: 15px;
+  top: 30px;
 }
 
 .event-head-text {
   width: 85%;
-
+  text-align: left;
 }
 
 .home-scroll-container {
@@ -509,10 +518,10 @@ button:active {
 }
 
 .cover-event-image {
-  width: 80%;
   height: 40%;
   max-width: 500px;
   max-height: 375px;
+  z-index: 1100;
 }
 
 .cover-event-info {
@@ -1058,10 +1067,10 @@ button:active {
     text-align: left;
   }
 
-  .info-artists {
+  /* .info-artists {
     position: relative;
     top: 15%;
-  }
+  } */
   
   .misc-info-container {
     width: 100%;
@@ -1072,17 +1081,7 @@ button:active {
     padding-bottom: 5px;
   }
 
-.event-container {
-  width: 70%;
-  max-width: 400px;
-  height: 300px;
-  min-height: fit-content;
-  padding-top: 20px;
-  padding-bottom: 60px;
-  position: relative;
-  margin: 40px auto 70px auto;
-  /* border-top: 1px solid black; */
-}
+
 
 .spot-event-container {
   width: 70%;
@@ -1108,8 +1107,28 @@ button:active {
   
 }
 
+.event-time {
+  text-align: left;
+}
+
+.event-container {
+  width: 70%;
+  max-width: 500px;
+  /* height: 300px; */
+  min-height: fit-content;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  padding-left: 20px;
+  background-color: rgb(2, 105, 146);
+  position: relative;
+
+  border-bottom: 1px solid white;
+  /* margin: 40px auto 70px auto; */
+  /* border-top: 1px solid black; */
+}
+
 .event-image {
-  width: 100%;
+  width: 50%;
   height: 100%;
   max-width: 610px;
   max-height: 400px;
@@ -1117,6 +1136,23 @@ button:active {
   -moz-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   cursor: pointer;
+}
+
+.event-inner-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.event-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  text-align: left;
 }
 
 .info-overlay-image {
@@ -1189,7 +1225,7 @@ button:active {
   position: relative;
   -ms-overflow-style: none;  
   scrollbar-width: none;  
-  
+  background-color: rgb(2, 105, 146);
 }
 
 .bottom-container::-webkit-scrollbar {
@@ -1546,8 +1582,9 @@ button:active {
   }
 
   .event-container {
-      height: 330px;
+      /* height: 330px; */
       padding-bottom: 30px;
+      border-bottom: 1px solid white;
   }
 
 
@@ -1579,6 +1616,7 @@ button:active {
 
 
   .event-head-text {
+    
     width: 85%;
     font-size: 1.65rem;
   }
@@ -2099,11 +2137,13 @@ button:active {
   
   .event-container {
       display: block;
-      padding-top: 10px;
-      width: 80%;
-      height: 310px;
+      padding: 15px;
+      width: 100%;
+      /* height: 310px; */
       position: relative;
-      margin: 10px auto 20px auto;
+      /* margin: 10px auto 20px auto; */
+      border: none;
+      border-bottom: 1px solid white;
       
   }
 
@@ -2115,11 +2155,12 @@ button:active {
   }
 
   .event-time {
+    text-align: left;
     font-size: x-small;
   }
   
   .event-image {
-      width: 100%;
+      width: 50%;
       height: 200px;
   }
 
@@ -2148,10 +2189,10 @@ button:active {
     padding-bottom: 10px;
   }
 
-  .info-artists {
+  /* .info-artists {
     position: relative;
     top: 0;
-  }
+  } */
   
   .misc-info-container {
     width: 100%;

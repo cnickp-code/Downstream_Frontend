@@ -14,9 +14,10 @@ class Event extends React.Component {
     }
 
     handleSetEventInfo = () => {
-        this.setState({
-            showOverlayInfo: true
-        })
+        // this.setState({
+        //     showOverlayInfo: true
+        // })
+        this.context.setEventInfo(this.props.event)
     }
 
     handleHideEventInfo = () => {
@@ -45,6 +46,49 @@ class Event extends React.Component {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`
         }
 
+        let description = this.props.event.description;
+        if(this.props.event.description.length > 50) {
+            description = this.props.event.description.split(' ')
+
+            let length = 0;
+            let i = 0;
+            while(length < 60 && description[i] !== undefined) {
+                length += description[i].length;
+                i++;
+            }
+
+            if(description[i] === undefined) {
+                description = description.slice(0, i).join(' ')
+            } else {
+                description = description.slice(0, i).join(' ') + '...'
+            }
+            
+        }
+
+        let artists = this.props.event.artists;
+
+        artists = artists.split(', ').map(artist => {
+            return <div className="artist">{artist}</div>
+        }).join(', ')
+
+        if(this.props.event.artists.length > 50) {
+            artists = this.props.event.artists.split(', ')
+
+            let length = 0;
+            let i = 0;
+            while(length < 50) {
+                length += artists[i].length;
+                i++;
+            }
+
+            artists = artists.slice(0, i).join(', ') + '...'
+        }
+
+        const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
+        const endDate = this.props.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
+
+
+
         // const info =
         //     <div className="info-container" onClick={this.handleSetEventInfo}>
         //         <div className="info-details">
@@ -69,26 +113,40 @@ class Event extends React.Component {
                     ? exit
                     : info} */}
 
+                <h3 className="event-head-text">{this.props.event.name}</h3>
+                <p className="event-time">{timeString}</p>
 
-                <h3 className="popularity-container"> <i className="fas fa-tint"></i>  {this.props.event.event_popularity}</h3>
 
-                <h3 className="center-text center event-head-text">{this.props.event.name}</h3>
-                <p className="event-time center">{timeString}</p>
+
                 <h3 className="center"></h3>
 
+                <div className="event-inner-container">
+                    <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>   
+                    <div className="event-right-container">
+                    
+                    
+                        {/* <div>{description}</div> */}
+                        <div className="info-artists">
+                            <h4>Artists:</h4>
+                            {artists}
+                        </div>
+                        <hr />
+                        <h3> <i className="fas fa-tint"></i>  {this.props.event.event_popularity} dropping in.</h3>
+                        <EventButtons event={this.props.event} showInfo={this.state.showOverlayInfo} />
+                    </div>
+                </div>
 
-
-                {this.state.showOverlayInfo
+                {/* {this.state.showOverlayInfo
                     ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>
                     : <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>}
 
-
+{this.state.showOverlayInfo && <EventButtons event={this.props.event} showInfo={this.state.showOverlayInfo} /> } */}
 
                 {/* {this.state.showEventInfo 
                     ? <EventButtons />
                     : } */}
 
-                {this.state.showOverlayInfo && <EventButtons event={this.props.event} showInfo={this.state.showOverlayInfo} /> }
+                
 
 
             </div>

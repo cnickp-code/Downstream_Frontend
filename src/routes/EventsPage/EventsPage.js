@@ -7,6 +7,7 @@ import EventList from '../../components/EventList/EventList'
 import DSContext from '../../contexts/DSContext'
 import EventInfo from '../../components/EventInfo/EventInfo'
 import MobileSearch from '../../components/MobileSearch/MobileSearch'
+import EventCoverImage from '../../components/EventCoverImage/EventCoverImage'
 
 class EventsPage extends React.Component {
     static contextType = DSContext
@@ -26,6 +27,7 @@ class EventsPage extends React.Component {
                     </div>
                     {this.context.showEventInfo && <EventInfo />}
                     {this.context.showMobileSearch && <MobileSearch />}
+                    {this.context.showCoverImage && <EventCoverImage />}
                 </main>
                 <Footer />
             </>
