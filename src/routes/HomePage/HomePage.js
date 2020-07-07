@@ -8,19 +8,6 @@ import DSContext from '../../contexts/DSContext'
 class HomePage extends React.Component {
     static contextType = DSContext
 
-    componentDidMount() {
-        DownstreamApiService.getEvents()
-          .then(events => {
-            this.context.setEvents(events)
-          })
-          .catch(this.context.setError)
-    
-        DownstreamApiService.getSchedule()
-          .then(items => {
-            this.context.setSchedule(items)
-          })
-          .catch(this.context.setError)
-      }
     render() {
         return (
             <>

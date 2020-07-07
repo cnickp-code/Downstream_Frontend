@@ -34,29 +34,12 @@ class EventInfo extends React.Component {
             event_id: eventId
         }
 
-
-
-
         DownstreamApiService.postScheduleItem(newRawScheduleItem)
             .then(item => {
                 this.context.addScheduleItem(item)
                 this.context.hideEventInfo()
             })
             .catch(this.context.setError)
-
-        // DownstreamApiService.getSchedule()
-        //     .then(sched => {
-        //         console.log(`sched item: ${sched}`)
-        //         this.context.setSchedule(sched)
-        //     })
-        //     .catch(this.context.setError)
-
-        // DownstreamApiService.getEvents()
-        //     .then(events => {
-        //         console.log(`events: ${events}`)
-        //         this.context.setEvents(events)
-        //     })
-        //     .catch(this.context.setError)
     }
 
     handleShowCoverImage = () => {

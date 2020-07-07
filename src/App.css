@@ -581,21 +581,13 @@ button:active {
 }
 
 .cover-exit {
-  position: absolute;
-  right: 15px;
-  top: 5px;
+  position: fixed;
+  right: 10%;
+  top: 10%;
   font-size: 30px;
   cursor: pointer;
   text-decoration: none;
-  /* background-color: rgb(2, 138, 192); */
 }
-
-/* .cover-exit:before {
-  content: "X";
-  text-decoration: none;
-  color: #F7F9Fb;
-  background-color: rgb(2, 138, 192);
-} */
 
 /* Splash Screen Styles */
 
