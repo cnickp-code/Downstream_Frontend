@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom'
 import DSContext from '../../contexts/DSContext'
 import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent'
 import DownstreamApiService from '../../services/downstream-api-service';
+import EventInfo from '../EventInfo/EventInfo';
+import EventCoverImage from '../EventCoverImage/EventCoverImage'
 
 class Spotlight extends React.Component {
     static contextType = DSContext
 
     componentDidMount() {
-        console.log('hello')
         DownstreamApiService.getEvents()
           .then(events => {
               console.log('added events')
@@ -21,14 +22,14 @@ class Spotlight extends React.Component {
         
         const event = this.context.events[0]
 
-        console.log(event)
-
         return (
             <main>
+                {this.context.showEventInfo && <EventInfo />}
+                {this.context.showCoverImage && <EventCoverImage />}
                 <h1 className="spotlight-header">Spotlight</h1>
                 <div className="spotlight-container">
                     <SpotlightEvent event={event} />
-                    {/* <p className="center center-text">Click the flyer for more info!</p> */}
+                    <p className="center center-text">Click the flyer for more info!</p>
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>

@@ -1,26 +1,13 @@
 import React from 'react'
 import Spotlight from '../Spotlight/Spotlight';
 import EventOverlay from '../EventOverlay/EventOverlay';
-
+import DSContext from '../../contexts/DSContext'
 
 class SpotlightEvent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showOverlayInfo: false
-        }
-    }
+    static contextType = DSContext
 
     handleSetEventInfo = () => {
-        this.setState({
-            showOverlayInfo: true
-        })
-    }
-
-    handleHideEventInfo = () => {
-        this.setState({
-            showOverlayInfo: false
-        })
+        this.context.setEventInfo(this.props.event)
     }
 
     componentDidMount() {

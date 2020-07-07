@@ -367,7 +367,7 @@ button:active {
 }
 
 .home-scroll-container {
-  height: 100vh;
+  height: 102vh;
   overflow-y: scroll;
 }
 
