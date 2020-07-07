@@ -15,7 +15,11 @@ class ScheduleEventList extends React.Component {
     }
     render() {
         
-        const scheduleList = this.context.schedule.map(event => {
+        const scheduleList = this.context.schedule.sort((a, b) => {
+            let firstStartDate = new Date(a.start_date)
+            let secondStartDate = new Date(b.start_date)
+            return firstStartDate - secondStartDate
+        }).map(event => {
             return <ScheduleEvent key={event.id} event={event} />
         })
 
@@ -35,7 +39,7 @@ class ScheduleEventList extends React.Component {
         return (
             <div className="myevents-content-container">
                 <h1 className="events-header">My Schedule</h1>
-                <div className="bottom-container">
+                <div className="bottom-schedule-container">
                 {scheduleList}
 
                 </div>

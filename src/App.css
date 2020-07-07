@@ -192,6 +192,14 @@ footer {
   font-size: x-small;
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
 .info {
   color: black;
 }
@@ -234,9 +242,19 @@ footer {
   margin-left: 20px;
 }
 
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin {
+  margin: 10px;
+}
+
 .trash {
   color: red;
 }
+
+
 
 /* .info {
   color: blue;
@@ -522,6 +540,10 @@ button:active {
   max-width: 500px;
   max-height: 375px;
   z-index: 1100;
+}
+
+.cover-full-image {
+  height: 100%;
 }
 
 .cover-event-info {
@@ -1085,8 +1107,8 @@ button:active {
 
 .spot-event-container {
   width: 70%;
-  max-width: 610px;
-  height: 400px;
+  max-width: 400px;
+  height: 550px;
   min-height: fit-content;
   padding-top: 20px;
   padding-bottom: 60px;
@@ -1098,8 +1120,8 @@ button:active {
 .spotlight-event-image {
   width: 100%;
   height: 100%;
-  max-width: 610px;
-  max-height: 400px;
+  max-width: 400px;
+  max-height: 550px;
   -webkit-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   -moz-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
@@ -1122,7 +1144,7 @@ button:active {
   background-color: rgb(2, 105, 146);
   position: relative;
 
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
   /* margin: 40px auto 70px auto; */
   /* border-top: 1px solid black; */
 }
@@ -1219,6 +1241,16 @@ button:active {
 }
 
 .bottom-container {
+  overflow-y: scroll;
+  overflow-x: none;
+  height: calc(100% + 58px);
+  position: relative;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  background-color: rgb(2, 105, 146);
+}
+
+.bottom-schedule-container {
   overflow-y: scroll;
   overflow-x: none;
   height: calc(100% + 58px);
@@ -1881,7 +1913,7 @@ button:active {
   .spot-event-container {
     width: 70%;
     max-width: 310px;
-    height: 230px;
+    height: 390px;
     min-height: fit-content;
     padding-top: 20px;
     padding-bottom: 60px;
@@ -1891,10 +1923,8 @@ button:active {
   }
   
   .spotlight-event-image {
-    width: 100%;
-    height: 100%;
-    max-width: 610px;
-    max-height: 400px;
+    max-width: 400px;
+    max-height: 600px;
     -webkit-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
     -moz-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
     box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
@@ -1967,7 +1997,7 @@ button:active {
     display: flex;
     position: fixed;
     height: 35px;
-    bottom: 75px;
+    bottom: 105px;
     right: 20px;
     z-index: 999;
     border-radius: 25px;
@@ -1982,7 +2012,7 @@ button:active {
   .fab-container {
       display: flex;
       position: fixed;
-      bottom: 65px;
+      bottom: 105px;
       right: 10px;
       z-index: 999;
       border-radius: 25px;
@@ -2061,10 +2091,16 @@ button:active {
   }
   
   .cover-event-image {
-      width: 90%;
-      height: 175px;
+      /* width: 90%;
+      height: 175px; */
+      height: 40%;
+      z-index: 1100;
   }
-  
+
+  .cover-full-image {
+    width: 100%;
+    height: 70%;
+  }
   .cover-event-info {
       margin-top: 10px;
       margin-bottom: 10px;
@@ -2143,7 +2179,7 @@ button:active {
       position: relative;
       /* margin: 10px auto 20px auto; */
       border: none;
-      border-bottom: 1px solid white;
+      /* border-bottom: 1px solid white; */
       
   }
 
@@ -2376,7 +2412,7 @@ button:active {
 }
 @media screen and (min-height: 700px) {
   .fab-container {
-      bottom: 75px;
+      bottom: 105px;
 
   }
 }
@@ -2391,18 +2427,38 @@ button:active {
 
 @media screen and (min-width: 760px) {
   .bottom-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-flow: row wrap;
-    align-items: flex-start; */
-    justify-content: space-between; 
-    transition: 0.3s ease;
+
     overflow-y: scroll;
     overflow-x: hidden;
     height: calc(100% + 58px);
     position: relative;
     -ms-overflow-style: none;  
     scrollbar-width: none;  
+  }
+  .bottom-date-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between; 
+    transition: 0.3s ease;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .bottom-schedule-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100% + 58px);
+    position: relative;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    background-color: rgb(2, 105, 146);
   }
 }
 

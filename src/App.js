@@ -158,8 +158,13 @@ class App extends React.Component {
       .catch(this.setError)
   }
 
+  setSortedEvents = (events) => {
+    this.setState({
+      events
+    })
+  }
+
   setEvents = (events) => {
-    console.log('set events')
     const currentDate = new Date();
     const clientEvents = events.map(event => {
       let pastObj = { past: false }
@@ -271,10 +276,11 @@ class App extends React.Component {
       setShowMobileSearch: this.setShowMobileSearch,
       hideMobileSearch: this.hideMobileSearch,
       setSearchTerm: this.setSearchTerm,
-      setSearchEvents: this.setSearchEvents
+      setSearchEvents: this.setSearchEvents,
+      setSortedEvents: this.setSortedEvents
     }
 
-    console.log(this.state.showCoverImage)
+    console.log(this.state.schedule)
 
 
     return (

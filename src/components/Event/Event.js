@@ -46,30 +46,30 @@ class Event extends React.Component {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`
         }
 
-        let description = this.props.event.description;
-        if(this.props.event.description.length > 50) {
-            description = this.props.event.description.split(' ')
+        // let description = this.props.event.description;
+        // if(this.props.event.description.length > 50) {
+        //     description = this.props.event.description.split(' ')
 
-            let length = 0;
-            let i = 0;
-            while(length < 60 && description[i] !== undefined) {
-                length += description[i].length;
-                i++;
-            }
+        //     let length = 0;
+        //     let i = 0;
+        //     while(length < 60 && description[i] !== undefined) {
+        //         length += description[i].length;
+        //         i++;
+        //     }
 
-            if(description[i] === undefined) {
-                description = description.slice(0, i).join(' ')
-            } else {
-                description = description.slice(0, i).join(' ') + '...'
-            }
+        //     if(description[i] === undefined) {
+        //         description = description.slice(0, i).join(' ')
+        //     } else {
+        //         description = description.slice(0, i).join(' ') + '...'
+        //     }
             
-        }
+        // }
 
         let artists = this.props.event.artists;
 
-        artists = artists.split(', ').map(artist => {
-            return <div className="artist">{artist}</div>
-        }).join(', ')
+        // artists = artists.split(', ').map(artist => {
+        //     return <div className="artist">{artist}</div>
+        // }).join(', ')
 
         if(this.props.event.artists.length > 50) {
             artists = this.props.event.artists.split(', ')

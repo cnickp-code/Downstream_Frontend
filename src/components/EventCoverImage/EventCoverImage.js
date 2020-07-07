@@ -17,7 +17,7 @@ class EventCoverImage extends React.Component {
                         <i className="far fa-times-circle"></i>
                     </div>
                     <img src={this.context.event.image_url}
-                        className="cover-event-image center" alt="cover" />
+                        className="cover-full-image center" alt="cover" />
                 </div>
             </div>
         )

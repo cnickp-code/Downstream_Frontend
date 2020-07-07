@@ -55,8 +55,8 @@ class SpotlightEvent extends React.Component {
 
         return (
             <div className="spot-event-container">
-                <h3 className="center-text event-head-text">{this.props.event.name}   <i className="fas fa-tint margin-left"></i>  {this.props.event.event_popularity}</h3>
-                <p className="event-time center">{timeString}</p>
+                {/* <h3 className="center-text event-head-text">{this.props.event.name}   <i className="fas fa-tint margin-left"></i>  {this.props.event.event_popularity}</h3>
+                <p className="event-time center">{timeString}</p> */}
                 <h3 className="center"></h3> 
                 <img src={this.props.event.image_url} className="spotlight-event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>
                 {/* {this.state.showOverlayInfo
