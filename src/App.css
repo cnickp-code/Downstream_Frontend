@@ -992,7 +992,16 @@ button:active {
   z-index: 999;
   border-radius: 20px;
   box-shadow: 4px 3px 11px 0px rgba(0,0,0,0.75);
-  left: 300px;
+  left: 10px;
+  top: 200px;
+}
+
+.sidebar-fab-container-open {
+  position: absolute;
+  z-index: 999;
+  border-radius: 20px;
+  box-shadow: 4px 3px 11px 0px rgba(0,0,0,0.75);
+  left: 21%;
   top: 200px;
 }
 
@@ -2369,6 +2378,14 @@ button:active {
   .dot-container {
       margin-bottom: 20px;
   }
+
+  .sidebar-fab-container {
+    display: none;
+  }
+  
+  .sidebar-fab-container-open {
+    display: none;
+  }
   
   .sidebar {
       display: none;
@@ -2421,8 +2438,6 @@ button:active {
   .cover-container {
       overflow: scroll;
   }
-
-
 }
 
 @media screen and (min-width: 760px) {
@@ -2440,7 +2455,7 @@ button:active {
     /* flex-wrap: wrap; */
     flex-flow: row wrap;
     align-items: flex-start;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     transition: 0.3s ease;
     width: 100%;
     height: fit-content;
@@ -2451,7 +2466,7 @@ button:active {
     /* flex-wrap: wrap; */
     flex-flow: row wrap;
     align-items: flex-start;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     overflow-y: scroll;
     overflow-x: hidden;
     height: calc(100% + 58px);

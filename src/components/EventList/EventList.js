@@ -6,6 +6,10 @@ import DownstreamApiService from '../../services/downstream-api-service'
 class EventList extends React.Component {
     static contextType = DSContext;
 
+    handleToggleSideBar = () => {
+        this.context.toggleSideBar();
+    }
+
     componentDidMount() {
         DownstreamApiService.getEvents()
             .then(events => {
@@ -53,51 +57,71 @@ class EventList extends React.Component {
         eventsToday = eventsToday.sort((a, b) => {
             let firstStartDate = new Date(a.start_date)
             let secondStartDate = new Date(b.start_date)
-            return secondStartDate- firstStartDate
+            return secondStartDate - firstStartDate
         }).map(event => {
             return <Event key={event.id} event={event} />
         })
         eventsInAWeek = eventsInAWeek.sort((a, b) => {
             let firstStartDate = new Date(a.start_date)
             let secondStartDate = new Date(b.start_date)
-            return secondStartDate- firstStartDate
+            return secondStartDate - firstStartDate
         }).map(event => {
             return <Event key={event.id} event={event} />
         })
         eventsFuture = eventsFuture.sort((a, b) => {
             let firstStartDate = new Date(a.start_date)
             let secondStartDate = new Date(b.start_date)
-            return secondStartDate- firstStartDate
+            return secondStartDate - firstStartDate
         }).map(event => {
             return <Event key={event.id} event={event} />
         })
         pastEvents = pastEvents.sort((a, b) => {
             let firstStartDate = new Date(a.start_date)
             let secondStartDate = new Date(b.start_date)
-            return secondStartDate- firstStartDate
+            return secondStartDate - firstStartDate
         }).map(event => {
             return <Event key={event.id} event={event} />
         })
 
-        if(eventsToday.length === 0) {
+        if (eventsToday.length === 0) {
             eventsToday = <p className="align-center center margin-bottom">No Events Today</p>
         }
-        if(eventsInAWeek.length === 0) {
+        if (eventsInAWeek.length === 0) {
             eventsInAWeek = <p className="align-center center margin-bottom">No Events This Week</p>
         }
-        if(eventsFuture.length === 0) {
+        if (eventsFuture.length === 0) {
             eventsFuture = <p className="align-center center margin-bottom">No Events To Display</p>
         }
-        if(pastEvents.length === 0) {
+        if (pastEvents.length === 0) {
             pastEvents = <p className="align-center center margin-bottom">No Events To Display</p>
         }
 
+        let sideBarFab
 
+        if (this.context.showSideBar) {
+            sideBarFab = 
+                <div className="sidebar-fab-container-open" onClick={this.handleToggleSideBar}>
+                    <div className="sidebar-fab">
+                        <i className="fas fa-search"></i>
+                    </div>
+                </div>
+        } else {
+            sideBarFab = 
+                <div className="sidebar-fab-container" onClick={this.handleToggleSideBar}>
+                    <div className="sidebar-fab">
+                        <i className="fas fa-search"></i>
+                    </div>
+                </div>
+        }
 
+        console.log(this.context.showPastEvents)
         return (
 
             <div className="myevents-content-container">
-                <h1 className="events-header">Events</h1>
+                <h1 className="events-header">
+                    {sideBarFab}
+                    Events
+                </h1>
                 <div className="bottom-container">
                     <h2 className="margin">Events Today:</h2>
                     <div class="bottom-date-container">
@@ -114,11 +138,17 @@ class EventList extends React.Component {
                         {eventsFuture}
                     </div>
                     <hr />
-                    <h2 className="margin">Past Events:</h2>
-                    <div class="bottom-date-container">
-                        {pastEvents}
-                    </div>
-                    <hr />
+
+                    {this.context.showPastEvents && 
+                    <>
+                        <h2 className="margin">Past Events:</h2>
+                        <div class="bottom-date-container">
+                            {pastEvents}
+                        </div>
+                        <hr />
+                    </>}
+
+                    
                 </div>
             </div>
         )

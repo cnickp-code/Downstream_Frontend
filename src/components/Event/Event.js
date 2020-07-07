@@ -127,7 +127,7 @@ class Event extends React.Component {
                     
                         {/* <div>{description}</div> */}
                         <div className="info-artists">
-                            <h4>Artists:</h4>
+                            <h4>Artist(s):</h4>
                             {artists}
                         </div>
                         <hr />

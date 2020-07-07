@@ -17,14 +17,32 @@ class App extends React.Component {
       showAdd: false,
       showEventInfo: false,
       showCoverImage: false,
+      showSideBar: false,
       showMobileSearch: false,
+      showPastEvents: true,
       event: {},
       error: null
     }
   }
 
+  resetToDefault = () => {
+    this.setState({
+      showAdd: false,
+      showEventInfo: false,
+      showCoverImage: false,
+      showSideBar: false,
+      showMobileSearch: false,
+      showPastEvents: true,
+    })
+  }
+
+  toggleShowPastEvents = (pastBool) => {
+    this.setState({
+      showPastEvents: pastBool
+    })
+  }
+
   toggleCoverImage = () => {
-    console.log('toggle cover image reached')
     const showCoverImage = !this.state.showCoverImage
     this.setState({
       showCoverImage
@@ -235,6 +253,13 @@ class App extends React.Component {
     })
   }
 
+  toggleSideBar = () => {
+    const sideBarState = !this.state.showSideBar
+    this.setState({
+      showSideBar: sideBarState
+    })
+  }
+
   componentDidMount() {
     DownstreamApiService.getEvents()
       .then(events => {
@@ -262,6 +287,8 @@ class App extends React.Component {
       showEventInfo: this.state.showEventInfo,
       showMobileSearch: this.state.showMobileSearch,
       showCoverImage: this.state.showCoverImage,
+      showSideBar: this.state.showSideBar,
+      showPastEvents: this.state.showPastEvents,
       toggleCoverImage: this.toggleCoverImage,
       setEventInfo: this.setEventInfo,
       hideEventInfo: this.hideEventInfo,
@@ -277,10 +304,11 @@ class App extends React.Component {
       hideMobileSearch: this.hideMobileSearch,
       setSearchTerm: this.setSearchTerm,
       setSearchEvents: this.setSearchEvents,
-      setSortedEvents: this.setSortedEvents
+      setSortedEvents: this.setSortedEvents,
+      toggleSideBar: this.toggleSideBar,
+      resetToDefault: this.resetToDefault,
+      toggleShowPastEvents: this.toggleShowPastEvents
     }
-
-    console.log(this.state.schedule)
 
 
     return (

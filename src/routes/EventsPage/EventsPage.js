@@ -11,6 +11,7 @@ import EventCoverImage from '../../components/EventCoverImage/EventCoverImage'
 
 class EventsPage extends React.Component {
     static contextType = DSContext
+    
 
     render() {
         return (
@@ -22,7 +23,7 @@ class EventsPage extends React.Component {
                     <Fab />
                     
                     <div className="main-container">
-                        <Sidebar />
+                        {this.context.showSideBar && <Sidebar />}
                         <EventList />
                     </div>
                     {this.context.showEventInfo && <EventInfo />}

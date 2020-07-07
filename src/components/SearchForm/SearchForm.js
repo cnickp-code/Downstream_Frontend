@@ -31,8 +31,14 @@ class SearchForm extends React.Component {
 
         let currentDate = new Date();
 
-        this.context.setSearchTerm(searchTerm)
+        this.context.setSearchTerm(searchTerm);
         this.context.setSearchEvents();
+    }
+
+    handlePastEvents = () => {
+        const pastBool = this.pastEvents.current.value;
+
+        this.context.toggleShowPastEvents(pastBool)
     }
 
     componentDidMount() {
@@ -44,6 +50,13 @@ class SearchForm extends React.Component {
         return (
             <form id="event-search-form">
                 <input type="text" placeholder="Search" className="event-search-input" id="search-input" onChange={event => this.handleSearch(event)} ref={this.searchTerm}/>
+
+                {/* <label htmlFor="past" className="margin-top">Show Past Events?</label>
+                <select name="past" id="past" defaultValue="true" className="event-select" onChange={this.handlePastEvents} ref={this.pastEvents}>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select> */}
+                
                 {/* <br />
                     <p>Time Frame:</p>
                     <div className="date-inner-container">
@@ -57,11 +70,7 @@ class SearchForm extends React.Component {
                         </select>
                     </div>
 
-                <p className="margin-top">Show Past Events?</p>
-                <select name="past" id="past" className="event-select" onChange={event => this.handleSearch(event)} ref={this.pastEvents}>
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-                </select>
+
                 <label htmlFor="genre" className="margin-top">Filter by genre:</label>
                 <div className="genre-container">
                     <div className="genre-container-left">

@@ -21,7 +21,7 @@ class SchedulePage extends React.Component {
                 <main>
                     <Fab />
                     <div className="main-container">
-                        <Sidebar />
+                        {this.context.showSideBar && <Sidebar />}
                         <ScheduleEventList />
                     </div>
                     {this.context.showEventInfo && <EventInfo />}

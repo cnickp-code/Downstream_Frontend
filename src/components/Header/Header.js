@@ -1,8 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import TokenService from '../../services/token-service'
+import DSContext from '../../contexts/DSContext'
 
 class Header extends React.Component {
+    static contextType = DSContext
+
+    handleResetToDefault = () => {
+        this.context.resetToDefault();
+    }
+
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         // this.props.history.push('/home')
@@ -14,8 +21,8 @@ class Header extends React.Component {
                 <nav className="main-nav">
                     <ul className="nav-list">
                         <li><NavLink to='/news' className="nav-link">News</NavLink></li>
-                        <li><NavLink to="/events" className="nav-link">Events</NavLink></li>
-                        <li><NavLink to="/signup" className="nav-link">My Schedule</NavLink></li>
+                        <li><NavLink to="/events" className="nav-link" onClick={this.handleResetToDefault}>Events</NavLink></li>
+                        <li><NavLink to="/signup" className="nav-link" onClick={this.handleResetToDefault}>My Schedule</NavLink></li>
                     </ul>
                     <ul className="nav-list">
                         <li><NavLink to="/login" className="nav-link">Login</NavLink></li>
@@ -33,8 +40,8 @@ class Header extends React.Component {
 
                         <ul id="menu">
                             <NavLink to="/news"><li>News</li></NavLink>
-                            <NavLink to="/events"><li>Events</li></NavLink>
-                            <NavLink to="/signup"><li>My Schedule</li></NavLink>
+                            <NavLink to="/events" onClick={this.handleResetToDefault}><li>Events</li></NavLink>
+                            <NavLink to="/signup" onClick={this.handleResetToDefault}><li>My Schedule</li></NavLink>
                             <NavLink to="/login"><li>Login</li></NavLink>
                             <NavLink to="/signup"><li>Sign Up</li></NavLink>
                         </ul>
