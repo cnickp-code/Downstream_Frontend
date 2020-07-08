@@ -1,18 +1,17 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import DSContext from '../../contexts/DSContext'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import TokenService from '../../services/token-service';
+import DSContext from '../../contexts/DSContext';
 
 class Header extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     handleResetToDefault = () => {
         this.context.resetToDefault();
     }
 
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
-        // this.props.history.push('/home')
+        TokenService.clearAuthToken();
     }
 
     renderPublicNav() {

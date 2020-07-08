@@ -1,12 +1,12 @@
-import React from 'react'
-import SearchForm from '../SearchForm/SearchForm'
-import DSContext from '../../contexts/DSContext'
+import React from 'react';
+import SearchForm from '../SearchForm/SearchForm';
+import DSContext from '../../contexts/DSContext';
 
 class MobileSearch extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     handleHideSearch = () => {
-        this.context.hideMobileSearch()
+        this.context.hideMobileSearch();
     }
 
     render() {

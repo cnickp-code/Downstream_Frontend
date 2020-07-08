@@ -1,5 +1,5 @@
-import React from 'react'
-import SearchForm from '../SearchForm/SearchForm'
+import React from 'react';
+import SearchForm from '../SearchForm/SearchForm';
 
 
 class Sidebar extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TwitterTweetEmbed} from 'react-twitter-embed'
+import { TwitterTweetEmbed} from 'react-twitter-embed';
 
 class News extends React.Component {
     render() {

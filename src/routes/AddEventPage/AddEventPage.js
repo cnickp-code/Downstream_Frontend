@@ -1,14 +1,14 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import AddEvent from '../../components/AddEvent/AddEvent'
+import React from 'react';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import AddEvent from '../../components/AddEvent/AddEvent';
 
 class AddEventPage extends React.Component {
 
     handleAddSuccess = () => {
-        const { location, history } = this.props
-        const destination = (location.state || {}).from || '/home'
-        history.push(destination)
+        const { location, history } = this.props;
+        const destination = (location.state || {}).from || '/home';
+        history.push(destination);
     }
 
     render() {

@@ -1,18 +1,18 @@
 import React from 'react'
-import TokenService from '../../services/token-service'
-import AuthApiService from '../../services/auth-api-service'
-import { NavLink } from 'react-router-dom'
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
+import { NavLink } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             error: null,
         }
     }
 
     handleSubmit = event => {
-        event.preventDefault()
+        event.preventDefault();
         this.setState({
             error: null,
         })
@@ -24,10 +24,10 @@ class Login extends React.Component {
             password: password.value
         })
             .then(res => {
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
+                user_name.value = '';
+                password.value = '';
+                TokenService.saveAuthToken(res.authToken);
+                this.props.onLoginSuccess();
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -36,7 +36,8 @@ class Login extends React.Component {
     }
 
     render() {
-        const { error } = this.state
+        const { error } = this.state;
+
         return (
             <div className="form-box-ls center">
                 <form className="main-form" onSubmit={this.handleSubmit}>

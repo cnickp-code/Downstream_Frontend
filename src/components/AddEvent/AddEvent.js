@@ -59,19 +59,19 @@ class AddEvent extends React.Component {
         if (eventStartDate > eventEndDate) {
             this.setState({
                 error: "Start date/time must be before end date/time."
-            })
+            });
         } else if (eventStartDate < currentDate || eventEndDate < currentDate) {
             this.setState({
                 error: "Start/end date must be on or after today."
-            })
+            });
         } else if (eventGenre === "") {
             this.setState({
                 error: "Please choose a genre."
-            })
+            });
         } else if (eventPlatform === "") {
             this.setState({
                 error: "Please choose a primary platform."
-            })
+            });
         } else {
             const newEvent = {
                 name: eventName,
@@ -84,20 +84,15 @@ class AddEvent extends React.Component {
                 end_date: eventEndDate.toLocaleDateString(),
                 description: eventDescription,
                 artists: eventArtists
-            }
+            };
 
             DownstreamApiService.postEvent(newEvent)
                 .then(res => {
-                    this.context.addEvent(res)
-                    this.props.onAddSuccess()
-                    this.props.history.push('/home')
+                    this.context.addEvent(res);
+                    this.props.onAddSuccess();
+                    this.props.history.push('/home');
                 })
                 .catch(this.context.setError)
-
-                // console.log(this.props)
-            // const { location, history } = this.props
-            // const destination = (location.state || {}).from || '/home'
-            // history.push(destination)
         }
 
 
@@ -106,9 +101,6 @@ class AddEvent extends React.Component {
     }
 
     render() {
-
-        // Add conditional rendering of date select menus and genres
-
         return (
 
             <div className="form-box center">

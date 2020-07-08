@@ -1,10 +1,10 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import AuthApiService from '../../services/auth-api-service'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import AuthApiService from '../../services/auth-api-service';
 
 class Signup extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.password = React.createRef();
         this.state = { 
             error: null,
@@ -19,8 +19,8 @@ class Signup extends React.Component {
 
     handleRegistrationSubmit = (event) => {
         event.preventDefault();
-        const { user_name, email, password } = event.target
-        const date_created = new Date()
+        const { user_name, email, password } = event.target;
+        const date_created = new Date();
 
         this.setState({ error: null })
 
@@ -31,11 +31,11 @@ class Signup extends React.Component {
             date_created: date_created
         })
         .then(user => {
-            user_name.value = ''
-            password.value = ''
-            email.value = ''
-            this.props.onRegistrationSuccess()
-            this.props.history.push('/login')
+            user_name.value = '';
+            password.value = '';
+            email.value = '';
+            this.props.onRegistrationSuccess();
+            this.props.history.push('/login');
         })
         .catch(res => {
             this.setState({ 
@@ -103,7 +103,7 @@ class Signup extends React.Component {
     }
 
     handleRepeatPasswordError = (event) => {
-        const repeatPassword = event.target.value
+        const repeatPassword = event.target.value;
         
 
         if (repeatPassword.length === 0) {
@@ -125,7 +125,7 @@ class Signup extends React.Component {
 
     handleEmailError = (event) => {
         const email = event.target.value
-        const regexp_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        const regexp_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         
         if (email.length === 0) {
             this.setState({
@@ -145,7 +145,7 @@ class Signup extends React.Component {
     }
 
     render() {
-        const { error, userNameError, emailError, passwordError, repeatPasswordError } = this.state
+        const { error, userNameError, emailError, passwordError, repeatPasswordError } = this.state;
         return (
             <div className="form-box-ls center">
                 <form className="main-form" onSubmit={this.handleRegistrationSubmit}>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
-import './LandingPage.css'
+import { NavLink } from 'react-router-dom';
+import './LandingPage.css';
 
 class LandingPage extends React.Component {
     render() {

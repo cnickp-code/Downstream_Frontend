@@ -1,12 +1,12 @@
-import React from 'react'
-import DSContext from '../../contexts/DSContext'
+import React from 'react';
+import DSContext from '../../contexts/DSContext';
 
 class EventCoverImage extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     handleHideCoverImage = () => {
         this.context.toggleCoverImage();
-        this.context.setEventInfo(this.context.event)
+        this.context.setEventInfo(this.context.event);
     }
 
     render() {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import DSContext from '../../contexts/DSContext';
 
 class SearchForm extends React.Component {

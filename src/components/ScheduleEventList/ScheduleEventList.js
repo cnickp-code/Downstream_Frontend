@@ -1,7 +1,7 @@
-import React from 'react'
-import ScheduleEvent from '../ScheduleEvent/ScheduleEvent'
-import DSContext from '../../contexts/DSContext'
-import DownstreamApiService from '../../services/downstream-api-service'
+import React from 'react';
+import ScheduleEvent from '../ScheduleEvent/ScheduleEvent';
+import DSContext from '../../contexts/DSContext';
+import DownstreamApiService from '../../services/downstream-api-service';
 
 class ScheduleEventList extends React.Component {
     static contextType = DSContext;
@@ -19,7 +19,7 @@ class ScheduleEventList extends React.Component {
     }
     render() {
 
-        let scheduleList
+        let scheduleList;
         
         if(this.context.searchTerm.length > 0) {
             scheduleList = this.context.searchSchedule;
@@ -93,7 +93,7 @@ class ScheduleEventList extends React.Component {
                     </div>
                     <hr />
                     <h2 className="margin">Past Events:</h2>
-                    <div class="bottom-date-container">
+                    <div className="bottom-date-container">
                         {pastEvents}
                     </div>
                 </div>

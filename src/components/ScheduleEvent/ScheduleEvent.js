@@ -6,24 +6,8 @@ import ScheduleButtons from '../ScheduleButtons/ScheduleButtons';
 class ScheduleEvent extends React.Component {
     static contextType = DSContext;
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            showOverlayInfo: false
-        }
-    }
-
     handleSetEventInfo = () => {
-        // this.setState({
-        //     showOverlayInfo: true
-        // })
         this.context.setEventInfo(this.props.event);
-    }
-
-    handleHideEventInfo = () => {
-        this.setState({
-            showOverlayInfo: false
-        })
     }
 
     render() {
@@ -46,20 +30,6 @@ class ScheduleEvent extends React.Component {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`;
         }
 
-        // const info =
-        //     <div className="info-container" onClick={this.handleSetEventInfo}>
-        //         <div className="info-details">
-        //             <i className="fas fa-info-circle"></i>
-        //         </div>
-        //     </div>;
-
-        // const exit =
-        //     <div className="info-container" onClick={this.handleHideEventInfo}>
-        //         <div className="info-details">
-        //             <i class="far fa-times-circle"></i>
-        //         </div>
-        //     </div>;
-
         let artists = this.props.event.artists;
 
         if(this.props.event.artists.length > 50) {
@@ -72,17 +42,13 @@ class ScheduleEvent extends React.Component {
                 i++;
             }
 
-            artists = artists.slice(0, i).join(', ') + '...'
+            artists = artists.slice(0, i).join(', ') + '...';
         }
 
-        // const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
-        // const endDate = this.props.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
 
         return (
             <div className="event-container">
-                {/* {this.state.showOverlayInfo
-                    ? exit
-                    : info} */}
+
 
                 <h3 className="event-head-text">{this.props.event.name}</h3>
                 <p className="event-time">{timeString}</p>
@@ -92,13 +58,13 @@ class ScheduleEvent extends React.Component {
                     <div className="event-right-container">
                     
                     
-                        {/* <div>{description}</div> */}
+
                         <div className="info-artists">
                             <h4>Artist(s):</h4>
                             {artists}
                         </div>
                         <hr />
-                        {/* <h3> <i className="fas fa-tint"></i>  {this.props.event.event_popularity} dropping in.</h3> */}
+
                         <ScheduleButtons event={this.props.event} showInfo={this.state.showOverlayInfo} />
                     </div>
                 </div>  

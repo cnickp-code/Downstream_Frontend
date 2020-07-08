@@ -45,30 +45,8 @@ class Event extends React.Component {
             timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`;
         }
 
-        // let description = this.props.event.description;
-        // if(this.props.event.description.length > 50) {
-        //     description = this.props.event.description.split(' ')
-
-        //     let length = 0;
-        //     let i = 0;
-        //     while(length < 60 && description[i] !== undefined) {
-        //         length += description[i].length;
-        //         i++;
-        //     }
-
-        //     if(description[i] === undefined) {
-        //         description = description.slice(0, i).join(' ')
-        //     } else {
-        //         description = description.slice(0, i).join(' ') + '...'
-        //     }
-            
-        // }
-
         let artists = this.props.event.artists;
 
-        // artists = artists.split(', ').map(artist => {
-        //     return <div className="artist">{artist}</div>
-        // }).join(', ')
 
         if(this.props.event.artists.length > 50) {
             artists = this.props.event.artists.split(', ');
@@ -83,24 +61,7 @@ class Event extends React.Component {
             artists = artists.slice(0, i).join(', ') + '...';
         }
 
-        // const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
-        // const endDate = this.props.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
 
-
-
-        // const info =
-        //     <div className="info-container" onClick={this.handleSetEventInfo}>
-        //         <div className="info-details">
-        //             <i className="fas fa-info-circle"></i>
-        //         </div>
-        //     </div>;
-
-        // const exit =
-        //     <div className="info-container" onClick={this.handleHideEventInfo}>
-        //         <div className="info-details">
-        //             <i class="far fa-times-circle"></i>
-        //         </div>
-        //     </div>;
 
 
         
@@ -108,19 +69,13 @@ class Event extends React.Component {
 
         return (
             <div className="event-container">
-                {/* {this.state.showOverlayInfo
-                    ? exit
-                    : info} */}
-
                 <h3 className="event-head-text">{this.props.event.name}</h3>
                 <p className="event-time">{timeString}</p>
 
                 <div className="event-inner-container">
                     <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>   
                     <div className="event-right-container">
-                    
-                    
-                        {/* <div>{description}</div> */}
+                
                         <div className="info-artists">
                             <h4>Artist(s):</h4>
                             {artists}
@@ -130,20 +85,6 @@ class Event extends React.Component {
                         <EventButtons event={this.props.event} showInfo={this.state.showOverlayInfo} />
                     </div>
                 </div>
-
-                {/* {this.state.showOverlayInfo
-                    ? <EventOverlay event={this.props.event} showInfo={this.state.showOverlayInfo} hideInfo={this.handleHideEventInfo}/>
-                    : <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>}
-
-{this.state.showOverlayInfo && <EventButtons event={this.props.event} showInfo={this.state.showOverlayInfo} /> } */}
-
-                {/* {this.state.showEventInfo 
-                    ? <EventButtons />
-                    : } */}
-
-                
-
-
             </div>
         )
     }

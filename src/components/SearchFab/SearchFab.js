@@ -1,9 +1,8 @@
-import React from 'react'
-import DSContext from '../../contexts/DSContext'
-// import { CSSTransitionGroup } from 'react-transition-group'
+import React from 'react';
+import DSContext from '../../contexts/DSContext';
 
 class SearchFab extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     constructor(props) {
         super(props)
