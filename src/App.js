@@ -3,7 +3,6 @@ import './App.css';
 import Routes from './Routes'
 import DSContext from './contexts/DSContext'
 import DownstreamApiService from './services/downstream-api-service'
-import TokenService from './services/token-service';
 
 class App extends React.Component {
   constructor(props) {

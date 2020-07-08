@@ -11,24 +11,24 @@ class EventInfo extends React.Component {
 
     handleAddEventToSchedule = () => {
         const eventId = this.context.event.id
-        const eventDescription = this.context.event.description
-        const eventGenre = this.context.event.genre
-        const eventImageUrl = this.context.event.image_url
-        const eventInfoUrl = this.context.event.info_url
-        const eventStreamUrl = this.context.event.stream_url
-        const eventStartDate = this.context.event.start_date
-        const eventEndDate = this.context.event.end_date
+        // const eventDescription = this.context.event.description
+        // const eventGenre = this.context.event.genre
+        // const eventImageUrl = this.context.event.image_url
+        // const eventInfoUrl = this.context.event.info_url
+        // const eventStreamUrl = this.context.event.stream_url
+        // const eventStartDate = this.context.event.start_date
+        // const eventEndDate = this.context.event.end_date
 
-        const newScheduleItem = {
-            event_id: eventId,
-            description: eventDescription,
-            genre: eventGenre,
-            image_url: eventImageUrl,
-            info_url: eventInfoUrl,
-            stream_url: eventStreamUrl,
-            start_date: eventStartDate,
-            end_date: eventEndDate
-        }
+        // const newScheduleItem = {
+        //     event_id: eventId,
+        //     description: eventDescription,
+        //     genre: eventGenre,
+        //     image_url: eventImageUrl,
+        //     info_url: eventInfoUrl,
+        //     stream_url: eventStreamUrl,
+        //     start_date: eventStartDate,
+        //     end_date: eventEndDate
+        // }
 
         const newRawScheduleItem = {
             event_id: eventId

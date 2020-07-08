@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../../components/Header/Header'
-import Spotlight from '../../components/Spotlight/Spotlight'
-import Footer from '../../components/Footer/Footer'
-import DownstreamApiService from '../../services/downstream-api-service'
-import DSContext from '../../contexts/DSContext'
+import Header from '../../components/Header/Header';
+import Spotlight from '../../components/Spotlight/Spotlight';
+import Footer from '../../components/Footer/Footer';
+import DSContext from '../../contexts/DSContext';
 
 class HomePage extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     render() {
         return (

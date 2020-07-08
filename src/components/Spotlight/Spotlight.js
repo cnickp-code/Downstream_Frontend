@@ -1,17 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
-import DSContext from '../../contexts/DSContext'
-import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent'
-import DownstreamApiService from '../../services/downstream-api-service';
+import { NavLink } from 'react-router-dom';
+import DSContext from '../../contexts/DSContext';
+import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent';
 import EventInfo from '../EventInfo/EventInfo';
-import EventCoverImage from '../EventCoverImage/EventCoverImage'
+import EventCoverImage from '../EventCoverImage/EventCoverImage';
 
 class Spotlight extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     render() {
         
-        const event = this.context.events[0]
+        const event = this.context.events[0];
+        
         return (
             <main>
                 {this.context.showEventInfo && <EventInfo />}

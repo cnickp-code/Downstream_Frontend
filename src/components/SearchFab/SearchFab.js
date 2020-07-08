@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import DSContext from '../../contexts/DSContext'
 // import { CSSTransitionGroup } from 'react-transition-group'
 
@@ -16,10 +15,9 @@ class SearchFab extends React.Component {
     }
 
     handleShowMobileSearch = () => {
-        // this.context.setShowMobileSearch();
         
 
-        const newShowInput = !this.state.showSearchInput
+        const newShowInput = !this.state.showSearchInput;
 
         this.setState({
             showSearchInput: newShowInput
@@ -32,18 +30,18 @@ class SearchFab extends React.Component {
         const searchTerm = this.searchTerm.current.value;
 
 
-        this.context.setSearchTerm(searchTerm)
+        this.context.setSearchTerm(searchTerm);
         this.context.setSearchEvents();
     }
 
     render() {
 
-        let searchInput 
+        let searchInput; 
 
         if(this.state.showSearchInput) {
-            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-in" ref={this.searchTerm} onChange={this.handleMobileSearch}/>
+            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-in" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
         } else {
-            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-out click-through" ref={this.searchTerm} onChange={this.handleMobileSearch}/>
+            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-out click-through" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
         }
 
 

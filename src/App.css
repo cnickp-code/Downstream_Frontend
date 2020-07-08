@@ -980,21 +980,17 @@ button:active {
 }
 
 .sidebar-fab-container {
-  position: absolute;
+  float: left;
   z-index: 999;
   border-radius: 20px;
   box-shadow: 4px 3px 11px 0px rgba(0,0,0,0.75);
-  left: 10px;
-  top: 200px;
 }
 
 .sidebar-fab-container-open {
-  position: absolute;
+  float: left;
   z-index: 999;
   border-radius: 20px;
   box-shadow: 4px 3px 11px 0px rgba(0,0,0,0.75);
-  left: 21%;
-  top: 200px;
 }
 
 .sidebar-fab {

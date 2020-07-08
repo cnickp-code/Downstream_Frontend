@@ -1,7 +1,7 @@
-import React from 'react'
-import DSContext from '../../contexts/DSContext'
-import DownstreamApiService from '../../services/downstream-api-service'
-import TokenServices from '../../services/token-service'
+import React from 'react';
+import DSContext from '../../contexts/DSContext';
+import DownstreamApiService from '../../services/downstream-api-service';
+import TokenServices from '../../services/token-service';
 
 class EventButtons extends React.Component {
     static contextType = DSContext
@@ -24,27 +24,27 @@ class EventButtons extends React.Component {
     }
 
     handleAddEventToSchedule = () => {
-        const eventId = this.props.event.id
-        const eventDescription = this.props.event.description
-        const eventGenre = this.props.event.genre
-        const eventImageUrl = this.props.event.image_url
-        const eventInfoUrl = this.props.event.info_url
-        const eventStreamUrl = this.props.event.stream_url
-        const eventStartDate = this.props.event.start_date
-        const eventEndDate = this.props.event.end_date
-        const eventPlatform = this.props.event.platform
+        const eventId = this.props.event.id;
+        // const eventDescription = this.props.event.description;
+        // const eventGenre = this.props.event.genre;
+        // const eventImageUrl = this.props.event.image_url;
+        // const eventInfoUrl = this.props.event.info_url;
+        // const eventStreamUrl = this.props.event.stream_url;
+        // const eventStartDate = this.props.event.start_date;
+        // const eventEndDate = this.props.event.end_date;
+        // const eventPlatform = this.props.event.platform;
 
-        const newScheduleItem = {
-            event_id: eventId,
-            description: eventDescription,
-            genre: eventGenre,
-            image_url: eventImageUrl,
-            info_url: eventInfoUrl,
-            stream_url: eventStreamUrl,
-            start_date: eventStartDate,
-            end_date: eventEndDate,
-            platform: eventPlatform
-        }
+        // const newScheduleItem = {
+        //     event_id: eventId,
+        //     description: eventDescription,
+        //     genre: eventGenre,
+        //     image_url: eventImageUrl,
+        //     info_url: eventInfoUrl,
+        //     stream_url: eventStreamUrl,
+        //     start_date: eventStartDate,
+        //     end_date: eventEndDate,
+        //     platform: eventPlatform
+        // }
 
         const newRawScheduleItem = {
             event_id: eventId
@@ -60,7 +60,7 @@ class EventButtons extends React.Component {
                 //     id: item.id
                 // }
 
-                this.context.addScheduleItem(item)
+                this.context.addScheduleItem(item);
 
                 DownstreamApiService.getEvents()
                 .then(events => {

@@ -27,9 +27,9 @@ class SearchForm extends React.Component {
         // const timeFrame = this.timeFrame.current.value;
         // const pastBool = this.pastEvents.current.value;
         // const platform = this.platform.current.value;
-        let events = this.context.events;
+        // let events = this.context.events;
 
-        let currentDate = new Date();
+        // let currentDate = new Date();
 
         this.context.setSearchTerm(searchTerm);
         this.context.setSearchEvents();
@@ -38,11 +38,11 @@ class SearchForm extends React.Component {
     handlePastEvents = () => {
         const pastBool = this.pastEvents.current.value;
 
-        this.context.toggleShowPastEvents(pastBool)
+        this.context.toggleShowPastEvents(pastBool);
     }
 
     componentDidMount() {
-        this.context.setSearchEvents()
+        this.context.setSearchEvents();
     }
 
     render() {

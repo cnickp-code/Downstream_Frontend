@@ -1,10 +1,9 @@
-import React from 'react'
-import DSContext from '../../contexts/DSContext'
-import EventOverlay from '../EventOverlay/EventOverlay'
-import EventButtons from '../EventButtons/EventButtons'
+import React from 'react';
+import DSContext from '../../contexts/DSContext';
+import EventButtons from '../EventButtons/EventButtons';
 
 class Event extends React.Component {
-    static contextType = DSContext
+    static contextType = DSContext;
 
     constructor(props) {
         super(props);
@@ -17,7 +16,7 @@ class Event extends React.Component {
         // this.setState({
         //     showOverlayInfo: true
         // })
-        this.context.setEventInfo(this.props.event)
+        this.context.setEventInfo(this.props.event);
     }
 
     handleHideEventInfo = () => {
@@ -28,7 +27,7 @@ class Event extends React.Component {
 
     render() {
         const currentDate = new Date();
-        const eventStartDate = new Date(this.props.event.start_date)
+        const eventStartDate = new Date(this.props.event.start_date);
         const eventEndDate = new Date(this.props.event.end_date);
         let timeString
 
@@ -37,13 +36,13 @@ class Event extends React.Component {
         let minutes = Number('.' + hours.toString().split('.')[1]) * 60;
 
         if (currentDate.getTime() > eventEndDate.getTime()) {
-            timeString = `Event has passed :(`
+            timeString = `Event has passed :(`;
         }
         if (currentDate.getTime() >= eventStartDate.getTime() && currentDate.getTime() <= eventEndDate.getTime()) {
-            timeString = `Happening now!!`
+            timeString = `Happening now!!`;
         }
         if (currentDate.getTime() < eventStartDate.getTime()) {
-            timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`
+            timeString = `${Math.floor(days)} days, ${Math.floor(hours)} hours, and ${Math.floor(minutes)} minutes away!`;
         }
 
         // let description = this.props.event.description;
@@ -72,7 +71,7 @@ class Event extends React.Component {
         // }).join(', ')
 
         if(this.props.event.artists.length > 50) {
-            artists = this.props.event.artists.split(', ')
+            artists = this.props.event.artists.split(', ');
 
             let length = 0;
             let i = 0;
@@ -81,11 +80,11 @@ class Event extends React.Component {
                 i++;
             }
 
-            artists = artists.slice(0, i).join(', ') + '...'
+            artists = artists.slice(0, i).join(', ') + '...';
         }
 
-        const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
-        const endDate = this.props.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
+        // const startDate = this.props.event.start_date.toLocaleString().slice(5,10).split('-').join('/')
+        // const endDate = this.props.event.end_date.toLocaleString().slice(5,10).split('-').join('/')
 
 
 
@@ -115,10 +114,6 @@ class Event extends React.Component {
 
                 <h3 className="event-head-text">{this.props.event.name}</h3>
                 <p className="event-time">{timeString}</p>
-
-
-
-                <h3 className="center"></h3>
 
                 <div className="event-inner-container">
                     <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>   

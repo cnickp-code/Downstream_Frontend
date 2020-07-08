@@ -1,8 +1,7 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import About from '../../components/About/About'
-import News from '../../components/News/News'
+import React from 'react';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import News from '../../components/News/News';
 
 class NewsPage extends React.Component {
     render() {

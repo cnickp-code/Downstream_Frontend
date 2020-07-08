@@ -1,6 +1,4 @@
 import React from 'react'
-import Spotlight from '../Spotlight/Spotlight';
-import EventOverlay from '../EventOverlay/EventOverlay';
 import DSContext from '../../contexts/DSContext'
 
 class SpotlightEvent extends React.Component {
