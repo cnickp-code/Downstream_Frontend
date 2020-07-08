@@ -119,6 +119,7 @@ class App extends React.Component {
           event.name.toLowerCase().includes(searchTerm.toLowerCase())
           || event.name.toLowerCase().includes(searchTerm.toLowerCase())
           || event.genre.toLowerCase().includes(searchTerm.toLowerCase())
+          || event.artists.toLowerCase().includes(searchTerm.toLowerCase())
         );
       });
 
@@ -127,6 +128,7 @@ class App extends React.Component {
           item.name.toLowerCase().includes(searchTerm.toLowerCase())
           || item.name.toLowerCase().includes(searchTerm.toLowerCase())
           || item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+          || item.artists.toLowerCase().includes(searchTerm.toLowerCase())
         );
       })
 
@@ -147,6 +149,7 @@ class App extends React.Component {
             event.name.toLowerCase().includes(searchTerm.toLowerCase())
             || event.name.toLowerCase().includes(searchTerm.toLowerCase())
             || event.genre.toLowerCase().includes(searchTerm.toLowerCase())
+            || event.artists.toLowerCase().includes(searchTerm.toLowerCase())
           )
         });
 
@@ -164,6 +167,7 @@ class App extends React.Component {
             item.name.toLowerCase().includes(searchTerm.toLowerCase())
             || item.name.toLowerCase().includes(searchTerm.toLowerCase())
             || item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+            || item.artists.toLowerCase().includes(searchTerm.toLowerCase())
           );
         })
 

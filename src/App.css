@@ -1346,7 +1346,14 @@ button:active {
 
 .event-search-input {
   margin: 10px;
-  padding: 2px;
+  z-index: 999;
+  height: 35px;
+  border-radius: 25px;
+  width: 85%;
+  padding: 5px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
 }
 
 .event-select {
@@ -1993,10 +2000,10 @@ button:active {
   .mobile-search-input {
     display: flex;
     position: fixed;
-    height: 35px;
     bottom: 105px;
     right: 20px;
     z-index: 999;
+    height: 35px;
     border-radius: 25px;
     width: 85%;
     padding: 5px;

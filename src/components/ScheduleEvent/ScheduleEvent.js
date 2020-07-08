@@ -65,7 +65,7 @@ class ScheduleEvent extends React.Component {
                         </div>
                         <hr />
 
-                        <ScheduleButtons event={this.props.event} showInfo={this.state.showOverlayInfo} />
+                        <ScheduleButtons event={this.props.event} />
                     </div>
                 </div>  
             
