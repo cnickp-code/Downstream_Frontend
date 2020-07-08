@@ -7,16 +7,6 @@ class SpotlightEvent extends React.Component {
     handleSetEventInfo = () => {
         this.context.setEventInfo(this.props.event)
     }
-
-    componentDidMount() {
-        console.log('hello')
-        // DownstreamApiService.getEvents()
-        //   .then(events => {
-        //       console.log('added events')
-        //       this.context.setEvents(events)
-        //   })
-        //   .catch(this.context.setError)
-    }
     
     render() {
         const currentDate = new Date();

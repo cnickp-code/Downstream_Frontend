@@ -14,7 +14,6 @@ class EventOverlay extends React.Component {
             let length = 0;
             let i = 0;
             while(length < 60 && description[i] !== undefined) {
-                console.log(description[i])
                 length += description[i].length;
                 i++;
             }
