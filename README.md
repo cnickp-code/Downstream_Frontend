@@ -13,7 +13,7 @@ This is a passion project. I love live music. One of my favorite pastimes is exp
 My goal with this project is to contribute to the culture and the industry that I love and that has given me so much, from friends, to experiences that I will never forget. 
 
 ## Screenshots
-![First_SS](https://user-images.githubusercontent.com/61900464/87516110-b2949300-c631-11ea-827b-d955c6c1ad13.PNG)
+![first_sss](https://user-images.githubusercontent.com/61900464/87516302-07d0a480-c632-11ea-8a29-6a0cfe1036fc.PNG)
 ![Second_SS](https://user-images.githubusercontent.com/61900464/87516115-b4f6ed00-c631-11ea-8159-e899caa26522.PNG)
 
 
