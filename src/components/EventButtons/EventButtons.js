@@ -54,6 +54,10 @@ class EventButtons extends React.Component {
             .catch(this.context.setError)
     }
 
+    handleLoginAlert = () => {
+        alert('Must log in to add to schedule.')
+    }
+
     render() {
 
         return (
@@ -64,6 +68,9 @@ class EventButtons extends React.Component {
                 <div className="icon-container">
                     <a href={this.props.event.stream_url}><i className="fas fa-desktop white"></i></a>
                 </div>
+                {!TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleLoginAlert}>
+                    <i className="fas fa-plus-circle invalid"></i>
+                </div>}
                 {!this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddEventToSchedule}>
                     <i className="fas fa-plus-circle added"></i>
                 </div>}

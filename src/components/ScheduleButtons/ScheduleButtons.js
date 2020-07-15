@@ -39,15 +39,15 @@ class ScheduleButtons extends React.Component {
         return (
             <div className={this.props.showInfo ? "event-button-container center" : "event-button-container moveUp center"}>
                 <div className="icon-container">
-                    <a href={this.props.event.info_url}> <i class="fas fa-link white"></i> </a>
+                    <a href={this.props.event.info_url}> <i className="fas fa-link white"></i> </a>
                 </div>
                 <div className="icon-container">
-                    <a href={this.props.event.stream_url}><i class="fas fa-desktop white"></i></a>
+                    <a href={this.props.event.stream_url}><i className="fas fa-desktop white"></i></a>
                 </div>
 
 
                 <div className="icon-container" >
-                    <i class="fas fa-minus-circle trash" onClick={this.handleDeleteFromSchedule}></i>
+                    <i className="fas fa-minus-circle trash" onClick={this.handleDeleteFromSchedule}></i>
                 </div>
                 
             </div>

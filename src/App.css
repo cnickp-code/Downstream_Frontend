@@ -212,6 +212,10 @@ footer {
   color: #F7F9Fb;
 }
 
+.invalid {
+  color: gray;
+}
+
 /* .scroll {
   color: purple;
 } */
@@ -240,6 +244,10 @@ footer {
 
 .margin-left {
   margin-left: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .margin-bottom {
@@ -1147,10 +1155,10 @@ button:active {
 }
 
 .event-image {
-  width: 50%;
-  height: 100%;
-  max-width: 610px;
-  max-height: 400px;
+  /* width: 50%;
+  height: 100%; */
+  width: 240px;
+  height: 300px;
   -webkit-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   -moz-box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);
   box-shadow: 6px 5px 11px -1px rgba(0,0,0,0.59);

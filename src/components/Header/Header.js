@@ -50,10 +50,8 @@ class Header extends React.Component {
                         <NavLink to="/home" className="nav-header-text"><i className="fas fa-headphones margin-right"></i>DownStream</NavLink>
                     </div>
                 </nav>
-
             </>
         )
-
     }
 
     renderPrivateNav() {
@@ -92,7 +90,6 @@ class Header extends React.Component {
                         <NavLink to="/home" className="nav-header-text"><i className="fas fa-headphones margin-right"></i>DownStream</NavLink>
                     </div>
                 </nav>
-
             </>
         )
     }

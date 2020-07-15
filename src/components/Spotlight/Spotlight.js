@@ -5,6 +5,7 @@ import SpotlightEvent from '../../components/SpotlightEvent/SpotlightEvent';
 import EventInfo from '../EventInfo/EventInfo';
 import EventCoverImage from '../EventCoverImage/EventCoverImage';
 
+
 class Spotlight extends React.Component {
     static contextType = DSContext;
 
@@ -16,10 +17,18 @@ class Spotlight extends React.Component {
             <main>
                 {this.context.showEventInfo && <EventInfo />}
                 {this.context.showCoverImage && <EventCoverImage />}
-                <h1 className="spotlight-header">Spotlight</h1>
+                <h1 className="spotlight-header">Home</h1>
                 <div className="spotlight-container">
-                    {this.context.events[0] && <SpotlightEvent event={event} />}
-                    <p className="center center-text">Click the flyer for more info!</p>
+                    <h2 className="center center-text">Welcome to DownStream</h2>
+                    <p className="center center-text mb-10">Never miss a live streamed music festival event ever again! </p>
+                    <p className="center center-text">Sign up to access your schedule!</p>
+                    <p className="center center-text margin-bottom">Click on the Events Tab to get started. There you will find all upcoming events as well as past events!</p>
+                    <h2 className="center center-text">Example Event Picture:</h2>
+                    <img src="https://i.ibb.co/bBqCNwH/Event.png" className="center margin-bottom" ></img>
+                    <p className="center center-text">Click <i className="fas fa-link white"></i> to go to the event page.</p>
+                    <p className="center center-text">Click <i className="fas fa-desktop white"></i> to go to the stream.</p>
+                    <p className="center center-text">Log in/Sign up and click <i className="fas fa-plus-circle added"></i> to add to schedule.</p>
+                    <p className="center center-text">Click <i className="fas fa-minus-circle trash"></i> on the schedule page to remove the event.</p>
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>

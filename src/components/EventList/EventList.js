@@ -38,11 +38,11 @@ class EventList extends React.Component {
 
         eventList.forEach(event => {
             let eventStartDate = new Date(event.start_date);
-            if (eventStartDate - currentDate > 0 && eventStartDate - currentDate < 86400000) {
+            if ((eventStartDate - currentDate) > 0 && (eventStartDate - currentDate) < 86400000) {
                 eventsToday.push(event);
-            } else if (eventStartDate - currentDate > 86400000 && eventStartDate - currentDate < 604800000) {
+            } else if ((eventStartDate - currentDate) > 86400000 && (eventStartDate - currentDate) < 604800000) {
                 eventsInAWeek.push(event);
-            } else if (eventStartDate - currentDate > 604800000) {
+            } else if ((eventStartDate - currentDate) > 604800000) {
                 eventsFuture.push(event);
             } else {
                 pastEvents.push(event);
@@ -118,17 +118,17 @@ class EventList extends React.Component {
                 </h1>
                 <div className="bottom-container">
                     <h2 className="margin">Events Today:</h2>
-                    <div class="bottom-date-container">
+                    <div className="bottom-date-container">
                         {eventsToday}
                     </div>
                     <hr />
                     <h2 className="margin">Events In A Week:</h2>
-                    <div class="bottom-date-container">
+                    <div className="bottom-date-container">
                         {eventsInAWeek}
                     </div>
                     <hr />
                     <h2 className="margin">Events In The Future:</h2>
-                    <div class="bottom-date-container">
+                    <div className="bottom-date-container">
                         {eventsFuture}
                     </div>
                     <hr />
@@ -136,7 +136,7 @@ class EventList extends React.Component {
                     {this.context.showPastEvents && 
                     <>
                         <h2 className="margin">Past Events:</h2>
-                        <div class="bottom-date-container">
+                        <div className="bottom-date-container">
                             {pastEvents}
                         </div>
                         <hr />
