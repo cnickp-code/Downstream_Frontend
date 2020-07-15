@@ -24,7 +24,7 @@ class Spotlight extends React.Component {
                     <p className="center center-text">Sign up to access your schedule!</p>
                     <p className="center center-text margin-bottom">Click on the Events Tab to get started. There you will find all upcoming events as well as past events!</p>
                     <h2 className="center center-text">Example Event Picture:</h2>
-                    <img src="https://i.ibb.co/bBqCNwH/Event.png" className="center margin-bottom" ></img>
+                    <img src="https://i.ibb.co/bBqCNwH/Event.png" className="center margin-bottom home-image" ></img>
                     <p className="center center-text">Click <i className="fas fa-link white"></i> to go to the event page.</p>
                     <p className="center center-text">Click <i className="fas fa-desktop white"></i> to go to the stream.</p>
                     <p className="center center-text">Log in/Sign up and click <i className="fas fa-plus-circle added"></i> to add to schedule.</p>
