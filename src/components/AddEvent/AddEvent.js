@@ -31,14 +31,18 @@ class AddEvent extends React.Component {
     }
 
     handleStartDateChange = (date) => {
+        let newDate = new Date(date);
+        console.log(newDate)
         this.setState({
-            startDate: date
+            startDate: newDate
         });
     }
 
     handleEndDateChange = (date) => {
+        let newDate = new Date(date);
+        console.log(newDate.toLocaleString())
         this.setState({
-            endDate: date
+            endDate: newDate
         });
     }
 
@@ -80,8 +84,8 @@ class AddEvent extends React.Component {
                 info_url: eventPageUrl,
                 genre: eventGenre,
                 platform: eventPlatform,
-                start_date: eventStartDate.toLocaleDateString(),
-                end_date: eventEndDate.toLocaleDateString(),
+                start_date: eventStartDate.toLocaleString(),
+                end_date: eventEndDate.toLocaleString(),
                 description: eventDescription,
                 artists: eventArtists
             };
@@ -158,8 +162,10 @@ class AddEvent extends React.Component {
                                 <div className="date-container">
                                     <h4>Start Date:</h4>
                                     <DatePicker
-                                        selected={this.state.startDate}
+                                        id="start-date-time"
+                                        name="startDateTime"
                                         showTimeInput
+                                        selected={this.state.startDate}
                                         onChange={this.handleStartDateChange}
                                     />
 
@@ -167,8 +173,8 @@ class AddEvent extends React.Component {
                                     <DatePicker
                                         id="end-date-time"
                                         name="endDateTime"
-                                        selected={this.state.endDate}
                                         showTimeInput
+                                        selected={this.state.endDate}
                                         onChange={this.handleEndDateChange}
                                     />
 

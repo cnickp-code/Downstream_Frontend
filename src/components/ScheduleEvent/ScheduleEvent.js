@@ -50,8 +50,8 @@ class ScheduleEvent extends React.Component {
             <div className="event-container">
 
 
-                <h3 className="event-head-text">{this.props.event.name}</h3>
-                <p className="event-time">{timeString}</p>
+                {/* <h3 className="event-head-text">{this.props.event.name}</h3>
+                <p className="event-time">{timeString}</p> */}
 
                 <div className="event-inner-container">
                     <img src={this.props.event.image_url} className="event-image box-shadow" alt="event" onClick={this.handleSetEventInfo}/>   

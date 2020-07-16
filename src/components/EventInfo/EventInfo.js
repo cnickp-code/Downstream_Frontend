@@ -30,9 +30,14 @@ class EventInfo extends React.Component {
     }
 
     render() {
-        const startDate = this.context.event.start_date.toLocaleString().slice(5,10).split('-').join('/');
-        const endDate = this.context.event.end_date.toLocaleString().slice(5,10).split('-').join('/');
+        // const startDate = this.context.event.start_date.toLocaleString().slice(5,10).split('-').join('/');
+        // const endDate = this.context.event.end_date.toLocaleString().slice(5,10).split('-').join('/');
 
+        let startDate = new Date(this.context.event.start_date)
+        let endDate = new Date(this.context.event.end_date)
+
+        startDate = startDate.toDateString().slice(4);
+        endDate = endDate.toDateString().slice(4);
 
         return (
             <div className="cover" onClick={this.handleHideEventInfo}>
@@ -45,6 +50,7 @@ class EventInfo extends React.Component {
                         <div className="cover-list center">{startDate} to {endDate}</div>
                     <img src={this.context.event.image_url}
                         className="cover-event-image center" alt="cover" onClick={this.handleShowCoverImage}/>
+                    <p className="center center-text xs-text">Click flyer to expand</p>
                     <div className="cover-event-info center">
                         {this.context.event.description}
                         <h3 className="cover-inner-title">Artists:</h3>

@@ -49,7 +49,7 @@ class SearchForm extends React.Component {
         
         return (
             <form id="event-search-form">
-                <input type="text" placeholder="Search name, genre, artist, or description" className="event-search-input" id="search-input" onChange={event => this.handleSearch(event)} ref={this.searchTerm}/>
+                <input type="text" placeholder="Search name, genre, or artist" className="event-search-input" id="search-input" onChange={event => this.handleSearch(event)} ref={this.searchTerm}/>
 
                 {/* <label htmlFor="past" className="margin-top">Show Past Events?</label>
                 <select name="past" id="past" defaultValue="true" className="event-select" onChange={this.handlePastEvents} ref={this.pastEvents}>

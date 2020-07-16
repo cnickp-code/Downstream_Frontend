@@ -34,10 +34,15 @@ class EventList extends React.Component {
         let eventsInAWeek = [];
         let eventsFuture = [];
         let pastEvents = [];
-        const currentDate = new Date();
+        let now = new Date();
+        let currentDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+       
 
         eventList.forEach(event => {
             let eventStartDate = new Date(event.start_date);
+            console.log(currentDate)
+            console.log(eventStartDate)
+            console.log('------------')
             if ((eventStartDate - currentDate) > 0 && (eventStartDate - currentDate) < 86400000) {
                 eventsToday.push(event);
             } else if ((eventStartDate - currentDate) > 86400000 && (eventStartDate - currentDate) < 604800000) {
@@ -52,28 +57,28 @@ class EventList extends React.Component {
         eventsToday = eventsToday.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <Event key={event.id} event={event} />;
         })
         eventsInAWeek = eventsInAWeek.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <Event key={event.id} event={event} />;
         })
         eventsFuture = eventsFuture.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <Event key={event.id} event={event} />;
         })
         pastEvents = pastEvents.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <Event key={event.id} event={event} />;
         })
@@ -117,17 +122,17 @@ class EventList extends React.Component {
                     Events
                 </h1>
                 <div className="bottom-container">
-                    <h2 className="margin">Events Today:</h2>
+                    <h2 className="margin">Events Within 24Hrs:</h2>
                     <div className="bottom-date-container">
                         {eventsToday}
                     </div>
                     <hr />
-                    <h2 className="margin">Events In A Week:</h2>
+                    <h2 className="margin">Events Within A Week:</h2>
                     <div className="bottom-date-container">
                         {eventsInAWeek}
                     </div>
                     <hr />
-                    <h2 className="margin">Events In The Future:</h2>
+                    <h2 className="margin">Events Later:</h2>
                     <div className="bottom-date-container">
                         {eventsFuture}
                     </div>

@@ -19,16 +19,16 @@ class Spotlight extends React.Component {
                 {this.context.showCoverImage && <EventCoverImage />}
                 <h1 className="spotlight-header">Home</h1>
                 <div className="spotlight-container">
-                    <h2 className="center center-text">Welcome to DownStream</h2>
-                    <p className="center center-text mb-10">Never miss a live streamed music festival event ever again! </p>
-                    <p className="center center-text">Sign up to access your schedule!</p>
-                    <p className="center center-text margin-bottom">Click on the Events Tab to get started. There you will find all upcoming events as well as past events!</p>
+                    <h2 className="center center-text pad-left pad-right mb-10">Welcome to DownStream</h2>
+                    <p className="center center-text pad-left pad-right mb-10">Never miss a live streamed music event ever again! </p>
+                    <p className="center center-text pad-left pad-right mb-10"><NavLink to='/signup' className="white">Sign up</NavLink> to access your schedule!</p>
+                    <p className="center center-text pad-left pad-right margin-bottom">Click on the Events Tab to get started. There, you will find all upcoming events as well as past events!</p>
                     <h2 className="center center-text">Example Event Picture:</h2>
-                    <img src="https://i.ibb.co/bBqCNwH/Event.png" className="center margin-bottom home-image" ></img>
-                    <p className="center center-text">Click <i className="fas fa-link white"></i> to go to the event page.</p>
-                    <p className="center center-text">Click <i className="fas fa-desktop white"></i> to go to the stream.</p>
-                    <p className="center center-text">Log in/Sign up and click <i className="fas fa-plus-circle added"></i> to add to schedule.</p>
-                    <p className="center center-text">Click <i className="fas fa-minus-circle trash"></i> on the schedule page to remove the event.</p>
+                    <img src="https://i.ibb.co/vD3sDBj/Event2.png" className="center margin-bottom home-image" ></img>
+                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-link white"></i> to go to the event page.</p>
+                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-desktop white"></i> to go to the stream.</p>
+                    <p className="center center-text pad-left pad-right">Log in/Sign up and click <i className="fas fa-plus-circle added"></i> to add to schedule.</p>
+                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-minus-circle trash"></i> on the schedule page to remove the event.</p>
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>
@@ -41,7 +41,7 @@ class Spotlight extends React.Component {
 
                     <h2 className="news-text">Need the scoop on the latest?</h2>
                     <div className="home-container">
-                        <NavLink to="/news" className="home-event-button2 center">News >></NavLink>
+                        <a href="https://twitter.com/Downstr90019240" className="home-event-button2 center">Follow Us >></a>
                     </div>
                 </div>
                 <div className="parallax">

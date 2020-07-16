@@ -313,6 +313,7 @@ class App extends React.Component {
       toggleShowPastEvents: this.toggleShowPastEvents
     }
 
+    
 
     return (
       <div className="App">
