@@ -16,7 +16,7 @@ My goal with this project is to contribute to the culture and the industry that 
 ![part-5r](https://user-images.githubusercontent.com/61900464/87834965-a599be80-c840-11ea-870d-15cff3b1d2b9.jpg)
 ![part-2r](https://user-images.githubusercontent.com/61900464/87834974-adf1f980-c840-11ea-95da-53d9f8e5d925.jpg)
 ![part-1r](https://user-images.githubusercontent.com/61900464/87834977-b0545380-c840-11ea-9d8b-334b80ebab68.jpg)
-![part-0](https://user-images.githubusercontent.com/61900464/87834979-b21e1700-c840-11ea-84d6-0aa9db5fc509.jpg)
+![part-0_2r](https://user-images.githubusercontent.com/61900464/87835274-894a5180-c841-11ea-9186-7290e904aa84.jpg)
 
 
 
