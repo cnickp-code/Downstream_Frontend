@@ -45,7 +45,7 @@ class EventList extends React.Component {
 
             if (currentDate > eventStartDate && currentDate < eventEndDate) {
                 eventsToday.push(event);
-            } else if ((eventEndDate - currentDate) > 0 && (eventEndDate - currentDate) < 604800000) {
+            } else if ((eventEndDate - currentDate) > 0 && (eventStartDate - currentDate) < 604800000) {
                 eventsInAWeek.push(event);
             } else if ((eventStartDate - currentDate) > 604800000) {
                 eventsFuture.push(event);
@@ -84,10 +84,10 @@ class EventList extends React.Component {
         })
 
         if (eventsToday.length === 0) {
-            eventsToday = <p className="align-center center margin-bottom">No Events Today</p>;
+            eventsToday = <p className="align-center center margin-bottom">No Events To Display</p>;
         }
         if (eventsInAWeek.length === 0) {
-            eventsInAWeek = <p className="align-center center margin-bottom">No Events This Week</p>;
+            eventsInAWeek = <p className="align-center center margin-bottom">No Events To Display</p>;
         }
         if (eventsFuture.length === 0) {
             eventsFuture = <p className="align-center center margin-bottom">No Events To Display</p>;
@@ -122,7 +122,7 @@ class EventList extends React.Component {
                     Events
                 </h1>
                 <div className="bottom-container">
-                    <h2 className="margin">Events Happening Now!</h2>
+                    <h2 className="margin">Events Happening Today!</h2>
                     <div className="bottom-date-container">
                         {eventsToday}
                     </div>
@@ -146,6 +146,9 @@ class EventList extends React.Component {
                         </div>
                         <hr />
                     </>}
+                </div>
+                <div className="space-container">
+                    
                 </div>
             </div>
         )

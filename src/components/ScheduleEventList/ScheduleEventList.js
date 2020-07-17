@@ -60,7 +60,7 @@ class ScheduleEventList extends React.Component {
             pastEvents = <p className="align-center center margin-bottom">No Events To Display</p>;
         }
         if (mainSchedule.length === 0) {
-            mainSchedule = <p className="align-center center margin-bottom">No Events To Display</p>;
+            mainSchedule = <p className="align-center center margin-bottom margin-top">No Events To Display</p>;
         }
 
         let sideBarFab

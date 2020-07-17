@@ -16,7 +16,8 @@
     "react-scripts": "3.4.1",
     "react-time-picker": "^4.0.1",
     "react-transition-group": "^4.4.1",
-    "react-twitter-embed": "^3.0.3"
+    "react-twitter-embed": "^3.0.3",
+    "sweetalert2": "^9.17.0"
   },
   "scripts": {
     "start": "react-scripts start",

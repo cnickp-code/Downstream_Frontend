@@ -38,9 +38,9 @@ class SearchFab extends React.Component {
         let searchInput; 
 
         if(this.state.showSearchInput) {
-            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-in" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
+            searchInput = <input type="text" placeholder="Search name, genre, or artist" className="mobile-search-input fade-in" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
         } else {
-            searchInput = <input type="text" placeholder="Search name, genre, artist, or description" className="mobile-search-input fade-out click-through" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
+            searchInput = <input type="text" placeholder="Search name, genre, or artist" className="mobile-search-input fade-out click-through" ref={this.searchTerm} onChange={this.handleMobileSearch}/>;
         }
 
 

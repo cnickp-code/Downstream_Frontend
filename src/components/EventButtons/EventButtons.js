@@ -2,6 +2,7 @@ import React from 'react';
 import DSContext from '../../contexts/DSContext';
 import DownstreamApiService from '../../services/downstream-api-service';
 import TokenServices from '../../services/token-service';
+// import Swal from 'sweetalert2';
 
 class EventButtons extends React.Component {
     static contextType = DSContext;
@@ -11,7 +12,12 @@ class EventButtons extends React.Component {
     }
 
     handleAddedAlert = () => {
-        alert('Event already added!');
+        alert('Event already added!')
+        // Swal.fire({
+        //     text: 'Event already added!',
+        //     icon: 'info',
+        //     confirmButtonText: 'Ok'
+        // });
     }
 
     handleDeleteFromSchedule = () => {

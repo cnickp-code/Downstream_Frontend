@@ -29,7 +29,7 @@ class Spotlight extends React.Component {
                 <div className="spotlight-container">
                     
                     <h2 className="center center-text font-family-2">Page Navigation</h2>
-                    <div class="landing-image-container">
+                    <div className="landing-image-container">
                         <img src="https://i.ibb.co/72ppTxm/Event3.png" className="center margin-bottom home-image" ></img>
                         <img src="https://i.ibb.co/Ps2cffP/navigation.png" className="center margin-bottom home-image3" ></img>
                     </div>

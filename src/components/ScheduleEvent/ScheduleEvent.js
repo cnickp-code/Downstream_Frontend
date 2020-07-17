@@ -37,7 +37,7 @@ class ScheduleEvent extends React.Component {
 
             let length = 0;
             let i = 0;
-            while(length < 50) {
+            while(length < 50 && artists[i] !== undefined) {
                 length += artists[i].length;
                 i++;
             }

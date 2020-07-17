@@ -32,7 +32,6 @@ class AddEvent extends React.Component {
 
     handleStartDateChange = (date) => {
         let newDate = new Date(date);
-        console.log(newDate)
         this.setState({
             startDate: newDate
         });
@@ -40,7 +39,6 @@ class AddEvent extends React.Component {
 
     handleEndDateChange = (date) => {
         let newDate = new Date(date);
-        console.log(newDate.toLocaleString())
         this.setState({
             endDate: newDate
         });
@@ -115,7 +113,7 @@ class AddEvent extends React.Component {
                         <div className="add-event-container">
                             <div className="add-event-left">
                                 <h4>Event Title</h4>
-                                <input placeholder="" type="text" name="title" id="event-title" className="text-input center" ref={this.name}
+                                <input placeholder="Title goes here" type="text" name="title" id="event-title" className="text-input center" ref={this.name}
                                     required />
                                 <h4>Image URL</h4>
                                 <input type="url" name="image-url" id="image-url" placeholder="https://"
@@ -127,7 +125,7 @@ class AddEvent extends React.Component {
                                 <input type="url" name="stream-url" id="stream-url" placeholder="https://"
                                     className="text-input center" ref={this.streamUrl} required />
                                 <h4>Artists (separate by commas)</h4>
-                                <input placeholder="" type="text" name="artists" id="artists" className="text-input center" ref={this.artists}
+                                <input placeholder="Artists go here" type="text" name="artists" id="artists" className="text-input center" ref={this.artists}
                                     required />
                             </div>
                             <div className="add-event-right">

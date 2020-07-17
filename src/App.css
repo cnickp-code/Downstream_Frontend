@@ -183,6 +183,10 @@ footer {
 
 /* General Stuff */
 
+.margin-top {
+  margin-top: 20px;
+}
+
 .spotlight-list-header {
   font-size: 72px;
   margin-bottom: 50px;
@@ -1120,6 +1124,7 @@ button:active {
 }
 
 .events-header {
+  position: relative;
   text-decoration: none;
   padding: 10px;
   -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.59);
@@ -1321,6 +1326,11 @@ button:active {
   z-index: 998;
 }
 
+.space-container {
+  height: 30px;
+  background-color: rgb(2, 105, 146);
+}
+
 .bottom-container {
   overflow-y: scroll;
   overflow-x: none;
@@ -1503,7 +1513,7 @@ button:active {
   margin-top: 5px;
   width: 400px;
   min-height: fit-content;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   min-width: fit-content;
   position: relative;
 }
