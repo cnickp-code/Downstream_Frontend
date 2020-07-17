@@ -13,11 +13,10 @@ This is a passion project. I love live music. One of my favorite pastimes is exp
 My goal with this project is to contribute to the culture and the industry that I love and that has given me so much, from friends, to experiences that I will never forget. 
 
 ## Screenshots
-![part-5](https://user-images.githubusercontent.com/61900464/87834721-f9f06e80-c83f-11ea-8fbb-d76398b659f3.jpg)
-![part-4](https://user-images.githubusercontent.com/61900464/87834728-fa890500-c83f-11ea-9a97-7f54dddc3bd7.jpg)
-![part-2](https://user-images.githubusercontent.com/61900464/87834735-fbba3200-c83f-11ea-94c5-cf7e25a17201.jpg)
-![part-1](https://user-images.githubusercontent.com/61900464/87834740-fceb5f00-c83f-11ea-853c-ff239ce96e61.jpg)
-![part-0](https://user-images.githubusercontent.com/61900464/87834746-fd83f580-c83f-11ea-82d4-2ee3c580a0ae.jpg)
+![part-5r](https://user-images.githubusercontent.com/61900464/87834965-a599be80-c840-11ea-870d-15cff3b1d2b9.jpg)
+![part-2r](https://user-images.githubusercontent.com/61900464/87834974-adf1f980-c840-11ea-95da-53d9f8e5d925.jpg)
+![part-1r](https://user-images.githubusercontent.com/61900464/87834977-b0545380-c840-11ea-9d8b-334b80ebab68.jpg)
+![part-0](https://user-images.githubusercontent.com/61900464/87834979-b21e1700-c840-11ea-84d6-0aa9db5fc509.jpg)
 
 
 
