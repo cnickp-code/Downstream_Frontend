@@ -10,33 +10,37 @@ class Spotlight extends React.Component {
     static contextType = DSContext;
 
     render() {
-        
+
         const event = this.context.events[0];
-        
+
         return (
             <main>
                 {this.context.showEventInfo && <EventInfo />}
                 {this.context.showCoverImage && <EventCoverImage />}
                 <h1 className="spotlight-header">Home</h1>
+                <div className="landing-container">
+                    <div className="landing-inner">
+                        <h2 className="center center-text pad-left pad-right font-family-2 spotlight-list-header">Welcome to DownStream</h2>
+                        <p className="center center-text pad-left pad-right spotlight-list-innertext font-family-2">Never miss a live streamed music event ever again! </p>
+                        <p className="center center-text pad-left pad-right spotlight-list-innertext2 font-family-2"><NavLink to='/signup' className="white"><b><i>Sign up</i></b></NavLink> to access your schedule!</p>
+                    </div>
+
+                </div>
                 <div className="spotlight-container">
-                    <h2 className="center center-text pad-left pad-right mb-10">Welcome to DownStream</h2>
-                    <p className="center center-text pad-left pad-right mb-10">Never miss a live streamed music event ever again! </p>
-                    <p className="center center-text pad-left pad-right mb-10"><NavLink to='/signup' className="white">Sign up</NavLink> to access your schedule!</p>
-                    <p className="center center-text pad-left pad-right margin-bottom">Click on the Events Tab to get started. There, you will find all upcoming events as well as past events!</p>
-                    <h2 className="center center-text">Example Event Picture:</h2>
-                    <img src="https://i.ibb.co/vD3sDBj/Event2.png" className="center margin-bottom home-image" ></img>
-                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-link white"></i> to go to the event page.</p>
-                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-desktop white"></i> to go to the stream.</p>
-                    <p className="center center-text pad-left pad-right">Log in/Sign up and click <i className="fas fa-plus-circle added"></i> to add to schedule.</p>
-                    <p className="center center-text pad-left pad-right">Click <i className="fas fa-minus-circle trash"></i> on the schedule page to remove the event.</p>
+                    
+                    <h2 className="center center-text font-family-2">Page Navigation</h2>
+                    <div class="landing-image-container">
+                        <img src="https://i.ibb.co/72ppTxm/Event3.png" className="center margin-bottom home-image" ></img>
+                        <img src="https://i.ibb.co/Ps2cffP/navigation.png" className="center margin-bottom home-image3" ></img>
+                    </div>
                     <div className="home-container">
                         <NavLink to="/events" className="home-event-button1 center">See All Events >></NavLink>
                     </div>
                 </div>
-                <div className="parallax">
+                {/* <div className="parallax">
                     <div className="home-image1">
                     </div>
-                </div>
+                </div> */}
                 <div className="home-news-container">
 
                     <h2 className="news-text">Need the scoop on the latest?</h2>
@@ -44,7 +48,7 @@ class Spotlight extends React.Component {
                         <a href="https://twitter.com/Downstr90019240" className="home-event-button2 center">Follow Us >></a>
                     </div>
                 </div>
-                <div className="parallax">
+                {/* <div className="parallax">
                     <div className="home-image2">
                     </div>
                 </div>
@@ -66,7 +70,7 @@ class Spotlight extends React.Component {
                             </textarea>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </main >
         )
     }

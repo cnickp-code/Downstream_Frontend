@@ -36,16 +36,16 @@ class EventList extends React.Component {
         let pastEvents = [];
         let now = new Date();
         let currentDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+        //let currentDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
        
 
         eventList.forEach(event => {
             let eventStartDate = new Date(event.start_date);
-            console.log(currentDate)
-            console.log(eventStartDate)
-            console.log('------------')
-            if ((eventStartDate - currentDate) > 0 && (eventStartDate - currentDate) < 86400000) {
+            let eventEndDate = new Date(event.end_date);
+
+            if (currentDate > eventStartDate && currentDate < eventEndDate) {
                 eventsToday.push(event);
-            } else if ((eventStartDate - currentDate) > 86400000 && (eventStartDate - currentDate) < 604800000) {
+            } else if ((eventEndDate - currentDate) > 0 && (eventEndDate - currentDate) < 604800000) {
                 eventsInAWeek.push(event);
             } else if ((eventStartDate - currentDate) > 604800000) {
                 eventsFuture.push(event);
@@ -122,17 +122,17 @@ class EventList extends React.Component {
                     Events
                 </h1>
                 <div className="bottom-container">
-                    <h2 className="margin">Events Within 24Hrs:</h2>
+                    <h2 className="margin">Events Happening Now!</h2>
                     <div className="bottom-date-container">
                         {eventsToday}
                     </div>
                     <hr />
-                    <h2 className="margin">Events Within A Week:</h2>
+                    <h2 className="margin">Events Happening Soon</h2>
                     <div className="bottom-date-container">
                         {eventsInAWeek}
                     </div>
                     <hr />
-                    <h2 className="margin">Events Later:</h2>
+                    <h2 className="margin">Events Later</h2>
                     <div className="bottom-date-container">
                         {eventsFuture}
                     </div>
@@ -140,7 +140,7 @@ class EventList extends React.Component {
 
                     {this.context.showPastEvents && 
                     <>
-                        <h2 className="margin">Past Events:</h2>
+                        <h2 className="margin">Past Events</h2>
                         <div className="bottom-date-container">
                             {pastEvents}
                         </div>

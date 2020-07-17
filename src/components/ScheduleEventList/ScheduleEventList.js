@@ -43,7 +43,7 @@ class ScheduleEventList extends React.Component {
         pastEvents = pastEvents.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <ScheduleEvent key={event.id} event={event} />;
         })
@@ -51,7 +51,7 @@ class ScheduleEventList extends React.Component {
         mainSchedule = mainSchedule.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
-            return secondStartDate - firstStartDate;
+            return firstStartDate - secondStartDate;
         }).map(event => {
             return <ScheduleEvent key={event.id} event={event} />;
         })
