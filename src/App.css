@@ -1162,7 +1162,7 @@ button:active {
     /* position: relative;
     top: -100%; */
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     position: relative;
     animation: fadeInEvent 0.5s ease;
     cursor: pointer;
@@ -1277,7 +1277,7 @@ button:active {
   /* position: relative;
   top: -100%; */
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.9;
   position: relative;
 }
 
@@ -2363,7 +2363,7 @@ button:active {
     /* position: relative;
     top: -100%; */
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     padding: 6px;
     position: relative;
     

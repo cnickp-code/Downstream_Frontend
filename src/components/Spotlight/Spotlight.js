@@ -45,7 +45,7 @@ class Spotlight extends React.Component {
 
                     <h2 className="news-text">Need the scoop on the latest?</h2>
                     <div className="home-container">
-                        <a href="https://twitter.com/Downstr90019240" className="home-event-button2 center">Follow Us >></a>
+                        <a href="https://twitter.com/Downstr90019240" target="_blank" className="home-event-button2 center">Follow Us >></a>
                     </div>
                 </div>
                 {/* <div className="parallax">
