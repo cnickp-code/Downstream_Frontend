@@ -45,7 +45,7 @@ class Login extends React.Component {
                         {error && <p className='error'>{error}</p>}
                     </div>
                     <h1>Log In</h1>
-                    <h3>Example Credentials:</h3>
+                    <h3>Demo Credentials:</h3>
                     <p>Username: Username</p>
                     <p className="margin-bottom">Password: Password123!</p>
                     <fieldset name="login-info">

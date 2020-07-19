@@ -35,7 +35,7 @@ class EventList extends React.Component {
         let pastEvents = [];
         let now = new Date();
         let currentDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
-        //let currentDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+
        
 
         eventList.forEach(event => {

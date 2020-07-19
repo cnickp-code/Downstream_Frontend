@@ -24,12 +24,6 @@ class SearchForm extends React.Component {
 
     handleSearch(event) {
         const searchTerm = this.searchTerm.current.value;
-        // const timeFrame = this.timeFrame.current.value;
-        // const pastBool = this.pastEvents.current.value;
-        // const platform = this.platform.current.value;
-        // let events = this.context.events;
-
-        // let currentDate = new Date();
 
         this.context.setSearchTerm(searchTerm);
         this.context.setSearchEvents();

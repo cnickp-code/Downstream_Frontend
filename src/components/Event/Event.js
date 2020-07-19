@@ -13,9 +13,6 @@ class Event extends React.Component {
     }
 
     handleSetEventInfo = () => {
-        // this.setState({
-        //     showOverlayInfo: true
-        // })
         this.context.setEventInfo(this.props.event);
     }
 

@@ -30,9 +30,6 @@ class EventInfo extends React.Component {
     }
 
     render() {
-        // const startDate = this.context.event.start_date.toLocaleString().slice(5,10).split('-').join('/');
-        // const endDate = this.context.event.end_date.toLocaleString().slice(5,10).split('-').join('/');
-
         let startDate = new Date(this.context.event.start_date)
         let endDate = new Date(this.context.event.end_date)
 
