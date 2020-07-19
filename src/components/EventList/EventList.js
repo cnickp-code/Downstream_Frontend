@@ -112,6 +112,7 @@ class EventList extends React.Component {
                 </h1>
                 <div className="bottom-container">
                     <h2 className="margin">Events Happening Today!</h2>
+                    <p className="xs-text"><i>Click on the flyers for more info!</i></p>
                     <div className="bottom-date-container">
                         {eventsToday}
                     </div>
