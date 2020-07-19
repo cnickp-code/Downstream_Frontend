@@ -92,7 +92,7 @@ class ScheduleEventList extends React.Component {
                         {mainSchedule}
                     </div>
                     <hr />
-                    <h2 className="margin">Past Events:</h2>
+                    <h2 className="margin">Events Attended</h2>
                     <div className="bottom-date-container">
                         {pastEvents}
                     </div>

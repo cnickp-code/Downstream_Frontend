@@ -31,7 +31,6 @@ class EventList extends React.Component {
 
 
         let eventsToday = [];
-        let eventsInAWeek = [];
         let eventsFuture = [];
         let pastEvents = [];
         let now = new Date();
@@ -45,23 +44,16 @@ class EventList extends React.Component {
 
             if (currentDate > eventStartDate && currentDate < eventEndDate) {
                 eventsToday.push(event);
-            } else if ((eventEndDate - currentDate) > 0 && (eventStartDate - currentDate) < 604800000) {
-                eventsInAWeek.push(event);
-            } else if ((eventStartDate - currentDate) > 604800000) {
+            } else if ((eventEndDate - currentDate) > 0) {
                 eventsFuture.push(event);
             } else {
                 pastEvents.push(event);
             }
+
+            // else if ((eventStartDate - currentDate) > 604800000)
         })
 
         eventsToday = eventsToday.sort((a, b) => {
-            let firstStartDate = new Date(a.start_date);
-            let secondStartDate = new Date(b.start_date);
-            return firstStartDate - secondStartDate;
-        }).map(event => {
-            return <Event key={event.id} event={event} />;
-        })
-        eventsInAWeek = eventsInAWeek.sort((a, b) => {
             let firstStartDate = new Date(a.start_date);
             let secondStartDate = new Date(b.start_date);
             return firstStartDate - secondStartDate;
@@ -85,9 +77,6 @@ class EventList extends React.Component {
 
         if (eventsToday.length === 0) {
             eventsToday = <p className="align-center center margin-bottom">No Events To Display</p>;
-        }
-        if (eventsInAWeek.length === 0) {
-            eventsInAWeek = <p className="align-center center margin-bottom">No Events To Display</p>;
         }
         if (eventsFuture.length === 0) {
             eventsFuture = <p className="align-center center margin-bottom">No Events To Display</p>;
@@ -129,11 +118,6 @@ class EventList extends React.Component {
                     <hr />
                     <h2 className="margin">Events Happening Soon</h2>
                     <div className="bottom-date-container">
-                        {eventsInAWeek}
-                    </div>
-                    <hr />
-                    <h2 className="margin">Events Later</h2>
-                    <div className="bottom-date-container">
                         {eventsFuture}
                     </div>
                     <hr />
@@ -148,7 +132,7 @@ class EventList extends React.Component {
                     </>}
                 </div>
                 <div className="space-container">
-                    
+
                 </div>
             </div>
         )

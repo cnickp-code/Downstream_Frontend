@@ -143,8 +143,32 @@ class App extends React.Component {
   setSearchEvents = () => {
     DownstreamApiService.getEvents()
       .then(events => {
+        const currentDate = new Date();
+    
+        const clientEvents = events.map(event => {
+          let pastObj = { past: false }
+          let eventEndDate = new Date(event.end_date);
+          if (currentDate > eventEndDate) {
+            pastObj = { past: true };
+          }
+    
+          const addedObj = { added: false };
+          const newEvent = Object.assign(event, addedObj, pastObj);
+    
+          return newEvent;
+        })
+    
+        clientEvents.forEach(event => {
+          this.state.schedule.forEach(item => {
+            if (item.name === event.name) {
+              event.added = true;
+            }
+          })
+          return event;
+        })
+
         const { searchTerm } = this.state
-        const searchEvents = events.filter(event => {
+        const searchEvents = clientEvents.filter(event => {
           return (
             event.name.toLowerCase().includes(searchTerm.toLowerCase())
             || event.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -154,7 +178,7 @@ class App extends React.Component {
         });
 
         this.setState({
-          events,
+          events: clientEvents,
           searchEvents
         })
       })
@@ -187,14 +211,16 @@ class App extends React.Component {
 
   setEvents = (events) => {
     const currentDate = new Date();
+    
     const clientEvents = events.map(event => {
-      let pastObj = { past: false }
-      if (currentDate > event.end_date) {
-        pastObj = { past: true }
+      let pastObj = { past: false };
+      let eventEndDate = new Date(event.end_date);
+      if (currentDate > eventEndDate) {
+        pastObj = { past: true };
       }
 
-      const addedObj = { added: false }
-      const newEvent = Object.assign(event, addedObj, pastObj)
+      const addedObj = { added: false };
+      const newEvent = Object.assign(event, addedObj, pastObj);
 
       return newEvent
     })
@@ -312,8 +338,6 @@ class App extends React.Component {
       resetToDefault: this.resetToDefault,
       toggleShowPastEvents: this.toggleShowPastEvents
     }
-
-    
 
     return (
       <div className="App">

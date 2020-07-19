@@ -12,12 +12,16 @@ class EventButtons extends React.Component {
     }
 
     handleAddedAlert = () => {
-        alert('Event already added!')
+        alert('Event already added!');
         // Swal.fire({
         //     text: 'Event already added!',
         //     icon: 'info',
         //     confirmButtonText: 'Ok'
         // });
+    }
+
+    handlePastAlert = () => {
+        alert('Event has already passed. Cannot add to schedule.');
     }
 
     handleDeleteFromSchedule = () => {
@@ -74,13 +78,17 @@ class EventButtons extends React.Component {
                 <div className="icon-container">
                     <a href={this.props.event.stream_url}><i className="fas fa-desktop white"></i></a>
                 </div>
+                {TokenServices.hasAuthToken() && this.props.event.past && <div className="icon-container" onClick={this.handlePastAlert}>
+                    <i className="fas fa-plus-circle invalid"></i>
+                </div>}
+
                 {!TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleLoginAlert}>
                     <i className="fas fa-plus-circle invalid"></i>
                 </div>}
-                {!this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddEventToSchedule}>
+                {!this.props.event.added && !this.props.event.past && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddEventToSchedule}>
                     <i className="fas fa-plus-circle added"></i>
                 </div>}
-                {this.props.event.added && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddedAlert}>
+                {this.props.event.added && !this.props.event.past && TokenServices.hasAuthToken() && <div className="icon-container" onClick={this.handleAddedAlert}>
                     <i className="far fa-check-square added"></i>
                 </div>}
             </div>
